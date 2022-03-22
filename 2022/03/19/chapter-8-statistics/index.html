@@ -11,8 +11,11 @@
     <!--Description-->
     
         <meta name="description" content="통계 분석통계 자료는 범주형 자료(명목형 &amp;#x2F; 순서형 으로 나뉨)와  수치형 자료 로 나뉜다.
-기술통계-기본적인 통계-평균값, 최솟값, 최댓값, 중앙값 등을 뜻함
-123setwd(&amp;quot;~/R_edu/source_2021/2_day_stat_regressio">
+기술통계
+기본적인 통계
+평균값, 최솟값, 최댓값, 중앙값 등을 뜻함
+
+123setwd(&amp;quot;~/R_edu/source_2021/2_day_stat_regressi">
     
 
     <!--Author-->
@@ -127,7 +130,7 @@
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
             <h1 class="f1-l f2-m tc tc-m tl-ns">part 8 statistics</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-03-17</p>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-03-19</p>
         </div>
     </div>
 
@@ -147,8 +150,11 @@
                     
 
                     <!-- Main Post Content -->
-                    <h4 id="통계-분석"><a href="#통계-분석" class="headerlink" title="통계 분석"></a>통계 분석</h4><p>통계 자료는 범주형 자료(명목형 &#x2F; 순서형 으로 나뉨)와  수치형 자료 로 나뉜다.</p>
-<h3 id="기술통계"><a href="#기술통계" class="headerlink" title="기술통계"></a>기술통계</h3><p>-기본적인 통계<br>-평균값, 최솟값, 최댓값, 중앙값 등을 뜻함</p>
+                    <h1 id="통계-분석"><a href="#통계-분석" class="headerlink" title="통계 분석"></a>통계 분석</h1><p>통계 자료는 범주형 자료(명목형 &#x2F; 순서형 으로 나뉨)와  수치형 자료 로 나뉜다.</p>
+<h2 id="기술통계"><a href="#기술통계" class="headerlink" title="기술통계"></a>기술통계</h2><ul>
+<li>기본적인 통계</li>
+<li>평균값, 최솟값, 최댓값, 중앙값 등을 뜻함</li>
+</ul>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setwd<span class="punctuation">(</span><span class="string">&quot;~/R_edu/source_2021/2_day_stat_regression/source&quot;</span><span class="punctuation">)</span></span><br><span class="line">albums <span class="operator">=</span> read.csv<span class="punctuation">(</span><span class="string">&quot;album.csv&quot;</span><span class="punctuation">)</span></span><br><span class="line">albums<span class="operator">$</span>sales</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">##   [1] 330 120 360 270 220 170  70 210 200 300 290  70 150 190 240 100 250 210</span><br><span class="line">##  [19] 280 230 210 230 320 210 230 250  60 330 150 150 180  80 180 130 320 280</span><br><span class="line">##  [37] 200 130 190 150 230 310 340 240 180 220  40 190 290 340 250 190 120 230</span><br><span class="line">##  [55] 190 210 170 310  90 140 300 340 170 100 200  80 100  70  50 240 160 290</span><br><span class="line">##  [73] 140 210 300 230 280 160 200 110 110  70 100 190  70 360 360 300 120 150</span><br><span class="line">##  [91] 220 280 300 140 290 180 140 210 250 250 120 290  60 140 290 160 100 160</span><br><span class="line">## [109] 150 140 230 230  30  80 190  90 120 150 230 150 210 180 140 360  10 240</span><br><span class="line">## [127] 270 290 220 230 220 240 260 170 130 270 140  60 210 210 240 210 200 140</span><br><span class="line">## [145]  90 120 100 360 180 150 110  90 160 230  40  60 230 230 120 150 120  60</span><br><span class="line">## [163] 280 120 230 230  40 140 360 210 260 250 200 150 250 100 260 210 290 220</span><br><span class="line">## [181]  70 110 250 320 300 180 180 200 320 140 100 120 230 150 250 190 240 250</span><br><span class="line">## [199] 230 110</span><br></pre></td></tr></table></figure>
@@ -156,8 +162,7 @@
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort<span class="punctuation">(</span>albums<span class="operator">$</span>sales<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">##   [1]  10  30  40  40  40  50  60  60  60  60  60  70  70  70  70  70  70  80</span><br><span class="line">##  [19]  80  80  90  90  90  90 100 100 100 100 100 100 100 100 110 110 110 110</span><br><span class="line">##  [37] 110 120 120 120 120 120 120 120 120 120 120 130 130 130 140 140 140 140</span><br><span class="line">##  [55] 140 140 140 140 140 140 140 150 150 150 150 150 150 150 150 150 150 150</span><br><span class="line">##  [73] 150 160 160 160 160 160 170 170 170 170 180 180 180 180 180 180 180 180</span><br><span class="line">##  [91] 190 190 190 190 190 190 190 190 200 200 200 200 200 200 200 210 210 210</span><br><span class="line">## [109] 210 210 210 210 210 210 210 210 210 210 220 220 220 220 220 220 230 230</span><br><span class="line">## [127] 230 230 230 230 230 230 230 230 230 230 230 230 230 230 230 240 240 240</span><br><span class="line">## [145] 240 240 240 240 250 250 250 250 250 250 250 250 250 250 260 260 260 270</span><br><span class="line">## [163] 270 270 280 280 280 280 280 290 290 290 290 290 290 290 290 300 300 300</span><br><span class="line">## [181] 300 300 300 310 310 320 320 320 320 330 330 340 340 340 360 360 360 360</span><br><span class="line">## [199] 360 360</span><br></pre></td></tr></table></figure>
-<p>#최소값</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort<span class="punctuation">(</span>albums<span class="operator">$</span>sales<span class="punctuation">)</span><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+<h3 id="최소값"><a href="#최소값" class="headerlink" title="최소값"></a>최소값</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort<span class="punctuation">(</span>albums<span class="operator">$</span>sales<span class="punctuation">)</span><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 10</span><br></pre></td></tr></table></figure>
 
@@ -165,7 +170,7 @@
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 10</span><br></pre></td></tr></table></figure>
 
-<h1 id="최댓값"><a href="#최댓값" class="headerlink" title="최댓값"></a>최댓값</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort<span class="punctuation">(</span>albums<span class="operator">$</span>sales<span class="punctuation">)</span><span class="punctuation">[</span><span class="number">200</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+<h3 id="최댓값"><a href="#최댓값" class="headerlink" title="최댓값"></a>최댓값</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort<span class="punctuation">(</span>albums<span class="operator">$</span>sales<span class="punctuation">)</span><span class="punctuation">[</span><span class="number">200</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 360</span><br></pre></td></tr></table></figure>
 
@@ -173,8 +178,7 @@
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 360</span><br></pre></td></tr></table></figure>
 
-<p>#최빈값</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">table<span class="punctuation">(</span>albums<span class="operator">$</span>sales<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h3 id="최빈값"><a href="#최빈값" class="headerlink" title="최빈값"></a>최빈값</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">table<span class="punctuation">(</span>albums<span class="operator">$</span>sales<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">##  10  30  40  50  60  70  80  90 100 110 120 130 140 150 160 170 180 190 200 210 </span><br><span class="line">##   1   1   3   1   5   6   3   4   8   5  10   3  11  12   5   4   8   8   7  13 </span><br><span class="line">## 220 230 240 250 260 270 280 290 300 310 320 330 340 360 </span><br><span class="line">##   6  17   7  10   3   3   5   8   6   2   4   2   3   6</span><br></pre></td></tr></table></figure>
 
@@ -182,7 +186,7 @@
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## 230 </span><br><span class="line">##  17</span><br></pre></td></tr></table></figure>
 
-<h1 id="평균값-중간값"><a href="#평균값-중간값" class="headerlink" title="평균값 , 중간값"></a>평균값 , 중간값</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mean<span class="punctuation">(</span>albums<span class="operator">$</span>sales<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h3 id="평균값-중간값"><a href="#평균값-중간값" class="headerlink" title="평균값 , 중간값"></a>평균값 , 중간값</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mean<span class="punctuation">(</span>albums<span class="operator">$</span>sales<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 193.2</span><br></pre></td></tr></table></figure>
 
@@ -190,8 +194,7 @@
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 200</span><br></pre></td></tr></table></figure>
 
-<p>#결측치 데이터 추가</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sales2 <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span>albums<span class="operator">$</span>sales<span class="punctuation">,</span> <span class="literal">NA</span><span class="punctuation">)</span></span><br><span class="line">tail<span class="punctuation">(</span>sales2<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h3 id="결측치-데이터-추가"><a href="#결측치-데이터-추가" class="headerlink" title="결측치 데이터 추가"></a>결측치 데이터 추가</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sales2 <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span>albums<span class="operator">$</span>sales<span class="punctuation">,</span> <span class="literal">NA</span><span class="punctuation">)</span></span><br><span class="line">tail<span class="punctuation">(</span>sales2<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 190 240 250 230 110  NA</span><br></pre></td></tr></table></figure>
 
@@ -202,8 +205,11 @@
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mean<span class="punctuation">(</span>sales2<span class="punctuation">,</span> na.rm <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">)</span> <span class="comment"># na.rm=TRUE NA 값을 없앤다.</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 193.2</span><br></pre></td></tr></table></figure>
-<p>#평균의 가장 큰 단점</p>
-<h1 id="극단적-값에-굉장히-민감함"><a href="#극단적-값에-굉장히-민감함" class="headerlink" title="극단적 값에 굉장히 민감함"></a>극단적 값에 굉장히 민감함</h1><p>#중간값은 극단적 값에 둔감함</p>
+<ul>
+<li>평균의 가장 큰 단점</li>
+<li>극단적 값에 굉장히 민감함</li>
+<li>중간값은 극단적 값에 둔감함</li>
+</ul>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">weight<span class="operator">=</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">64</span><span class="punctuation">,</span><span class="number">68</span><span class="punctuation">,</span><span class="number">70</span><span class="punctuation">,</span><span class="number">72</span><span class="punctuation">,</span><span class="number">76</span><span class="punctuation">)</span></span><br><span class="line">weight_mean <span class="operator">=</span> mean<span class="punctuation">(</span>weight<span class="punctuation">)</span> <span class="comment"># 평균</span></span><br><span class="line">weight_mean</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 70</span><br></pre></td></tr></table></figure>
@@ -224,20 +230,20 @@
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 16</span><br></pre></td></tr></table></figure>
 
-<p>#표준 편차</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sqrt</span><span class="punctuation">(</span>mean<span class="punctuation">(</span>weight_deviation_2<span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h3 id="표준-편차"><a href="#표준-편차" class="headerlink" title="표준 편차"></a>표준 편차</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sqrt</span><span class="punctuation">(</span>mean<span class="punctuation">(</span>weight_deviation_2<span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 4</span><br></pre></td></tr></table></figure>
-<h1 id="표본-분산"><a href="#표본-분산" class="headerlink" title="표본 분산"></a>표본 분산</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var<span class="punctuation">(</span>weight<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h3 id="표본-분산"><a href="#표본-분산" class="headerlink" title="표본 분산"></a>표본 분산</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var<span class="punctuation">(</span>weight<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 20</span><br></pre></td></tr></table></figure>
 
-<h1 id="표본-표준-편차"><a href="#표본-표준-편차" class="headerlink" title="표본 표준 편차"></a>표본 표준 편차</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sd<span class="punctuation">(</span>weight<span class="punctuation">)</span> </span><br></pre></td></tr></table></figure>
+<h3 id="표본-표준-편차"><a href="#표본-표준-편차" class="headerlink" title="표본 표준 편차"></a>표본 표준 편차</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sd<span class="punctuation">(</span>weight<span class="punctuation">)</span> </span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## [1] 4.472136</span><br></pre></td></tr></table></figure>
-<p>#변동계수 : 표준편차를 평균으로 나눈값 (cv)</p>
-<h1 id="————————————"><a href="#————————————" class="headerlink" title="————————————-"></a>————————————-</h1><h1 id="변동-계수"><a href="#변동-계수" class="headerlink" title="변동 계수"></a>변동 계수</h1><p>cv(변동 계수) &#x3D; sd(표본 표준 편차) &#x2F; mean(평균)</p>
-<h3 id="추론통계"><a href="#추론통계" class="headerlink" title="추론통계"></a>추론통계</h3><ul>
+<h3 id="변동계수-표준편차를-평균으로-나눈값-cv"><a href="#변동계수-표준편차를-평균으로-나눈값-cv" class="headerlink" title="변동계수 : 표준편차를 평균으로 나눈값 (cv)"></a>변동계수 : 표준편차를 평균으로 나눈값 (cv)</h3><h1 id="————————————"><a href="#————————————" class="headerlink" title="————————————-"></a>————————————-</h1><h3 id="변동-계수"><a href="#변동-계수" class="headerlink" title="변동 계수"></a>변동 계수</h3><ul>
+<li>cv(변동 계수) &#x3D; sd(표본 표준 편차) &#x2F; mean(평균)</li>
+</ul>
+<h1 id="추론통계"><a href="#추론통계" class="headerlink" title="추론통계"></a>추론통계</h1><ul>
 <li>변수 간의 관계를 파악, 변수 간의 인과관계나 새로운 사실들을 밝히는것</li>
 </ul>
 <h2 id="평균차이-검정"><a href="#평균차이-검정" class="headerlink" title="평균차이 검정"></a>평균차이 검정</h2><ul>
@@ -248,8 +254,11 @@
 <li><p>R에 내장된 t.test() 함수 사용</p>
 </li>
 </ul>
-<p>방법 1: t.test(data&#x3D;데이터세트, 종속변수(비교값)<del>독립변수(비교대상))<br>방법 2: t.test(데이터세트$종속변수(비교값)</del>데이터세트$독립변수(비교대상))</p>
-<p>예제인 mpg1.csv 에서 trans 변수의 기어 변속 방법으로 auto 와 manual 두 방식으로 나누어져 있고,<br>두 방식에 따라 cty(1갤런당 달리는 거리) 평균이 통계적으로 유의미한 차이가 있는가?를 알아보려 한다.<br>독립변수는 trans,  종속 변수는 cty 이다.<br>귀무가설: auto와 manual의 cty 평균은 차이가 없다.<br>대립가설: auto와 manual의 cty 평균은 차이가 있다.</p>
+<h4 id="방법-1-t-test-data-x3D-데이터세트-종속변수-비교값-독립변수-비교대상"><a href="#방법-1-t-test-data-x3D-데이터세트-종속변수-비교값-독립변수-비교대상" class="headerlink" title="방법 1: t.test(data&#x3D;데이터세트, 종속변수(비교값)~독립변수(비교대상))"></a>방법 1: t.test(data&#x3D;데이터세트, 종속변수(비교값)~독립변수(비교대상))</h4><h4 id="방법-2-t-test-데이터세트-종속변수-비교값-데이터세트-독립변수-비교대상"><a href="#방법-2-t-test-데이터세트-종속변수-비교값-데이터세트-독립변수-비교대상" class="headerlink" title="방법 2: t.test(데이터세트$종속변수(비교값)~데이터세트$독립변수(비교대상))"></a>방법 2: t.test(데이터세트$종속변수(비교값)~데이터세트$독립변수(비교대상))</h4><p>예제인 mpg1.csv 에서 trans 변수의 기어 변속 방법으로 auto 와 manual 두 방식으로 나누어져 있고,<br>두 방식에 따라 cty(1갤런당 달리는 거리) 평균이 통계적으로 유의미한 차이가 있는가?를 알아보려 한다.<br>독립변수는 trans,  종속 변수는 cty 이다.</p>
+<ul>
+<li>귀무가설: auto와 manual의 cty 평균은 차이가 없다.</li>
+<li>대립가설: auto와 manual의 cty 평균은 차이가 있다.</li>
+</ul>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setwd<span class="punctuation">(</span><span class="string">&quot;~/R_edu/source_2021/1_day_eda/solution/data/public_dataset&quot;</span><span class="punctuation">)</span></span><br><span class="line">mpg1<span class="operator">&lt;-</span> read.csv<span class="punctuation">(</span><span class="string">&quot;mpg1.csv&quot;</span><span class="punctuation">,</span> stringsAsFactors<span class="operator">=</span><span class="built_in">F</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">t.test<span class="punctuation">(</span>data<span class="operator">=</span>mpg1<span class="punctuation">,</span> cty<span class="operator">~</span>trans<span class="punctuation">)</span> <span class="comment"># 방법 2 : t.test(mpg1$cty~mpg1$trans) </span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">## 	Welch Two Sample t-test</span><br><span class="line">## </span><br><span class="line">## data:  cty by trans</span><br><span class="line">## t = -4.5375, df = 132.32, p-value = 1.263e-05</span><br><span class="line">## alternative hypothesis: true difference in means between group auto and group manual is not equal to 0</span><br><span class="line">## 95 percent confidence interval:</span><br><span class="line">##  -3.887311 -1.527033</span><br><span class="line">## sample estimates:</span><br><span class="line">##   mean in group auto mean in group manual </span><br><span class="line">##             15.96815             18.67532</span><br></pre></td></tr></table></figure>
@@ -274,36 +283,28 @@
 
 
 <ul>
-<li>auto 에서는 4륜구동이 47.8%, manual 에서는 전륜구동이 53.2%로 가장 많아서<br>trans에 따라 drv에 차이가 있는 것같다.<br>그리고 이 정보가 정말 맞는지 통계적으로 분석하는 것이 교차 분석</li>
+<li>auto 에서는 4륜구동이 47.8%, manual 에서는 전륜구동이 53.2%로 가장 많아서<br>trans에 따라 drv에 차이가 있는 것같다.</li>
+<li>그리고 이 정보가 정말 맞는지 통계적으로 분석하는 것이 교차 분석</li>
 </ul>
-<p>교차 분석을 하는 방법 3가지</p>
-<ol>
-<li>chisq.test()</li>
-<li>chisq.test(table())</li>
-<li>summary(table())</li>
-</ol>
-<h1 id="1번-방법"><a href="#1번-방법" class="headerlink" title="1번 방법"></a>1번 방법</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chisq.test<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h3 id="교차-분석을-하는-방법-3가지"><a href="#교차-분석을-하는-방법-3가지" class="headerlink" title="교차 분석을 하는 방법 3가지"></a>교차 분석을 하는 방법 3가지</h3><h4 id="1-chisq-test"><a href="#1-chisq-test" class="headerlink" title="1. chisq.test()"></a>1. chisq.test()</h4><h4 id="2-chisq-test-table"><a href="#2-chisq-test-table" class="headerlink" title="2. chisq.test(table())"></a>2. chisq.test(table())</h4><h4 id="3-summary-table"><a href="#3-summary-table" class="headerlink" title="3. summary(table())"></a>3. summary(table())</h4><h3 id="1번-방법"><a href="#1번-방법" class="headerlink" title="1번 방법"></a>1번 방법</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chisq.test<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">## 	Pearson&#x27;s Chi-squared test</span><br><span class="line">## </span><br><span class="line">## data:  mpg1$trans and mpg1$drv</span><br><span class="line">## X-squared = 3.1368, df = 2, p-value = 0.2084</span><br></pre></td></tr></table></figure>
 
-<h1 id="2번-방법"><a href="#2번-방법" class="headerlink" title="2번 방법"></a>2번 방법</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chisq.test<span class="punctuation">(</span>table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h3 id="2번-방법"><a href="#2번-방법" class="headerlink" title="2번 방법"></a>2번 방법</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chisq.test<span class="punctuation">(</span>table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">## 	Pearson&#x27;s Chi-squared test</span><br><span class="line">## </span><br><span class="line">## data:  table(mpg1$trans, mpg1$drv)</span><br><span class="line">## X-squared = 3.1368, df = 2, p-value = 0.2084</span><br></pre></td></tr></table></figure>
 
-<h1 id="3번-방법"><a href="#3번-방법" class="headerlink" title="3번 방법"></a>3번 방법</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summary<span class="punctuation">(</span>table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h3 id="3번-방법"><a href="#3번-방법" class="headerlink" title="3번 방법"></a>3번 방법</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summary<span class="punctuation">(</span>table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">## Number of cases in table: 234 </span><br><span class="line">## Number of factors: 2 </span><br><span class="line">## Test for independence of all factors:</span><br><span class="line">## 	Chisq = 3.1368, df = 2, p-value = 0.2084</span><br></pre></td></tr></table></figure>
 
 <p>p-value(유의수준) &#x3D; 0.2084이므로 p &gt; 0.05 입니다. 대립가설을 기각하지 못하므로 trans에 따라 drv에 차이가 있다고 할 수 없습니다.</p>
 <h2 id="상관관계분석"><a href="#상관관계분석" class="headerlink" title="상관관계분석"></a>상관관계분석</h2><ul>
-<li><p>변수 간의 상관관계와 그 강도를 알아보는 분석</p>
-</li>
-<li><p>상관 관계 분석은 R에 내장되어 있는 cor.test() 함수로 합니다.</p>
-</li>
+<li>변수 간의 상관관계와 그 강도를 알아보는 분석</li>
+<li>상관 관계 분석은 R에 내장되어 있는 cor.test() 함수로 합니다.</li>
+<li>cor.test(데이터세트$비교변수1, 데이터세트$비교변수2)</li>
 </ul>
-<p>cor.test(데이터세트$비교변수1, 데이터세트$비교변수2)</p>
-<p>mpg1 속 cty(도시에서 1갤런당 달리는 거리) 와 hwy(고속도로에서 1갤런당 달리는 거리) 사이의 상관관계를 분석</p>
-<p>귀무가설: cty와 hwy는 상관관계가 없다.<br>대립가설: cty와 hwy는 상관관계가 있다.</p>
+<p>mpg1 속 cty(도시에서 1갤런당 달리는 거리) 와 hwy(고속도로에서 1갤런당 달리는 거리) 사이의 상관관계를 분석<br>귀무가설: cty와 hwy는 상관관계가 없다.<br>대립가설: cty와 hwy는 상관관계가 있다.</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setwd<span class="punctuation">(</span><span class="string">&quot;~/R_edu/source_2021/1_day_eda/solution/data/public_dataset&quot;</span><span class="punctuation">)</span></span><br><span class="line">mpg1<span class="operator">&lt;-</span> read.csv<span class="punctuation">(</span><span class="string">&quot;mpg1.csv&quot;</span><span class="punctuation">,</span> stringsAsFactors <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">cor.test<span class="punctuation">(</span>mpg1<span class="operator">$</span>cty<span class="punctuation">,</span> mpg1<span class="operator">$</span>hwy<span class="punctuation">)</span> <span class="comment">#상관관계분석</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">## 	Pearson&#x27;s product-moment correlation</span><br><span class="line">## </span><br><span class="line">## data:  mpg1$cty and mpg1$hwy</span><br><span class="line">## t = 49.585, df = 232, p-value &lt; 2.2e-16</span><br><span class="line">## alternative hypothesis: true correlation is not equal to 0</span><br><span class="line">## 95 percent confidence interval:</span><br><span class="line">##  0.9433129 0.9657663</span><br><span class="line">## sample estimates:</span><br><span class="line">##       cor </span><br><span class="line">## 0.9559159</span><br></pre></td></tr></table></figure>
@@ -316,13 +317,11 @@
 <li>상관관계 분석으로는 알 수 없는 인과관계를 알 기 위한 분석</li>
 <li>영향을 주는 것과 영향을 받는 것을 구별</li>
 </ul>
-<p>#단순 회귀 분석</p>
-<ul>
+<h2 id="단순-회귀-분석"><a href="#단순-회귀-분석" class="headerlink" title="단순 회귀 분석"></a>단순 회귀 분석</h2><ul>
 <li>단순 회귀 분석은 독립변수가 1개, 종속변수가 1개일 때 합니다.</li>
-<li>회귀분석은 R의 lm() 함수로 합니다.<br>방법 1. lm(data&#x3D;데이터세트, 종속변수~독립변수)<br>방법 2. lm(종속변수 ~ 독립변수, data&#x3D;데이터세트)<br>방법 3. lm(데이터세트$종속변수 ~ 데이터세트$독립변수)</li>
+<li>회귀분석은 R의 lm() 함수로 합니다.</li>
 </ul>
-<p>예제: R이 자체적으로 가지고 있는 mtcars 데이터 셋 사용<br>총 11개 변수 , 32개 자동차의 정보 중 disp(배기량)이 mpg(1갤런당 주행 마일)에 끼치는 영향</p>
-<p>str(mtcars) 로 mtcars에 있는 변수들을 살펴 보면, disp와 mpg 모두 실수형(num) 변수이기 때문에 회귀분석 가능.<br>귀무가설: disp는 mpg에 영향을 주지 않는다.<br>대립가설: disp는 mpg에 영향을 준다.</p>
+<h4 id="방법-1-lm-data-x3D-데이터세트-종속변수-독립변수"><a href="#방법-1-lm-data-x3D-데이터세트-종속변수-독립변수" class="headerlink" title="방법 1. lm(data&#x3D;데이터세트, 종속변수~독립변수)"></a>방법 1. lm(data&#x3D;데이터세트, 종속변수~독립변수)</h4><h4 id="방법-2-lm-종속변수-독립변수-data-x3D-데이터세트"><a href="#방법-2-lm-종속변수-독립변수-data-x3D-데이터세트" class="headerlink" title="방법 2. lm(종속변수 ~ 독립변수, data&#x3D;데이터세트)"></a>방법 2. lm(종속변수 ~ 독립변수, data&#x3D;데이터세트)</h4><h4 id="방법-3-lm-데이터세트-종속변수-데이터세트-독립변수"><a href="#방법-3-lm-데이터세트-종속변수-데이터세트-독립변수" class="headerlink" title="방법 3. lm(데이터세트$종속변수 ~ 데이터세트$독립변수)"></a>방법 3. lm(데이터세트$종속변수 ~ 데이터세트$독립변수)</h4><h4 id="예제-R이-자체적으로-가지고-있는-mtcars-데이터-셋-사용"><a href="#예제-R이-자체적으로-가지고-있는-mtcars-데이터-셋-사용" class="headerlink" title="예제: R이 자체적으로 가지고 있는 mtcars 데이터 셋 사용"></a>예제: R이 자체적으로 가지고 있는 mtcars 데이터 셋 사용</h4><h4 id="총-11개-변수-32개-자동차의-정보-중-disp-배기량-이-mpg-1갤런당-주행-마일-에-끼치는-영향"><a href="#총-11개-변수-32개-자동차의-정보-중-disp-배기량-이-mpg-1갤런당-주행-마일-에-끼치는-영향" class="headerlink" title="총 11개 변수 , 32개 자동차의 정보 중 disp(배기량)이 mpg(1갤런당 주행 마일)에 끼치는 영향"></a>총 11개 변수 , 32개 자동차의 정보 중 disp(배기량)이 mpg(1갤런당 주행 마일)에 끼치는 영향</h4><p>str(mtcars) 로 mtcars에 있는 변수들을 살펴 보면, disp와 mpg 모두 실수형(num) 변수이기 때문에 회귀분석 가능.<br>귀무가설: disp는 mpg에 영향을 주지 않는다.<br>대립가설: disp는 mpg에 영향을 준다.</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lm<span class="punctuation">(</span>data<span class="operator">=</span>mtcars<span class="punctuation">,</span> mpg<span class="operator">~</span>disp<span class="punctuation">)</span> <span class="comment">#lm(mpg~disp, data=mtcars), lm(mtcars$mpg~mtcars$disp)의 결과도 같다</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">## Call:</span><br><span class="line">## lm(formula = mpg ~ disp, data = mtcars)</span><br><span class="line">## </span><br><span class="line">## Coefficients:</span><br><span class="line">## (Intercept)         disp  </span><br><span class="line">##    29.59985     -0.04122</span><br></pre></td></tr></table></figure>
@@ -336,14 +335,14 @@
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RA <span class="operator">&lt;-</span> lm<span class="punctuation">(</span>data<span class="operator">=</span>mtcars<span class="punctuation">,</span> mpg<span class="operator">~</span>disp<span class="punctuation">)</span> <span class="comment"># 회귀분석 결과를 RA 에</span></span><br><span class="line"></span><br><span class="line">summary<span class="punctuation">(</span>RA<span class="punctuation">)</span> <span class="comment"># 상세한 분석 결과 출력</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">## Call:</span><br><span class="line">## lm(formula = mpg ~ disp, data = mtcars)</span><br><span class="line">## </span><br><span class="line">## Residuals:</span><br><span class="line">##     Min      1Q  Median      3Q     Max </span><br><span class="line">## -4.8922 -2.2022 -0.9631  1.6272  7.2305 </span><br><span class="line">## </span><br><span class="line">## Coefficients:</span><br><span class="line">##              Estimate Std. Error t value Pr(&gt;|t|)    </span><br><span class="line">## (Intercept) 29.599855   1.229720  24.070  &lt; 2e-16 ***</span><br><span class="line">## disp        -0.041215   0.004712  -8.747 9.38e-10 ***</span><br><span class="line">## ---</span><br><span class="line">## Signif. codes:  0 &#x27;***&#x27; 0.001 &#x27;**&#x27; 0.01 &#x27;*&#x27; 0.05 &#x27;.&#x27; 0.1 &#x27; &#x27; 1</span><br><span class="line">## </span><br><span class="line">## Residual standard error: 3.251 on 30 degrees of freedom</span><br><span class="line">## Multiple R-squared:  0.7183,	Adjusted R-squared:  0.709 </span><br><span class="line">## F-statistic: 76.51 on 1 and 30 DF,  p-value: 9.38e-10</span><br></pre></td></tr></table></figure>
-<p>마지막 항목에서 p-value 확인 가능(해당 값은 9.38e-10 으로 p&lt;0.05 이므로 회귀모형이 적합하다고 해석할 수 있다.)</p>
-<h1 id="다중-회귀-분석"><a href="#다중-회귀-분석" class="headerlink" title="다중 회귀 분석"></a>다중 회귀 분석</h1><ul>
+<ul>
+<li>마지막 항목에서 p-value 확인 가능(해당 값은 9.38e-10 으로 p&lt;0.05 이므로 회귀모형이 적합하다고 해석할 수 있다.)</li>
+</ul>
+<h2 id="다중-회귀-분석"><a href="#다중-회귀-분석" class="headerlink" title="다중 회귀 분석"></a>다중 회귀 분석</h2><ul>
 <li>종속 변수에 영향을 주는 독립 변수가 복수 일 때 분석하는 방식</li>
 <li>단순 회귀 분석의 독립 변수들을 ‘+’ 기호로 연결하여 사용</li>
 </ul>
-<p>방법 1. lm(data&#x3D;데이터세트, 종속변수 ~ 독립변수1 + 독립변수2+…)<br>방법 2. lm(종속 변수 ~ 독립변수1+독립변수2+…, data&#x3D;데이터세트)<br>방법 3. lm(데이터세트$종속변수 ~ 데이터세트$독립변수1 + 데이터세트$독립변수2+….)</p>
-<p>예제: mtcars 데이터로 실습(mpg 와 독립변수들 disp(배기량), hp(마력), wt(중량))</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lm<span class="punctuation">(</span>data <span class="operator">=</span> mtcars<span class="punctuation">,</span> mpg<span class="operator">~</span>disp <span class="operator">+</span> hp <span class="operator">+</span>wt<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h4 id="방법-1-lm-data-x3D-데이터세트-종속변수-독립변수1-독립변수2-…"><a href="#방법-1-lm-data-x3D-데이터세트-종속변수-독립변수1-독립변수2-…" class="headerlink" title="방법 1. lm(data&#x3D;데이터세트, 종속변수 ~ 독립변수1 + 독립변수2+…)"></a>방법 1. lm(data&#x3D;데이터세트, 종속변수 ~ 독립변수1 + 독립변수2+…)</h4><h4 id="방법-2-lm-종속-변수-독립변수1-독립변수2-…-data-x3D-데이터세트"><a href="#방법-2-lm-종속-변수-독립변수1-독립변수2-…-data-x3D-데이터세트" class="headerlink" title="방법 2. lm(종속 변수 ~ 독립변수1+독립변수2+…, data&#x3D;데이터세트)"></a>방법 2. lm(종속 변수 ~ 독립변수1+독립변수2+…, data&#x3D;데이터세트)</h4><h4 id="방법-3-lm-데이터세트-종속변수-데이터세트-독립변수1-데이터세트-독립변수2-…"><a href="#방법-3-lm-데이터세트-종속변수-데이터세트-독립변수1-데이터세트-독립변수2-…" class="headerlink" title="방법 3. lm(데이터세트$종속변수 ~ 데이터세트$독립변수1 + 데이터세트$독립변수2+….)"></a>방법 3. lm(데이터세트$종속변수 ~ 데이터세트$독립변수1 + 데이터세트$독립변수2+….)</h4><h3 id="예제-mtcars-데이터로-실습-mpg-와-독립변수들-disp-배기량-hp-마력-wt-중량"><a href="#예제-mtcars-데이터로-실습-mpg-와-독립변수들-disp-배기량-hp-마력-wt-중량" class="headerlink" title="예제: mtcars 데이터로 실습(mpg 와 독립변수들 disp(배기량), hp(마력), wt(중량))"></a>예제: mtcars 데이터로 실습(mpg 와 독립변수들 disp(배기량), hp(마력), wt(중량))</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lm<span class="punctuation">(</span>data <span class="operator">=</span> mtcars<span class="punctuation">,</span> mpg<span class="operator">~</span>disp <span class="operator">+</span> hp <span class="operator">+</span>wt<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">## Call:</span><br><span class="line">## lm(formula = mpg ~ disp + hp + wt, data = mtcars)</span><br><span class="line">## </span><br><span class="line">## Coefficients:</span><br><span class="line">## (Intercept)         disp           hp           wt  </span><br><span class="line">##   37.105505    -0.000937    -0.031157    -3.800891</span><br></pre></td></tr></table></figure>
 
@@ -398,7 +397,11 @@
     <h3>Recent Posts</h3>
     
         <p>
-            <a href="/2022/03/18/chapter-8-practice-mark-down/">chapter 8 practice</a>
+            <a href="/2022/03/19/chapter-8-statistics/">part 8 statistics</a>
+        </p>
+    
+        <p>
+            <a href="/2022/03/18/chapter-8-practice-mark-down/">chapter 2 practice</a>
         </p>
     
         <p>
@@ -407,10 +410,6 @@
     
         <p>
             <a href="/2022/03/18/Colaboratory_intro/">Google Colaboratory</a>
-        </p>
-    
-        <p>
-            <a href="/2022/03/17/chapter-8-statistics/">part 8 statistics</a>
         </p>
     
         <p>

@@ -25,7 +25,7 @@ R에서 chisq.test() 함수로 진행
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="chapter 8 practice"/>
+        <meta property="og:title" content="chapter 2 practice"/>
     
 
     <!--Open Graph Description-->
@@ -47,7 +47,7 @@ R에서 chisq.test() 함수로 진행
 
     <!-- Title -->
     
-    <title>chapter 8 practice - Hexo</title>
+    <title>chapter 2 practice - Hexo</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
@@ -129,7 +129,7 @@ R에서 chisq.test() 함수로 진행
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">chapter 8 practice</h1>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">chapter 2 practice</h1>
             <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-03-18</p>
         </div>
     </div>
@@ -167,38 +167,28 @@ R에서 chisq.test() 함수로 진행
 <ul>
 <li>auto 에서는 4륜구동이 47.8%, manual 에서는 전륜구동이 53.2%로 가장 많아서<br>trans에 따라 drv에 차이가 있는 것같다.<br>그리고 이 정보가 정말 맞는지 통계적으로 분석하는 것이 교차 분석</li>
 </ul>
-<p>교차 분석을 하는 방법 3가지</p>
-<ol>
+<h2 id="교차-분석을-하는-방법-3가지"><a href="#교차-분석을-하는-방법-3가지" class="headerlink" title="교차 분석을 하는 방법 3가지"></a>교차 분석을 하는 방법 3가지</h2><ol>
 <li>chisq.test()</li>
 <li>chisq.test(table())</li>
 <li>summary(table())</li>
 </ol>
-<h1 id="1번-방법"><a href="#1번-방법" class="headerlink" title="1번 방법"></a>1번 방법</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chisq.test<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h3 id="1번-방법"><a href="#1번-방법" class="headerlink" title="1번 방법"></a>1번 방법</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chisq.test<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">## 	Pearson&#x27;s Chi-squared test</span><br><span class="line">## </span><br><span class="line">## data:  mpg1$trans and mpg1$drv</span><br><span class="line">## X-squared = 3.1368, df = 2, p-value = 0.2084</span><br></pre></td></tr></table></figure>
 
-<h1 id="2번-방법"><a href="#2번-방법" class="headerlink" title="2번 방법"></a>2번 방법</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chisq.test<span class="punctuation">(</span>table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h3 id="2번-방법"><a href="#2번-방법" class="headerlink" title="2번 방법"></a>2번 방법</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chisq.test<span class="punctuation">(</span>table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">## 	Pearson&#x27;s Chi-squared test</span><br><span class="line">## </span><br><span class="line">## data:  table(mpg1$trans, mpg1$drv)</span><br><span class="line">## X-squared = 3.1368, df = 2, p-value = 0.2084</span><br></pre></td></tr></table></figure>
 
-<h1 id="3번-방법"><a href="#3번-방법" class="headerlink" title="3번 방법"></a>3번 방법</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summary<span class="punctuation">(</span>table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h3 id="3번-방법"><a href="#3번-방법" class="headerlink" title="3번 방법"></a>3번 방법</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summary<span class="punctuation">(</span>table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">## Number of cases in table: 234 </span><br><span class="line">## Number of factors: 2 </span><br><span class="line">## Test for independence of all factors:</span><br><span class="line">## 	Chisq = 3.1368, df = 2, p-value = 0.2084</span><br></pre></td></tr></table></figure>
 
 <p>p-value(유의수준) &#x3D; 0.2084이므로 p &gt; 0.05 입니다. 대립가설을 기각하지 못하므로 trans에 따라 drv에 차이가 있다고 할 수 없습니다.</p>
-<h3 id="상관관계분석"><a href="#상관관계분석" class="headerlink" title="상관관계분석"></a>상관관계분석</h3><ul>
+<h4 id="상관관계분석"><a href="#상관관계분석" class="headerlink" title="상관관계분석"></a>상관관계분석</h4><ul>
 <li>상관 관계 분석은 R에 내장되어 있는 cor.test() 함수로 합니다.</li>
 </ul>
 <p>cor.test(데이터세트$비교변수1, 데이터세트$비교변수2)</p>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a target="_blank" rel="noopener" href="http://rmarkdown.rstudio.com/">http://rmarkdown.rstudio.com</a>.</p>
-<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summary<span class="punctuation">(</span>cars<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">##      speed           dist       </span><br><span class="line">##  Min.   : 4.0   Min.   :  2.00  </span><br><span class="line">##  1st Qu.:12.0   1st Qu.: 26.00  </span><br><span class="line">##  Median :15.0   Median : 36.00  </span><br><span class="line">##  Mean   :15.4   Mean   : 42.98  </span><br><span class="line">##  3rd Qu.:19.0   3rd Qu.: 56.00  </span><br><span class="line">##  Max.   :25.0   Max.   :120.00</span><br></pre></td></tr></table></figure>
-
-<h2 id="Including-Plots"><a href="#Including-Plots" class="headerlink" title="Including Plots"></a>Including Plots</h2><p>You can also embed plots, for example:</p>
-<p><img src="/images/chapter-8-practice-mark-down_files/figure-html/pressure-1.png"><!-- --></p>
-<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
 
                     
                     <!-- Tags Bottom -->
@@ -236,7 +226,11 @@ R에서 chisq.test() 함수로 진행
     <h3>Recent Posts</h3>
     
         <p>
-            <a href="/2022/03/18/chapter-8-practice-mark-down/">chapter 8 practice</a>
+            <a href="/2022/03/19/chapter-8-statistics/">part 8 statistics</a>
+        </p>
+    
+        <p>
+            <a href="/2022/03/18/chapter-8-practice-mark-down/">chapter 2 practice</a>
         </p>
     
         <p>
@@ -245,10 +239,6 @@ R에서 chisq.test() 함수로 진행
     
         <p>
             <a href="/2022/03/18/Colaboratory_intro/">Google Colaboratory</a>
-        </p>
-    
-        <p>
-            <a href="/2022/03/17/chapter-8-statistics/">part 8 statistics</a>
         </p>
     
         <p>
