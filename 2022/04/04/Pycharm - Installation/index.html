@@ -10,14 +10,12 @@
 
     <!--Description-->
     
-        <meta name="description" content="Pycharm 테마 적용
-이카루스 테마를 사용하였다.
+        <meta name="description" content="Pycharm 설치 및 환경 설정Pycharm 설치
+링크: https://www.jetbrains.com/ko-kr/pycharm/download/download-thanks.html?platform=windows&amp;code=PCC
+모두 체크하고 다운로드 받기
 
-링크: https://ppoffice.github.io/hexo-theme-icarus/uncategorized/getting-started-with-icarus/#install-npm
 
-
-icarus 버전 설치
-">
+환경 ">
     
 
     <!--Author-->
@@ -27,7 +25,7 @@ icarus 버전 설치
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content=" Pycharm - myblog 테마 적용"/>
+        <meta property="og:title" content=" Pycharm - 설치 및 개발 환경 설정"/>
     
 
     <!--Open Graph Description-->
@@ -49,7 +47,7 @@ icarus 버전 설치
 
     <!-- Title -->
     
-    <title> Pycharm - myblog 테마 적용 - Hexo</title>
+    <title> Pycharm - 설치 및 개발 환경 설정 - Hexo</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
@@ -131,8 +129,8 @@ icarus 버전 설치
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns"> Pycharm - myblog 테마 적용</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-05</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns"> Pycharm - 설치 및 개발 환경 설정</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-04</p>
         </div>
     </div>
 
@@ -152,48 +150,42 @@ icarus 버전 설치
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Pycharm-myblog/">#Pycharm, myblog</a>
+                                <a class="fw3 ph1 dib" href="/tags/Pycharm/">#Pycharm</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <h1 id="Pycharm-테마-적용"><a href="#Pycharm-테마-적용" class="headerlink" title="Pycharm 테마 적용"></a>Pycharm 테마 적용</h1><ul>
-<li><p>이카루스 테마를 사용하였다.</p>
-<ul>
-<li>링크: <strong><a target="_blank" rel="noopener" href="https://ppoffice.github.io/hexo-theme-icarus/uncategorized/getting-started-with-icarus/#install-npm">https://ppoffice.github.io/hexo-theme-icarus/uncategorized/getting-started-with-icarus/#install-npm</a></strong></li>
+                    <h1 id="Pycharm-설치-및-환경-설정"><a href="#Pycharm-설치-및-환경-설정" class="headerlink" title="Pycharm 설치 및 환경 설정"></a>Pycharm 설치 및 환경 설정</h1><h2 id="Pycharm-설치"><a href="#Pycharm-설치" class="headerlink" title="Pycharm 설치"></a>Pycharm 설치</h2><ul>
+<li>링크: <a target="_blank" rel="noopener" href="https://www.jetbrains.com/ko-kr/pycharm/download/download-thanks.html?platform=windows&code=PCC">https://www.jetbrains.com/ko-kr/pycharm/download/download-thanks.html?platform=windows&code=PCC</a><ul>
+<li>모두 체크하고 다운로드 받기</li>
 </ul>
 </li>
-<li><p>icarus 버전 설치</p>
-<ul>
-<li><code>npm install -S hexo-theme-icarus</code></li>
+<li>환경 변수 - 환경 변수 편집 - 시스템 변수 - path<ul>
+<li>Pycharm의 환경 변수가 추가됐는지 체크</li>
 </ul>
 </li>
-<li><p>테마 수정하기</p>
-<ul>
-<li><code>hexo config theme icarus</code></li>
+</ul>
+<h2 id="Pycharm-개발-환경-및-가상-환경-설정"><a href="#Pycharm-개발-환경-및-가상-환경-설정" class="headerlink" title="Pycharm 개발 환경 및 가상 환경 설정"></a>Pycharm 개발 환경 및 가상 환경 설정</h2><ol>
+<li>Pycharm 실행 후 , File - Close Project</li>
+<li>New Project - 경로 설정 후 완료</li>
+<li>Terminal - Git Bash -  which python 입력 - &#x2F;venv&#x2F;Scripts&#x2F;python 경로 확인 (가상 환경 경로 확인)</li>
+<li>가상환경 실행 명령어 source venv&#x2F;Scripts&#x2F;activate </li>
+<li>명령어 python <a target="_blank" rel="noopener" href="http://main.py/">main.py</a> 입력(python 으로 main.py 를 구동시킨다)<ul>
+<li>현 상태로는 아직 library가 설치 안돼있어서 numpy 등의 실행이 안된다</li>
+<li>패키지 설치<ul>
+<li>pip install numpy (numpy 패키지 설치)</li>
 </ul>
 </li>
-<li><p>에러 발생 시</p>
-<ul>
-<li><code>npm install --save bulma-stylus@0.8.0 hexo-renderer-inferno@^0.1.3</code></li>
-<li>에러 발생 창 중간의 위 명령어를 입력해서 다시 설치를 진행한다.</li>
 </ul>
 </li>
-<li><p>테마 적용확인</p>
-</li>
-</ul>
-<p><code>hexo generate —server</code></p>
-<p><code>hexo generate —deploy</code></p>
-<ul>
-<li>기타 테마는 <a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a> 에서 찾아서 적용 가능</li>
-</ul>
+</ol>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Pycharm-myblog/">#Pycharm, myblog</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Pycharm/">#Pycharm</a>
                         </div>
                     
 
