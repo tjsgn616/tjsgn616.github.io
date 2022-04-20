@@ -10,14 +10,11 @@
 
     <!--Description-->
     
-        <meta name="description" content="Pycharm myblog먼저 node.js 와 git을 설치
-nodejs.org
-git-scm.com
-git bash에서 hexo 설치
-1npm install -g hexo-cli
+        <meta name="description" content="title: “ Pycharm - myblog 만들기”author: “park sun hoo”date: ‘2022-04-05’tags: Pycharm, myblog
+myblog 만들기
+Pycharm을 이용해 Github와 연동된 블로그를 만드는 과정이다.
 
-바탕화면에  깃배쉬 - hexo init myblog 입력
-myblog - 우클릭 파">
+필수 파일 ">
     
 
     <!--Author-->
@@ -27,7 +24,7 @@ myblog - 우클릭 파">
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Pycharm"/>
+        <meta property="og:title" content="Hexo"/>
     
 
     <!--Open Graph Description-->
@@ -38,7 +35,7 @@ myblog - 우클릭 파">
 
     <!--Type page-->
     
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
     
 
     <!--Page Cover-->
@@ -49,7 +46,7 @@ myblog - 우클릭 파">
 
     <!-- Title -->
     
-    <title>Pycharm - Hexo</title>
+    <title>Hexo</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
@@ -131,8 +128,8 @@ myblog - 우클릭 파">
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Pycharm</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-03-16</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">Untitled</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-20</p>
         </div>
     </div>
 
@@ -152,48 +149,64 @@ myblog - 우클릭 파">
                     
 
                     <!-- Main Post Content -->
-                    <h1 id="Pycharm-myblog"><a href="#Pycharm-myblog" class="headerlink" title="Pycharm myblog"></a>Pycharm myblog</h1><p>먼저 node.js 와 git을 설치</p>
-<p><strong><a target="_blank" rel="noopener" href="https://nodejs.org/en/">nodejs.org</a></strong></p>
-<p><strong><a target="_blank" rel="noopener" href="https://git-scm.com/">git-scm.com</a></strong></p>
-<p>git bash에서 hexo 설치</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+                    <p>title: “ Pycharm - myblog 만들기”<br>author: “park sun hoo”<br>date: ‘2022-04-05’<br>tags: Pycharm, myblog</p>
+<h1 id="myblog-만들기"><a href="#myblog-만들기" class="headerlink" title="myblog 만들기"></a>myblog 만들기</h1><ul>
+<li>Pycharm을 이용해 Github와 연동된 블로그를 만드는 과정이다.</li>
+</ul>
+<h2 id="필수-파일-설치"><a href="#필수-파일-설치" class="headerlink" title="필수 파일 설치"></a>필수 파일 설치</h2><ul>
+<li>node.js 와 git을 설치<ul>
+<li>링크: <strong><a target="_blank" rel="noopener" href="https://nodejs.org/en/">nodejs.org</a>  &#x2F; <a target="_blank" rel="noopener" href="https://git-scm.com/">git-scm.com</a></strong></li>
+<li>설치 후 정상적으로 설치 되었는지 확인해본다.</li>
+<li><code>node -v</code></li>
+<li><code>git —version</code></li>
+</ul>
+</li>
+<li>git bash에서 hexo 설치<ul>
+<li><code>npm install -g hexo-cli</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="블로그-폴더-만들기"><a href="#블로그-폴더-만들기" class="headerlink" title="블로그 폴더 만들기"></a>블로그 폴더 만들기</h2><ol>
+<li>바탕화면에  우클릭, Git Bash 선택</li>
+<li><code>hexo init myblog</code> 입력 &#x3D; myblog 폴더가 생성됨</li>
+<li>myblog - 우클릭 - Pycharm으로 실행</li>
+<li>하단부 terminal을 열고 Git Bash 란을 열어놓음.</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm install hexo-server --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
-<p>바탕화면에  깃배쉬 - hexo init myblog 입력</p>
-<p>myblog - 우클릭 파이참으로 실행</p>
-<p>하단부 terminal을 열고 화살표 버튼 눌러 Git Bash 란을 열어놓음.</p>
-<p>git hub에서 자기 프로필 repositories에서 새로 폴더 만들기 (myblog) 진행</p>
-<p>아이디&#x2F;myblog를 만들면 뜨는 명령어들 복사 붙여넣기</p>
-<p>(</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# myblog&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin https://github.com/tjsgn616/myblog.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+<h2 id="GitHub-설정"><a href="#GitHub-설정" class="headerlink" title="GitHub 설정"></a>GitHub 설정</h2><ol>
+<li>git hub에서 자기 프로필 repositories에서 새로 폴더 만들기 (myblog) 진행</li>
+<li>아이디&#x2F;myblog를 만들면 나오는 명령어들 Pycharm 터미널 Gitbash 에서 실행시킴 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# myblog&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin https://github.com/tjsgn616/myblog.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+ <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;updated&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Myblog-폴더-설정"><a href="#Myblog-폴더-설정" class="headerlink" title="Myblog 폴더 설정"></a>Myblog 폴더 설정</h2><ul>
+<li>_config.yml 파일 선택<ul>
+<li><p>URL 정보 수정</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url</span>: <span class="attr">https</span>:<span class="comment">//아이디.github.io    -&gt; 이걸 수정</span></span><br><span class="line"><span class="attr">root</span>: /</span><br><span class="line"><span class="attr">permalink</span>: :year/:month/:day/:title/</span><br><span class="line"><span class="attr">permalink_defaults</span>:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>맨 아래로 내려서 수정</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy</span>:</span><br><span class="line">  <span class="attr">type</span>: git</span><br><span class="line">  <span class="attr">repo</span>: <span class="attr">https</span>:<span class="comment">//github.com/아이디/아이디.github.io.git</span></span><br><span class="line">  <span class="attr">branch</span>: main</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="배포용-Github-설정"><a href="#배포용-Github-설정" class="headerlink" title="배포용 Github 설정"></a>배포용 Github 설정</h2><ul>
+<li>깃허브에 “<a target="_blank" rel="noopener" href="http://아이디.github.io/">아이디.github.io</a>”  로 repo를 하나 더 만든다.</li>
+<li>그 후 다시 Pycharm GitBash Terminal에서 명령어로 헥소를 이용해 테스트한다.  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<ul>
+<li>(localhost : 4000) 들어가서 확인</li>
+</ul>
+</li>
+</ul>
+<h2 id="최종-배포"><a href="#최종-배포" class="headerlink" title="최종 배포"></a>최종 배포</h2><ul>
+<li>최종 배포 또는 수정 후 재배포 시</li>
+</ul>
+<p><code>hexo generate  hexo deploy</code></p>
+<h2 id="새로운-파일-x2F-내용-추가"><a href="#새로운-파일-x2F-내용-추가" class="headerlink" title="새로운 파일&#x2F;내용 추가"></a>새로운 파일&#x2F;내용 추가</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">&quot;제목&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>)</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;updated&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br><span class="line">$ npm install hexo-server --save</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>_config.yml 파일에서 URL 정보 수정</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url</span>: <span class="attr">https</span>:<span class="comment">//아이디.github.io    -&gt; 이걸 수정</span></span><br><span class="line"><span class="attr">root</span>: /</span><br><span class="line"><span class="attr">permalink</span>: :year/:month/:day/:title/</span><br><span class="line"><span class="attr">permalink_defaults</span>:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>맨 아래로 내려서 수정</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy</span>:</span><br><span class="line">  <span class="attr">type</span>: git</span><br><span class="line">  <span class="attr">repo</span>: <span class="attr">https</span>:<span class="comment">//github.com/아이디/아이디.github.io.git</span></span><br><span class="line">  <span class="attr">branch</span>: main</span><br></pre></td></tr></table></figure>
-
-<p>깃허브에 “<a target="_blank" rel="noopener" href="http://아이디.github.io/">아이디.github.io</a>”  로 repo를 하나 더 만든다.</p>
-<p>그 후 아래 명령어로 헥소를 이용해 테스트한다.</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>(localhost : 4000) 들어가서 확인</p>
-<p>최종적으로</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>로 배포한다</p>
-<p>내용 변경시</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>반복</p>
-<h1 id="새로운-파일-x2F-내용-추가"><a href="#새로운-파일-x2F-내용-추가" class="headerlink" title="새로운 파일&#x2F;내용 추가"></a>새로운 파일&#x2F;내용 추가</h1><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">&quot;제목&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>헥소 기본적인 코딩 문법들</p>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/ko/docs/commands.html">https://hexo.io/ko/docs/commands.html</a></p>
+<ul>
+<li>헥소 기본적인 코딩 문법들</li>
+</ul>
+<p>링크: <a target="_blank" rel="noopener" href="https://hexo.io/ko/docs/commands.html">https://hexo.io/ko/docs/commands.html</a></p>
 
                     
                     <!-- Tags Bottom -->
@@ -231,23 +244,23 @@ myblog - 우클릭 파">
     <h3>Recent Posts</h3>
     
         <p>
+            <a href="/2022/04/20/Pycharm%20-%20Making%20myblog/">Untitled</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/20/Pycharm%20-%20Input%20RM%20File%20in%20myblog%20/">Untitled</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/20/Pycharm%20-%20Theme%20on%20myblog/">Untitled</a>
+        </p>
+    
+        <p>
             <a href="/2022/03/19/chapter-8-statistics/">part 8 statistics</a>
         </p>
     
         <p>
             <a href="/2022/03/18/chapter-8-practice-mark-down/">chapter 2 practice</a>
-        </p>
-    
-        <p>
-            <a href="/2022/03/18/blog/">blog test</a>
-        </p>
-    
-        <p>
-            <a href="/2022/03/18/Colaboratory_intro/">Google Colaboratory</a>
-        </p>
-    
-        <p>
-            <a href="/2022/03/16/Pycharm_my_blog/">Pycharm</a>
         </p>
     
 </div>
