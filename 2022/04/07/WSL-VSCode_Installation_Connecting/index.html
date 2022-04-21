@@ -10,7 +10,13 @@
 
     <!--Description-->
     
-        <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ">
+        <meta name="description" content="WSL - VSCode 설치 및 연동
+WSL에서 VSCode를 바로 실행시킬 수 있도록 연동 시킨다.
+
+VSCode 설치
+링크: https://code.visualstudio.com/download
+관리자 실행을 위해 System Installer로 다운받는다.
+설치 ">
     
 
     <!--Author-->
@@ -20,7 +26,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="seoul Food Report"/>
+        <meta property="og:title" content="WSL - VSCode 설치 및 연동"/>
     
 
     <!--Open Graph Description-->
@@ -42,7 +48,7 @@
 
     <!-- Title -->
     
-    <title>seoul Food Report - Hexo</title>
+    <title>WSL - VSCode 설치 및 연동 - Hexo</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
@@ -124,8 +130,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">seoul Food Report</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-03-14</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">WSL - VSCode 설치 및 연동</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-07</p>
         </div>
     </div>
 
@@ -143,25 +149,52 @@
                 <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
                     <!-- Tags Vertical -->
                     
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/WSL-VSCode/">#WSL, VSCode</a>
+                            </div>
+                        </div>
+                    
 
                     <!-- Main Post Content -->
-                    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<p>첫번째 파일이에요</p>
+                    <h1 id="WSL-VSCode-설치-및-연동"><a href="#WSL-VSCode-설치-및-연동" class="headerlink" title="WSL - VSCode 설치 및 연동"></a>WSL - VSCode 설치 및 연동</h1><ul>
+<li>WSL에서 VSCode를 바로 실행시킬 수 있도록 연동 시킨다.</li>
+</ul>
+<h2 id="VSCode-설치"><a href="#VSCode-설치" class="headerlink" title="VSCode 설치"></a>VSCode 설치</h2><ul>
+<li>링크: <strong><a target="_blank" rel="noopener" href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a></strong><ul>
+<li>관리자 실행을 위해 System Installer로 다운받는다.</li>
+<li>설치 파일을 관리자 권한으로 실행한다.</li>
+<li>설치 진행 시 환경 변수(PATH에 추가)란만 체크돼있는지 확인한다.</li>
+<li>설치 완료 후, 재부팅을 한다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Remote-WSL-연동"><a href="#Remote-WSL-연동" class="headerlink" title="Remote WSL 연동"></a>Remote WSL 연동</h2><ol>
+<li><p>VSCode를 실행한다.</p>
+</li>
+<li><p>Extension 버튼을 들어가서 Remote WSL을 설치한다.</p>
+<p><img src="/source/images/WSL-VSCode_Installation_Connecting/VS1.png" alt="VS1"></p>
+<ul>
+<li>체크 박스 둘 모두 체크하고 Mark Done을 실행한다.</li>
+</ul>
+</li>
+<li><p>새로운 파일을 실행한 다음 터미널에서 WSL이 있는지 확인한다.</p>
+</li>
+</ol>
+<h2 id="WSL에서-VSCode-실행"><a href="#WSL에서-VSCode-실행" class="headerlink" title="WSL에서 VSCode 실행"></a>WSL에서 VSCode 실행</h2><ul>
+<li>WSL에서 최초로 <code>Code .</code> 입력 시 자동으로 설치</li>
+</ul>
+<p><img src="/source/images/WSL-VSCode_Installation_Connecting/VS2.png" alt="VS2"></p>
+<ul>
+<li>설치 완료 후 <code>Code .</code> 입력시 해당 디렉토리로 VSCode가 실행된다.</li>
+</ul>
 
                     
                     <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/WSL-VSCode/">#WSL, VSCode</a>
+                        </div>
                     
 
                     <!-- Comments -->
