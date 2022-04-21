@@ -10,15 +10,13 @@
 
     <!--Description-->
     
-        <meta name="description" content="myblog 만들기
-Pycharm을 이용해 Github와 연동된 블로그를 만드는 과정이다.
+        <meta name="description" content="WSL - VSCode 설치 및 연동
+WSL에서 VSCode를 바로 실행시킬 수 있도록 연동 시킨다.
 
-필수 파일 설치
-node.js 와 git을 설치
-링크: nodejs.org  &amp;#x2F; git-scm.com
-설치 후 정상적으로 설치 되었는지 확인해본다.
-node -v
-gi">
+VSCode 설치
+링크: https://code.visualstudio.com/download
+관리자 실행을 위해 System Installer로 다운받는다.
+설치 ">
     
 
     <!--Author-->
@@ -28,7 +26,7 @@ gi">
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content=" Pycharm - myblog 만들기"/>
+        <meta property="og:title" content="WSL2 - VSCode 설치 및 연동"/>
     
 
     <!--Open Graph Description-->
@@ -50,7 +48,7 @@ gi">
 
     <!-- Title -->
     
-    <title> Pycharm - myblog 만들기 - Hexo</title>
+    <title>WSL2 - VSCode 설치 및 연동 - Hexo</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
@@ -132,8 +130,8 @@ gi">
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns"> Pycharm - myblog 만들기</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-05</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">WSL2 - VSCode 설치 및 연동</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-07</p>
         </div>
     </div>
 
@@ -153,75 +151,49 @@ gi">
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Pycharm-myblog/">#Pycharm, myblog</a>
+                                <a class="fw3 ph1 dib" href="/tags/WSL2-VSCode/">#WSL2, VSCode</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <h1 id="myblog-만들기"><a href="#myblog-만들기" class="headerlink" title="myblog 만들기"></a>myblog 만들기</h1><ul>
-<li>Pycharm을 이용해 Github와 연동된 블로그를 만드는 과정이다.</li>
+                    <h1 id="WSL-VSCode-설치-및-연동"><a href="#WSL-VSCode-설치-및-연동" class="headerlink" title="WSL - VSCode 설치 및 연동"></a>WSL - VSCode 설치 및 연동</h1><ul>
+<li>WSL에서 VSCode를 바로 실행시킬 수 있도록 연동 시킨다.</li>
 </ul>
-<h2 id="필수-파일-설치"><a href="#필수-파일-설치" class="headerlink" title="필수 파일 설치"></a>필수 파일 설치</h2><ul>
-<li>node.js 와 git을 설치<ul>
-<li>링크: <strong><a target="_blank" rel="noopener" href="https://nodejs.org/en/">nodejs.org</a>  &#x2F; <a target="_blank" rel="noopener" href="https://git-scm.com/">git-scm.com</a></strong></li>
-<li>설치 후 정상적으로 설치 되었는지 확인해본다.</li>
-<li><code>node -v</code></li>
-<li><code>git —version</code></li>
-</ul>
-</li>
-<li>git bash에서 hexo 설치<ul>
-<li><code>npm install -g hexo-cli</code></li>
+<h2 id="VSCode-설치"><a href="#VSCode-설치" class="headerlink" title="VSCode 설치"></a>VSCode 설치</h2><ul>
+<li>링크: <strong><a target="_blank" rel="noopener" href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a></strong><ul>
+<li>관리자 실행을 위해 System Installer로 다운받는다.</li>
+<li>설치 파일을 관리자 권한으로 실행한다.</li>
+<li>설치 진행 시 환경 변수(PATH에 추가)란만 체크돼있는지 확인한다.</li>
+<li>설치 완료 후, 재부팅을 한다.</li>
 </ul>
 </li>
 </ul>
-<h2 id="블로그-폴더-만들기"><a href="#블로그-폴더-만들기" class="headerlink" title="블로그 폴더 만들기"></a>블로그 폴더 만들기</h2><ol>
-<li>바탕화면에  우클릭, Git Bash 선택</li>
-<li><code>hexo init myblog</code> 입력 &#x3D; myblog 폴더가 생성됨</li>
-<li>myblog - 우클릭 - Pycharm으로 실행</li>
-<li>하단부 terminal을 열고 Git Bash 란을 열어놓음.</li>
-</ol>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm install hexo-server --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<h2 id="GitHub-설정"><a href="#GitHub-설정" class="headerlink" title="GitHub 설정"></a>GitHub 설정</h2><ol>
-<li>git hub에서 자기 프로필 repositories에서 새로 폴더 만들기 (myblog) 진행</li>
-<li>아이디&#x2F;myblog를 만들면 나오는 명령어들 Pycharm 터미널 Gitbash 에서 실행시킴 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# myblog&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin https://github.com/tjsgn616/myblog.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
- <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;updated&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="Myblog-폴더-설정"><a href="#Myblog-폴더-설정" class="headerlink" title="Myblog 폴더 설정"></a>Myblog 폴더 설정</h2><ul>
-<li>_config.yml 파일 선택<ul>
-<li><p>URL 정보 수정</p>
-  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url</span>: <span class="attr">https</span>:<span class="comment">//아이디.github.io    -&gt; 이걸 수정</span></span><br><span class="line"><span class="attr">root</span>: /</span><br><span class="line"><span class="attr">permalink</span>: :year/:month/:day/:title/</span><br><span class="line"><span class="attr">permalink_defaults</span>:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Remote-WSL-연동"><a href="#Remote-WSL-연동" class="headerlink" title="Remote WSL 연동"></a>Remote WSL 연동</h2><ol>
+<li><p>VSCode를 실행한다.</p>
 </li>
-<li><p>맨 아래로 내려서 수정</p>
-  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy</span>:</span><br><span class="line">  <span class="attr">type</span>: git</span><br><span class="line">  <span class="attr">repo</span>: <span class="attr">https</span>:<span class="comment">//github.com/아이디/아이디.github.io.git</span></span><br><span class="line">  <span class="attr">branch</span>: main</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-<h2 id="배포용-Github-설정"><a href="#배포용-Github-설정" class="headerlink" title="배포용 Github 설정"></a>배포용 Github 설정</h2><ul>
-<li>깃허브에 “<a target="_blank" rel="noopener" href="http://아이디.github.io/">아이디.github.io</a>”  로 repo를 하나 더 만든다.</li>
-<li>그 후 다시 Pycharm GitBash Terminal에서 명령어로 헥소를 이용해 테스트한다.  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<li><p>Extension 버튼을 들어가서 Remote WSL을 설치한다.</p>
+<p><img src="/images/WSL2-VSCode_Installation_Connecting/VS1.png" alt="VS1"></p>
 <ul>
-<li>(localhost : 4000) 들어가서 확인</li>
+<li>체크 박스 둘 모두 체크하고 Mark Done을 실행한다.</li>
 </ul>
 </li>
+<li><p>새로운 파일을 실행한 다음 터미널에서 WSL이 있는지 확인한다.</p>
+</li>
+</ol>
+<h2 id="WSL에서-VSCode-실행"><a href="#WSL에서-VSCode-실행" class="headerlink" title="WSL에서 VSCode 실행"></a>WSL에서 VSCode 실행</h2><ul>
+<li>WSL에서 최초로 <code>Code .</code> 입력 시 자동으로 설치</li>
 </ul>
-<h2 id="최종-배포"><a href="#최종-배포" class="headerlink" title="최종 배포"></a>최종 배포</h2><ul>
-<li>최종 배포 또는 수정 후 재배포 시</li>
-</ul>
-<p><code>hexo generate  hexo deploy</code></p>
-<h2 id="새로운-파일-x2F-내용-추가"><a href="#새로운-파일-x2F-내용-추가" class="headerlink" title="새로운 파일&#x2F;내용 추가"></a>새로운 파일&#x2F;내용 추가</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">&quot;제목&quot;</span></span><br></pre></td></tr></table></figure>
-
+<p><img src="/images/WSL2-VSCode_Installation_Connecting/VS2.png" alt="VS2"></p>
 <ul>
-<li>헥소 기본적인 코딩 문법들</li>
+<li>설치 완료 후 <code>Code .</code> 입력시 해당 디렉토리로 VSCode가 실행된다.</li>
 </ul>
-<p>링크: <a target="_blank" rel="noopener" href="https://hexo.io/ko/docs/commands.html">https://hexo.io/ko/docs/commands.html</a></p>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Pycharm-myblog/">#Pycharm, myblog</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/WSL2-VSCode/">#WSL2, VSCode</a>
                         </div>
                     
 
