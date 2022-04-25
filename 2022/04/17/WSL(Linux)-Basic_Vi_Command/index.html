@@ -10,7 +10,12 @@
 
     <!--Description-->
     
-        <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ">
+        <meta name="description" content="WSL(Linux) - 기본 명령어&amp;#x2F;vi 명령어파일 및 디렉토리 명령어
+clear : 콘솔에 적힌 텍스트 전부 삭제
+pwd : 현재 작업 중인 디렉토리를 보여줌
+ls : 현재 위치의 디렉토리 목록
+cd : 디렉토리 변경, cd .. : 상위 디렉토리로 이동
+m">
     
 
     <!--Author-->
@@ -20,7 +25,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="seoul Food Report"/>
+        <meta property="og:title" content="WSL2(Linux) - 기본 명령어/vi 명령어"/>
     
 
     <!--Open Graph Description-->
@@ -42,7 +47,7 @@
 
     <!-- Title -->
     
-    <title>seoul Food Report - Hexo</title>
+    <title>WSL2(Linux) - 기본 명령어/vi 명령어 - Hexo</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
@@ -124,8 +129,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">seoul Food Report</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-03-14</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">WSL2(Linux) - 기본 명령어/vi 명령어</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-17</p>
         </div>
     </div>
 
@@ -143,25 +148,91 @@
                 <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
                     <!-- Tags Vertical -->
                     
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/WSL2-Linux-Vi/">#WSL2, Linux, Vi</a>
+                            </div>
+                        </div>
+                    
 
                     <!-- Main Post Content -->
-                    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<p>첫번째 파일이에요</p>
+                    <h1 id="WSL-Linux-기본-명령어-x2F-vi-명령어"><a href="#WSL-Linux-기본-명령어-x2F-vi-명령어" class="headerlink" title="WSL(Linux) - 기본 명령어&#x2F;vi 명령어"></a>WSL(Linux) - 기본 명령어&#x2F;vi 명령어</h1><h2 id="파일-및-디렉토리-명령어"><a href="#파일-및-디렉토리-명령어" class="headerlink" title="파일 및 디렉토리 명령어"></a>파일 및 디렉토리 명령어</h2><ul>
+<li>clear : 콘솔에 적힌 텍스트 전부 삭제</li>
+<li>pwd : 현재 작업 중인 디렉토리를 보여줌</li>
+<li>ls : 현재 위치의 디렉토리 목록</li>
+<li>cd : 디렉토리 변경, cd .. : 상위 디렉토리로 이동</li>
+<li>mkdir 폴더이름 : 폴더 이름 폴더를 만든다.</li>
+<li>touch 파일이름.확장자 : 파일이름.확장자 파일을 만든다.</li>
+<li>mv A B : 파일(이름) 바꾸기(A파일을 B파일로 이름을 바꾼다)<ul>
+<li>mv A 경로 : A를 해당경로로 이동</li>
+<li>mv A B 경로: A B(추가로 더 가능) 파일을 경로로 이동</li>
+</ul>
+</li>
+<li>rm 파일이름 : 파일이름 삭제<ul>
+<li>rm -rf 폴더 : 폴더 전체 삭제</li>
+</ul>
+</li>
+<li>cp A B : A를 B라는 이름으로 복사<ul>
+<li>cp -f A B : B이름이 이미 있다면 삭제하고 복사</li>
+<li>cp -r A B : 폴더 복사(하위내용 포함)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Vi-명령어"><a href="#Vi-명령어" class="headerlink" title="Vi 명령어"></a>Vi 명령어</h2><ul>
+<li>vi 파일이름.확장자 : 파일 내용을 보고 수정할 수 있다.<ul>
+<li>vi 내부 명령어<ul>
+<li>명령모드(기본상태)<ul>
+<li>x : 커서가 위치한 글자 삭제(10x : 커서 있는 곳 부터 10개 삭제)</li>
+<li>dw : 커서가 있는 곳 부터 띄어쓰기가 있는 곳 까지의 한 단어 삭제</li>
+<li>dd : 커서가 위치한 한 줄 삭제</li>
+<li>u : 실행 취소(ctrl + z)</li>
+<li>yy : 복사 (5yy: 5줄 복사)</li>
+<li>dd : 잘라내기 (5dd: 5줄 잘라내기)</li>
+<li>p: 붙여넣기</li>
+<li>0 : 줄의 맨 처음으로(Home)</li>
+<li>$ : 줄의 맨 뒤로(End)</li>
+<li>G(대문자 G) : 파일 마지막 위치로 이동</li>
+<li>insert &#x2F; i : 입력 모드 전환</li>
+</ul>
+</li>
+<li>esc : 명령 모드 전환</li>
+<li>: &#x3D; 마지막 줄 모드 전환<ul>
+<li>:w : 저장</li>
+<li>:w 파일명 : 파일명 으로 저장</li>
+<li>:q &#x3D; 나가기, q! &#x3D; 저장하지 않고 그냥 종료<ul>
+<li>:wq 저장 후 종료</li>
+</ul>
+</li>
+<li>&#x2F;문자열 : 커서 위치 앞 쪽의 문자열 탐색</li>
+<li>?문자열 : 커서위치 뒤 쪽의 문자열 탐색</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="압축-명령어"><a href="#압축-명령어" class="headerlink" title="압축 명령어"></a>압축 명령어</h2><ul>
+<li>tar : 압축 관련 명령어<ul>
+<li>tar -cvf A.tar B : B를 A.tar 로 압축한다.</li>
+<li>tar -zcvf A.tar.gz B : B를 A.tar.gz 로 압축한다.</li>
+<li>tar -xvf A.tar : A.tar 파일의 압축을 푼다.</li>
+<li>tar -zxvf A.tar.gz : A.tar.gz 파일의 압축을푼다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="패키지-설치-x2F-삭제-명령어"><a href="#패키지-설치-x2F-삭제-명령어" class="headerlink" title="패키지 설치&#x2F;삭제 명령어"></a>패키지 설치&#x2F;삭제 명령어</h2><ul>
+<li>sudo : 관리자 권한 부여</li>
+<li>apt-get install&#x2F;uninstall 패키지이름 : 패키지 설치&#x2F;삭제(주로 sudo와 함께 사용된다.)</li>
+<li>apt-get upgrade : 패키지들을 최신 버전으로 업그레이드 할 때 사용</li>
+</ul>
 
                     
                     <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/WSL2-Linux-Vi/">#WSL2, Linux, Vi</a>
+                        </div>
                     
 
                     <!-- Comments -->
