@@ -10,13 +10,9 @@
 
     <!--Description-->
     
-        <meta name="description" content="WSL - VSCode 설치 및 연동
-WSL에서 VSCode를 바로 실행시킬 수 있도록 연동 시킨다.
-
-VSCode 설치
-링크: https://code.visualstudio.com/download
-관리자 실행을 위해 System Installer로 다운받는다.
-설치 ">
+        <meta name="description" content="WSL2- Apache-Airflow 설치와 설정(Windows10)windows wsl2에서 airflow 설치하기Step.1  Install pip on WSL
+airflow를 설치하기 위해 pip를 설치한다.
+  sudo apt-get update &amp;amp;&amp;am">
     
 
     <!--Author-->
@@ -26,7 +22,7 @@ VSCode 설치
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="WSL2 - VSCode 설치 및 연동"/>
+        <meta property="og:title" content="WSL2- Apache-Airflow 설치와 설정(Windows10)"/>
     
 
     <!--Open Graph Description-->
@@ -48,7 +44,7 @@ VSCode 설치
 
     <!-- Title -->
     
-    <title>WSL2 - VSCode 설치 및 연동 - Hexo</title>
+    <title>WSL2- Apache-Airflow 설치와 설정(Windows10) - Hexo</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
@@ -130,8 +126,8 @@ VSCode 설치
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">WSL2 - VSCode 설치 및 연동</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-14</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">WSL2- Apache-Airflow 설치와 설정(Windows10)</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-18</p>
         </div>
     </div>
 
@@ -151,49 +147,118 @@ VSCode 설치
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/WSL2-VSCode/">#WSL2, VSCode</a>
+                                <a class="fw3 ph1 dib" href="/tags/WSL2-Windows10-Apache-Airflow/">#WSL2, Windows10, Apache, Airflow</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <h1 id="WSL-VSCode-설치-및-연동"><a href="#WSL-VSCode-설치-및-연동" class="headerlink" title="WSL - VSCode 설치 및 연동"></a>WSL - VSCode 설치 및 연동</h1><ul>
-<li>WSL에서 VSCode를 바로 실행시킬 수 있도록 연동 시킨다.</li>
-</ul>
-<h2 id="VSCode-설치"><a href="#VSCode-설치" class="headerlink" title="VSCode 설치"></a>VSCode 설치</h2><ul>
-<li>링크: <strong><a target="_blank" rel="noopener" href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a></strong><ul>
-<li>관리자 실행을 위해 System Installer로 다운받는다.</li>
-<li>설치 파일을 관리자 권한으로 실행한다.</li>
-<li>설치 진행 시 환경 변수(PATH에 추가)란만 체크돼있는지 확인한다.</li>
-<li>설치 완료 후, 재부팅을 한다.</li>
-</ul>
+                    <h1 id="WSL2-Apache-Airflow-설치와-설정-Windows10"><a href="#WSL2-Apache-Airflow-설치와-설정-Windows10" class="headerlink" title="WSL2- Apache-Airflow 설치와 설정(Windows10)"></a>WSL2- Apache-Airflow 설치와 설정(Windows10)</h1><h1 id="windows-wsl2에서-airflow-설치하기"><a href="#windows-wsl2에서-airflow-설치하기" class="headerlink" title="windows wsl2에서 airflow 설치하기"></a>windows wsl2에서 airflow 설치하기</h1><h2 id="Step-1-Install-pip-on-WSL"><a href="#Step-1-Install-pip-on-WSL" class="headerlink" title="Step.1  Install pip on WSL"></a>Step.1  Install pip on WSL</h2><ul>
+<li><p>airflow를 설치하기 위해 pip를 설치한다.</p>
+<p>  <code>sudo apt-get update &amp;&amp; sudo apt-get upgrade</code></p>
+<p>  <code>sudo apt install python3-pip</code></p>
+<p>  <code>[sudo] password for username:</code>(비밀번호 입력)</p>
 </li>
 </ul>
-<h2 id="Remote-WSL-연동"><a href="#Remote-WSL-연동" class="headerlink" title="Remote WSL 연동"></a>Remote WSL 연동</h2><ol>
-<li><p>VSCode를 실행한다.</p>
-</li>
-<li><p>Extension 버튼을 들어가서 Remote WSL을 설치한다.</p>
-<p><img src="/images/WSL2-VSCode_Installation_Connecting/VS1.png" alt="VS1"></p>
+<h2 id="Step-2-Install-virtualenv-package"><a href="#Step-2-Install-virtualenv-package" class="headerlink" title="Step.2 Install virtualenv package"></a>Step.2 Install virtualenv package</h2><ul>
+<li><p>virtualenv 라이브러리를 설치한다.</p>
+<p>   <code>sudo pip3 install virtualenv</code></p>
 <ul>
-<li>체크 박스 둘 모두 체크하고 Mark Done을 실행한다.</li>
+<li>기본적인 명령어들: <a target="_blank" rel="noopener" href="https://staticclass.tistory.com/66">https://staticclass.tistory.com/66</a>, <a target="_blank" rel="noopener" href="https://www.manualfactory.net/10805">https://www.manualfactory.net/10805</a> , <a target="_blank" rel="noopener" href="https://blockdmask.tistory.com/25">https://blockdmask.tistory.com/25</a></li>
+<li>clear &#x3D; 콘솔에 적힌 텍스트 전부 삭제</li>
+<li>ls &#x3D; 현재 위치의 디렉토리 목록</li>
+<li>cd &#x3D; 디렉토리 변경, cd .. &#x3D; 상위 디렉토리로 이동</li>
+<li>mkdir 폴더이름 : 폴더 만든다.</li>
+<li>명령어 정리:</li>
 </ul>
 </li>
-<li><p>새로운 파일을 실행한 다음 터미널에서 WSL이 있는지 확인한다.</p>
-</li>
-</ol>
-<h2 id="WSL에서-VSCode-실행"><a href="#WSL에서-VSCode-실행" class="headerlink" title="WSL에서 VSCode 실행"></a>WSL에서 VSCode 실행</h2><ul>
-<li>WSL에서 최초로 <code>Code .</code> 입력 시 자동으로 설치</li>
 </ul>
-<p><img src="/images/WSL2-VSCode_Installation_Connecting/VS2.png" alt="VS2"></p>
+<h2 id="Step-3-Create-a-virtual-evironment"><a href="#Step-3-Create-a-virtual-evironment" class="headerlink" title="Step 3. Create a virtual evironment"></a>Step 3. Create a virtual evironment</h2><ul>
+<li><p>C 드라이브에 airflow-test폴더를 생성한다.</p>
+</li>
+<li><p>해당 디렉터리로 이동한다.</p>
+</li>
+<li><p>가상 환경을 생성한다.</p>
+<p>  <code>virtualenv venv</code></p>
+</li>
+<li><p>가상환경에 접속한다.</p>
+<p>  <code>source venv/bin/activate</code></p>
+</li>
+<li><p>.bashrc 파일을 수정한다.</p>
+<p>  <code>vi ~/.bashrc</code></p>
 <ul>
-<li>설치 완료 후 <code>Code .</code> 입력시 해당 디렉토리로 VSCode가 실행된다.</li>
+<li><p>vi 명령어 설명</p>
+<p>  <a target="_blank" rel="noopener" href="https://wiki.kldp.org/KoreanDoc/html/Vim_Guide-KLDP/Vim_Guide-KLDP.html">https://wiki.kldp.org/KoreanDoc/html/Vim_Guide-KLDP&#x2F;Vim_Guide-KLDP.html</a> </p>
+</li>
+<li><p>i : 입력, :w 저장,  :q 입력 종료후 나가기, :wq 저장후 나가기</p>
+</li>
+</ul>
+</li>
+<li><p>파일을 열고, 다음과 같은 코드를 추가한다.</p>
+<p>  <code>export AIRFLOW_HOME=/mnt/c/airflow-test</code></p>
+</li>
+<li><p>파일을 닫을 때는 ESC 누르고 :wq 명령어를 입력하면 된다.</p>
+</li>
+<li><p>수정된 코드를 업데이트 하기 위해서는 아래와 같이 반영한다.</p>
+<p>  <code>source ~/.bashrc</code></p>
+</li>
+<li><p>실제로 코드가 반영되었는지 확인하기 위해서는 다음과 같이 확인해본다.</p>
+<p>  <code>echo $AIRFLOW_HOME</code></p>
+<ul>
+<li>결과: &#x2F;mnt&#x2F;c&#x2F;airflow-test</li>
+</ul>
+</li>
+</ul>
+<h2 id="Step-4-Apache-Airflow-설치"><a href="#Step-4-Apache-Airflow-설치" class="headerlink" title="Step 4. Apache Airflow 설치"></a>Step 4. Apache Airflow 설치</h2><ul>
+<li><p>PostgreSQL, Slack, Celery 패키지를 동시에 설치하는 코드 입력</p>
+<p>  <code>pip3 install &#39;apache-airflow[postgres, slack, celery]&#39;</code></p>
+</li>
+<li><p>에어플로 실행 위해 DB 초기화를 해줘야 한다.</p>
+<p>  <code>airflow db init</code></p>
+<ul>
+<li>username을 추가하도록 한다.</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># $ airflow users create --username admin --password your_password --firstname your_first_name --lastname your_last_name --role <span class="title class_">Admin</span> --email your_email@some.<span class="property">com</span></span><br><span class="line">$ airflow users create --username airflow --password airflow --firstname evan --lastname airflow --role <span class="title class_">Admin</span> --email your_email@some.<span class="property">com</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>실제로 잘 구현이 되었는지 확인하기 위해 webserver를 실행한다.</p>
+<p>   <code>airflow webserver -p 8081</code>  → 8081 포트가 사용중이라면 다른걸 써야할지도</p>
+</li>
+<li><p>다음으로 일정 주기로 데이터 흐름이 실행되게 하려면 Scheduler가 필요하다.</p>
+<p>  <code>airflow scheduler</code> → 없어도 되는데?</p>
+<ul>
+<li>그 후, <strong><a target="_blank" rel="noopener" href="http://localhost:8081/login/">http://localhost:8081/login/</a> 로 들어간다.</strong></li>
+<li>로그인 화면에서 로그인을 진행하면 정상적으로 다양한 DAGs 파일이 나타난 것을 확인할 수 있다.</li>
+</ul>
+</li>
+</ul>
+<p><img src="/%5Cimages%5CWSL2-Apache_Airflow_installation_setting(Windows10)%5CUntitled_1.png" alt="Untitled 1.png"></p>
+<h2 id="Step-5-Default-예제-제거"><a href="#Step-5-Default-예제-제거" class="headerlink" title="Step 5.  Default 예제 제거"></a>Step 5.  Default 예제 제거</h2><ul>
+<li><p>처음에 나오는 load_examples 들 없애기</p>
+</li>
+<li><p>airflow.cfg 파일을 열고 load_examples &#x3D; True를 load_examples &#x3D;True 로 바꿔준다.</p>
+<ul>
+<li>:&#x2F;원하는검색단어 ⇒ 단어 검색, n&#x3D; 다음 결과로 찾아가기</li>
+</ul>
+</li>
+<li><p>저장 후,</p>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">airflow db reset</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>다시 webserver 실행</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">airflow webserver -p <span class="number">8080</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>이제 아무런 예제가 떠오르지 않는다.</li>
 </ul>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/WSL2-VSCode/">#WSL2, VSCode</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/WSL2-Windows10-Apache-Airflow/">#WSL2, Windows10, Apache, Airflow</a>
                         </div>
                     
 
