@@ -10,12 +10,9 @@
 
     <!--Description-->
     
-        <meta name="description" content="교차 분석
-교차 분석은 범주형 변수들이 관게가 있다는 것을 입증하는 것.
-평균의 차이가 아니라, 비율에 차이가 있는지 검정.
-R에서 chisq.test() 함수로 진행
-
-1234setwd(&amp;quot;C:/Users/human/Desktop/temp/public_data">
+        <meta name="description" content="WSL2 - Apache Nifi 설치와 설정(Windows10)WSL2 환경에서 Apache Nifi를 설치하고 환경을 세팅하는 방법을 기록하였다.JAVA 및 Apache-Nifi 설치
+Wsl2 에서 JAVA 를 설치한다.
+ sudo apt-get update &amp;am">
     
 
     <!--Author-->
@@ -25,7 +22,7 @@ R에서 chisq.test() 함수로 진행
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="chapter 2 practice"/>
+        <meta property="og:title" content="WSL2- Apache-Nifi 설치와 설정(Windows10)"/>
     
 
     <!--Open Graph Description-->
@@ -47,7 +44,7 @@ R에서 chisq.test() 함수로 진행
 
     <!-- Title -->
     
-    <title>chapter 2 practice - Hexo</title>
+    <title>WSL2- Apache-Nifi 설치와 설정(Windows10) - Hexo</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
@@ -129,8 +126,8 @@ R에서 chisq.test() 함수로 진행
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">chapter 2 practice</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-03-18</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">WSL2- Apache-Nifi 설치와 설정(Windows10)</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-19</p>
         </div>
     </div>
 
@@ -148,50 +145,82 @@ R에서 chisq.test() 함수로 진행
                 <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
                     <!-- Tags Vertical -->
                     
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/WSL2-Windows10-Apache-Nifi/">#WSL2, Windows10, Apache, Nifi</a>
+                            </div>
+                        </div>
+                    
 
                     <!-- Main Post Content -->
-                    <h3 id="교차-분석"><a href="#교차-분석" class="headerlink" title="교차 분석"></a>교차 분석</h3><ul>
-<li>교차 분석은 범주형 변수들이 관게가 있다는 것을 입증하는 것.</li>
-<li>평균의 차이가 아니라, 비율에 차이가 있는지 검정.</li>
-<li>R에서 chisq.test() 함수로 진행</li>
-</ul>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setwd<span class="punctuation">(</span><span class="string">&quot;C:/Users/human/Desktop/temp/public_dataset&quot;</span><span class="punctuation">)</span></span><br><span class="line">mpg1<span class="operator">&lt;-</span> read.csv<span class="punctuation">(</span><span class="string">&quot;mpg1.csv&quot;</span><span class="punctuation">,</span> stringsAsFactors <span class="operator">=</span> <span class="built_in">F</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span>mpg1<span class="operator">$</span>drv<span class="punctuation">)</span> <span class="comment"># trans와 drv의 교차분석</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">##         </span><br><span class="line">##           4  f  r</span><br><span class="line">##   auto   75 65 17</span><br><span class="line">##   manual 28 41  8</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prop.table<span class="punctuation">(</span>table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span><span class="punctuation">,</span><span class="number">1</span><span class="punctuation">)</span> <span class="comment"># auto와 manual의 drv 비율 분석</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">##         </span><br><span class="line">##                  4         f         r</span><br><span class="line">##   auto   0.4777070 0.4140127 0.1082803</span><br><span class="line">##   manual 0.3636364 0.5324675 0.1038961</span><br></pre></td></tr></table></figure>
-
-
+                    <h1 id="WSL2-Apache-Nifi-설치와-설정-Windows10"><a href="#WSL2-Apache-Nifi-설치와-설정-Windows10" class="headerlink" title="WSL2 - Apache Nifi 설치와 설정(Windows10)"></a>WSL2 - Apache Nifi 설치와 설정(Windows10)</h1><h1 id="WSL2-환경에서-Apache-Nifi를-설치하고-환경을-세팅하는-방법을-기록하였다"><a href="#WSL2-환경에서-Apache-Nifi를-설치하고-환경을-세팅하는-방법을-기록하였다" class="headerlink" title="WSL2 환경에서 Apache Nifi를 설치하고 환경을 세팅하는 방법을 기록하였다."></a>WSL2 환경에서 Apache Nifi를 설치하고 환경을 세팅하는 방법을 기록하였다.</h1><h2 id="JAVA-및-Apache-Nifi-설치"><a href="#JAVA-및-Apache-Nifi-설치" class="headerlink" title="JAVA 및 Apache-Nifi 설치"></a>JAVA 및 Apache-Nifi 설치</h2><ol>
+<li><p>Wsl2 에서 JAVA 를 설치한다.</p>
+<p> <code>sudo apt-get update &amp;&amp; sudo apt-get upgrade</code></p>
+<p> <code>sudo apt install openjdk-11-jre-headless</code></p>
 <ul>
-<li>auto 에서는 4륜구동이 47.8%, manual 에서는 전륜구동이 53.2%로 가장 많아서<br>trans에 따라 drv에 차이가 있는 것같다.<br>그리고 이 정보가 정말 맞는지 통계적으로 분석하는 것이 교차 분석</li>
+<li><p>환경변수를 설정한다.</p>
+<p>  <code>vi ~/.bash_profile</code></p>
+<p>  <code>export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64</code></p>
+<p>  <code>source ~/.bash_profile</code></p>
+</li>
 </ul>
-<h2 id="교차-분석을-하는-방법-3가지"><a href="#교차-분석을-하는-방법-3가지" class="headerlink" title="교차 분석을 하는 방법 3가지"></a>교차 분석을 하는 방법 3가지</h2><ol>
-<li>chisq.test()</li>
-<li>chisq.test(table())</li>
-<li>summary(table())</li>
+</li>
+<li><p>curl을 이용해서 NiFi를 현재 경로에 내려받는다.</p>
+<p> <code>sudo wget https://downloads.apache.org/nifi/1.16.0/nifi-1.16.0-bin.tar.gz</code></p>
+<p> → 여기서 Permission Error가 발생한다면, wsl2를 관리자 권한으로 재실행한다.</p>
+</li>
+<li><p>다운로드 받은 tar.gz 파일의 압축을 푼다.</p>
+<p> <code>sudo tar xvzf nifi-1.16.0-bin.tar.gz</code></p>
+</li>
 </ol>
-<h3 id="1번-방법"><a href="#1번-방법" class="headerlink" title="1번 방법"></a>1번 방법</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chisq.test<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">## 	Pearson&#x27;s Chi-squared test</span><br><span class="line">## </span><br><span class="line">## data:  mpg1$trans and mpg1$drv</span><br><span class="line">## X-squared = 3.1368, df = 2, p-value = 0.2084</span><br></pre></td></tr></table></figure>
-
-<h3 id="2번-방법"><a href="#2번-방법" class="headerlink" title="2번 방법"></a>2번 방법</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chisq.test<span class="punctuation">(</span>table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## </span><br><span class="line">## 	Pearson&#x27;s Chi-squared test</span><br><span class="line">## </span><br><span class="line">## data:  table(mpg1$trans, mpg1$drv)</span><br><span class="line">## X-squared = 3.1368, df = 2, p-value = 0.2084</span><br></pre></td></tr></table></figure>
-
-<h3 id="3번-방법"><a href="#3번-방법" class="headerlink" title="3번 방법"></a>3번 방법</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summary<span class="punctuation">(</span>table<span class="punctuation">(</span>mpg1<span class="operator">$</span>trans<span class="punctuation">,</span> mpg1<span class="operator">$</span>drv<span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">## Number of cases in table: 234 </span><br><span class="line">## Number of factors: 2 </span><br><span class="line">## Test for independence of all factors:</span><br><span class="line">## 	Chisq = 3.1368, df = 2, p-value = 0.2084</span><br></pre></td></tr></table></figure>
-
-<p>p-value(유의수준) &#x3D; 0.2084이므로 p &gt; 0.05 입니다. 대립가설을 기각하지 못하므로 trans에 따라 drv에 차이가 있다고 할 수 없습니다.</p>
-<h4 id="상관관계분석"><a href="#상관관계분석" class="headerlink" title="상관관계분석"></a>상관관계분석</h4><ul>
-<li>상관 관계 분석은 R에 내장되어 있는 cor.test() 함수로 합니다.</li>
+<h2 id="Nifi-환경-설정"><a href="#Nifi-환경-설정" class="headerlink" title="Nifi 환경 설정"></a>Nifi 환경 설정</h2><ol>
+<li><p>압축파일을 푼 다음에 nifi-1.16.0 폴더에 접속한다.</p>
+<p> <code>cd nifi-1.16.0/bin</code></p>
+</li>
+<li><p>ls 명령어로 <a target="_blank" rel="noopener" href="http://nifi-env.sh/">nifi-env.sh</a> 파일이 있는지 확인하고 vi 에디터로 연 후, .bash_profile에서 한 것과 같이 자바 환경변수를 잡아준다.( export JAVA_HOME&#x3D;”~~~~” )</p>
+<p> <code>sudo vi nifi-env.sh</code></p>
+<p> <code>export JAVA_HOME=&quot;/usr/lib/jvm/java-11-openjdk-amd64&quot;</code></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://nifi-env.sh/">nifi.sh</a> 파일을 실행한다</p>
+<p> <code>sudo ./nifi.sh start</code></p>
+<ul>
+<li>결과</li>
 </ul>
-<p>cor.test(데이터세트$비교변수1, 데이터세트$비교변수2)</p>
+<p> <code>Java home: /usr/lib/jvm/java-11-openjdk-amd64</code> </p>
+<p> <code>NiFi home: /nifi-1.16.0</code></p>
+<p> <code>Bootstrap Config File: /nifi-1.16.0/conf/bootstrap.conf</code>
+ </p>
+</li>
+<li><p>Webserver 주소를 확인한다.</p>
+<p> <code>/nifi-1.16.0/conf$ cd ..</code> (경로를 nifi-1.16.0&#x2F;conf$ 상태로 만든 후)</p>
+<p> <code>/nifi-1.16.0/conf$ vi nifi.properties</code></p>
+<p> <img src="/images/WSL2-Apache-Nifi_Install_Setting(Windows10)/Untitled.png" alt="Untitled.png"></p>
+<p> nifi.web.https.host&#x3D; 와 nifi.web.https.post&#x3D; 을 확인한다.</p>
+</li>
+<li><p>Nifi 화면에 접속한다.( <a target="_blank" rel="noopener" href="https://127.0.0.1:8443/nifi/login">https://127.0.0.1:8443/nifi/login</a>)</p>
+<ul>
+<li>로그인 화면이 나온다.</li>
+<li>Username과 Password를 기본 설정에 추가해 주어야한다.</li>
+<li><code>sudo ./bin/nifi.sh set-single-user-credentials human 1234567890123</code></li>
+<li>여기서는 username: human , password: 1234567890123로 진행한 것이다.</li>
+</ul>
+</li>
+<li><p>로그인 후, nifi 를 재실행한다.</p>
+<p> <code>sudo ./bin/nifi.sh start</code></p>
+<ul>
+<li>정상적으로 user name과 password가 입력됐다면, 접속이 완료된 것을 확인할 수 있다.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>참고: <a target="_blank" rel="noopener" href="https://dschloe.github.io/settings/apache_nifi_wsl2/">https://dschloe.github.io/settings/apache_nifi_wsl2&#x2F;</a></p>
 
                     
                     <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/WSL2-Windows10-Apache-Nifi/">#WSL2, Windows10, Apache, Nifi</a>
+                        </div>
                     
 
                     <!-- Comments -->
