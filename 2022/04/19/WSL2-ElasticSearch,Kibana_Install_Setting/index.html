@@ -10,14 +10,12 @@
 
     <!--Description-->
     
-        <meta name="description" content="WSL2 - Install WSL2 (Windows10)
-Windows 환경에서 리눅스를 사용할 수 있게하는 WSL2를 설치한다.
+        <meta name="description" content="WSL2 - ElasticSearch , Kibana 설치 및 설정
+WSL2 환경에서 ElasticSearch 와 Kibana를 설치 및 설정하고 실행하는 과정을 기록하였다.
+Java는 이미 설치 돼 있다고 가정하고 진행하였다.
 
-1. 윈도우 버전 확인
-Windows 10 20H1 이상의 버전에서만 설치 가능
-  
-
-만약 버전이 낮다면 Windows Update 설">
+사전 필수 패키지 설치
+시스템 패키지를">
     
 
     <!--Author-->
@@ -27,7 +25,7 @@ Windows 10 20H1 이상의 버전에서만 설치 가능
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="WSL2 - WSL2 설치(Windows10)"/>
+        <meta property="og:title" content="WSL2 - ElasticSearch , Kibana 설치 및 설정(Windows10)"/>
     
 
     <!--Open Graph Description-->
@@ -49,7 +47,7 @@ Windows 10 20H1 이상의 버전에서만 설치 가능
 
     <!-- Title -->
     
-    <title>WSL2 - WSL2 설치(Windows10) - Hexo</title>
+    <title>WSL2 - ElasticSearch , Kibana 설치 및 설정(Windows10) - Hexo</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
@@ -131,8 +129,8 @@ Windows 10 20H1 이상의 버전에서만 설치 가능
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">WSL2 - WSL2 설치(Windows10)</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-14</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">WSL2 - ElasticSearch , Kibana 설치 및 설정(Windows10)</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-19</p>
         </div>
     </div>
 
@@ -152,73 +150,120 @@ Windows 10 20H1 이상의 버전에서만 설치 가능
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/WSL2-Windows10/">#WSL2, Windows10</a>
+                                <a class="fw3 ph1 dib" href="/tags/WSL2-Windows10-ElasticSearch-Kibana/">#WSL2, Windows10, ElasticSearch, Kibana</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <h1 id="WSL2-Install-WSL2-Windows10"><a href="#WSL2-Install-WSL2-Windows10" class="headerlink" title="WSL2 - Install WSL2 (Windows10)"></a>WSL2 - Install WSL2 (Windows10)</h1><ul>
-<li>Windows 환경에서 리눅스를 사용할 수 있게하는 WSL2를 설치한다.</li>
+                    <h1 id="WSL2-ElasticSearch-Kibana-설치-및-설정"><a href="#WSL2-ElasticSearch-Kibana-설치-및-설정" class="headerlink" title="WSL2 - ElasticSearch , Kibana 설치 및 설정"></a>WSL2 - ElasticSearch , Kibana 설치 및 설정</h1><ul>
+<li>WSL2 환경에서 ElasticSearch 와 Kibana를 설치 및 설정하고 실행하는 과정을 기록하였다.</li>
+<li>Java는 이미 설치 돼 있다고 가정하고 진행하였다.</li>
 </ul>
-<h2 id="1-윈도우-버전-확인"><a href="#1-윈도우-버전-확인" class="headerlink" title="1. 윈도우 버전 확인"></a>1. 윈도우 버전 확인</h2><ul>
-<li><p>Windows 10 20H1 이상의 버전에서만 설치 가능</p>
-<p>  <img src="/images/WSL2-Install_WSL2_(Windows10)/Untitled.png" alt="Untitled"></p>
+<h3 id="사전-필수-패키지-설치"><a href="#사전-필수-패키지-설치" class="headerlink" title="사전 필수 패키지 설치"></a>사전 필수 패키지 설치</h3><ol>
+<li>시스템 패키지를 업데이트한다<ul>
+<li><code>sudo apt update</code></li>
+</ul>
+</li>
+<li>https 와 관련된 패키지를 설치한다<ul>
+<li><code>sudo apt install apt-transport-https</code></li>
+</ul>
+</li>
+<li>자바를 설치한다(이미 설치했으므로 버전만 확인한다.)<ul>
+<li><p><code>java -version</code></p>
+</li>
+<li><p>자바 환경 변수를 설정하기 위해 아래와 같이 에디터를 입력한다.</p>
 <ul>
-<li>만약 버전이 낮다면 Windows Update 설정에서 최신 버전으로 업데이트를 진행한다.</li>
+<li><code>sudo vi /etc/enviroment</code></li>
 </ul>
 </li>
-</ul>
-<h2 id="2-DISM으로-WSL-기능-활성화"><a href="#2-DISM으로-WSL-기능-활성화" class="headerlink" title="2. DISM으로 WSL 기능 활성화"></a>2. DISM으로 WSL 기능 활성화</h2><ul>
-<li><p>윈도우즈 터미널을 관리자 권한으로 실행한다.(cmd 또는 terminal 검색)</p>
+<li><p>아래 코드를 추가한다.(i : 입력, :wq 저장후 나오기)</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">JAVA_HOME</span>=<span class="string">&quot;/usr/lib/jvm/java-11-openjdk-amd64&quot;</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>DISM(배포 이미지 서비스 및 관리) 명령어로 Microsoft-Windows-Subsystem-Linux 기능을 활성화한다.</p>
-<p>  <code>dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</code></p>
-</li>
-<li><p>DISM 명령어로 VirtualMachinePlatform 기능을 활성화한다.</p>
-<p>  <code>dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</code></p>
-</li>
-<li><p>재부팅 한다.</p>
-</li>
-</ul>
-<h2 id="3-WSL2-Lunux-커널-업데이트"><a href="#3-WSL2-Lunux-커널-업데이트" class="headerlink" title="3. WSL2 Lunux 커널 업데이트"></a>3. WSL2 Lunux 커널 업데이트</h2><ul>
-<li><p>WSL_update_x64.msi 파일 설치를 진행한다</p>
+<li><p>환경 변수를 업데이트 한다.</p>
 <ul>
-<li>링크: <a target="_blank" rel="noopener" href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi</a></li>
+<li><code>source /etc/environment</code></li>
 </ul>
 </li>
-<li><p>설치가 완료되면 윈도우 터미널을 열고 기본 WSL 버전을 WSL2버전으로 바꿔준다. (관리자 권한 잊지 말 것)</p>
-<p>  <code>wsl --set-default-version 2</code></p>
-</li>
 </ul>
-<h2 id="4-Microsoft-Store-에서-리눅스-설치"><a href="#4-Microsoft-Store-에서-리눅스-설치" class="headerlink" title="4. Microsoft Store 에서 리눅스 설치"></a>4. Microsoft Store 에서 리눅스 설치</h2><ul>
-<li><p>Microsoft Store 앱 에서 Ubuntu를 검색하여 설치한다.</p>
+</li>
+</ol>
+<h2 id="ElasticSearch-설치"><a href="#ElasticSearch-설치" class="headerlink" title="ElasticSearch 설치"></a>ElasticSearch 설치</h2><ol>
+<li>GPG Keys 확인하여 설치 진행<ul>
+<li><code>wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -  OK</code></li>
+</ul>
+</li>
+<li>라이브러리를 추가한다.<ul>
+<li><code>sudo sh -c &#39;echo &quot;deb https://artifacts.elastic.co/packages/7.x/apt stable main&quot; &gt; /etc/apt/sources.list.d/elastic-7.x.list&#39;</code></li>
+</ul>
+</li>
+<li>elasticsearch를 설치한다<ul>
+<li><code>sudo apt-get update  sudo apt-get install elasticsearch</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="ElasticSearch-서비스-시작"><a href="#ElasticSearch-서비스-시작" class="headerlink" title="ElasticSearch 서비스 시작"></a>ElasticSearch 서비스 시작</h3><ol>
+<li>ealsticsearch 서비스를 시작한다.<ul>
+<li><p><code>sudo systemctl start elasticsearch</code></p>
+</li>
+<li><p>에러메시지 발생시 명령어를 추가해야한다</p>
 <ul>
-<li>Ubuntu는 가장 많이 사용되는 리눅스 배포판이다.</li>
-<li>설치가 끝나면 터미널이 열리고 자동으로 설치를 진행하므로 종료하지 않는다. 만약 터미널이 열리지 않는다면 Ubuntu를 직접 실행해 준다.</li>
-<li>’Installing. this may take few minutes…’ 메시지 후, Ubuntu에서 사용할 Username과 Password를 설정 해준다.</li>
+<li>에러메시지</li>
 </ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">System</span> has not been booted <span class="keyword">with</span> systemd <span class="keyword">as</span> init system (<span class="variable constant_">PID</span> <span class="number">1</span>). </span><br><span class="line"><span class="title class_">Can</span><span class="string">&#x27;t operate. Failed to connect to bus: Host is down</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>터미널을 실행하여 wsl 버전을 확인해 본다.</p>
+<li><p>명령어</p>
 <ul>
-<li><code>wsl -l -v</code>  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">NAME</span>      <span class="variable constant_">STATE</span>           <span class="variable constant_">VERSION</span></span><br><span class="line">* <span class="title class_">Ubuntu</span>    <span class="title class_">Running</span>         <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<li><code>sudo -b unshare --pid --fork --mount-proc /lib/systemd/systemd --system-unit=basic.target</code></li>
+<li><code>sudo -E nsenter --all -t $(pgrep -xo systemd) runuser -P -l $USER -c &quot;exec $SHELL&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>서비스가 가능하도록 한다.<ul>
+<li><code>sudo systemctl enable elasticsearch</code></li>
+</ul>
+</li>
+<li>서비스를 다시 시작한다.<ul>
+<li><p><code>sudo systemctl start elasticsearch</code></p>
 <ul>
-<li><p>2버전이라면 그대로 사용, 1버전이라면 아래 명령을 실행한다.</p>
-<p>  <code>wsl --set-version Ubuntu 2</code></p>
+<li><p>서비스가 잘 작동하고 있는지 확인한다.</p>
+<p>  <code>curl -X GET &quot;localhost:9200/&quot;</code></p>
+</li>
+<li><p>결과</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span> : <span class="string">&quot;evan&quot;</span>,</span><br><span class="line">  <span class="string">&quot;cluster_name&quot;</span> : <span class="string">&quot;elasticsearch&quot;</span>,</span><br><span class="line">  <span class="string">&quot;cluster_uuid&quot;</span> : <span class="string">&quot;vATWEOO1T9yOFGLc7G3L4w&quot;</span>,</span><br><span class="line">  <span class="string">&quot;version&quot;</span> : &#123;</span><br><span class="line">    <span class="string">&quot;number&quot;</span> : <span class="string">&quot;7.17.2&quot;</span>,</span><br><span class="line">    <span class="string">&quot;build_flavor&quot;</span> : <span class="string">&quot;default&quot;</span>,</span><br><span class="line">    <span class="string">&quot;build_type&quot;</span> : <span class="string">&quot;deb&quot;</span>,</span><br><span class="line">    <span class="string">&quot;build_hash&quot;</span> : <span class="string">&quot;de7261de50d90919ae53b0eff9413fd7e5307301&quot;</span>,</span><br><span class="line">    <span class="string">&quot;build_date&quot;</span> : <span class="string">&quot;2022-03-28T15:12:21.446567561Z&quot;</span>,</span><br><span class="line">    <span class="string">&quot;build_snapshot&quot;</span> : <span class="literal">false</span>,</span><br><span class="line">    <span class="string">&quot;lucene_version&quot;</span> : <span class="string">&quot;8.11.1&quot;</span>,</span><br><span class="line">    <span class="string">&quot;minimum_wire_compatibility_version&quot;</span> : <span class="string">&quot;6.8.0&quot;</span>,</span><br><span class="line">    <span class="string">&quot;minimum_index_compatibility_version&quot;</span> : <span class="string">&quot;6.0.0-beta1&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;tagline&quot;</span> : <span class="string">&quot;You Know, for Search&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>해당 메시지가 출력 된다면, <a target="_blank" rel="noopener" href="http://localhost:9200/">localhost:9200</a> 에 들어가서 확인해본다.</p>
 </li>
 </ul>
 </li>
+</ol>
+<h2 id="Kibana-설치-및-서비스-시작"><a href="#Kibana-설치-및-서비스-시작" class="headerlink" title="Kibana 설치 및 서비스 시작"></a>Kibana 설치 및 서비스 시작</h2><ol>
+<li>Kibana를 설치한다.<ul>
+<li><code>sudo apt-get install kibana</code></li>
 </ul>
 </li>
-<li><p>참고: <a target="_blank" rel="noopener" href="https://www.lainyzine.com/ko/article/how-to-install-wsl2-and-use-linux-on-windows-10/">https://www.lainyzine.com/ko/article/how-to-install-wsl2-and-use-linux-on-windows-10/</a></p>
-</li>
+<li>서비스를 활성화 한다.<ul>
+<li><code>sudo systemctl enable kibana</code></li>
 </ul>
+</li>
+<li>서비스를 시작하고, 확인해본다.<ul>
+<li><code>sudo systemctl start kibana</code></li>
+<li><code>sudo systemctl status kibana</code></li>
+</ul>
+</li>
+<li>Kibana Web UI 를 확인한다.<ul>
+<li><strong><a target="_blank" rel="noopener" href="http://localhost:5601/">http://localhost:5601/</a></strong> 에서 확인해본다.</li>
+</ul>
+</li>
+</ol>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/WSL2-Windows10/">#WSL2, Windows10</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/WSL2-Windows10-ElasticSearch-Kibana/">#WSL2, Windows10, ElasticSearch, Kibana</a>
                         </div>
                     
 
