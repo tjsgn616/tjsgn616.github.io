@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="SQL - 조인조인
+관계형 데이터베이스에서 원하는 정보를 가져올 때, 테이블 간의 연결고리로 관계를 맺고 데이터를 추출해야한다. 이 때 ‘조인’을 사용한다.
+
+1. 조인의 종류
+내부 조인, 외부 조인, 동등 조인, 안티 조인, 셀프 조인, 세미 조인, 카타시안 조인, ">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content=" Oracle - SQL 조인(Join)"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title> Oracle - SQL 조인(Join) - Hexo</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="Hexo">
+            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="Hexo">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="Home">
+                    Home
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="Archives">
+                    Archives
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/tags" 
+                    title="Tags">
+                    Tags
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/categories" 
+                    title="Categories">
+                    Categories
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about.html" 
+                    title="About">
+                    About
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/contact.html" 
+                    title="Contact">
+                    Contact
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns"> Oracle - SQL 조인(Join)</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-28</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa-file-text-o"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/SQL-Oracle/">#SQL, Oracle</a>
+                            </div>
+                        </div>
+                    
+
+                    <!-- Main Post Content -->
+                    <h1 id="SQL-조인"><a href="#SQL-조인" class="headerlink" title="SQL - 조인"></a>SQL - 조인</h1><h1 id="조인"><a href="#조인" class="headerlink" title="조인"></a>조인</h1><ul>
+<li>관계형 데이터베이스에서 원하는 정보를 가져올 때, 테이블 간의 연결고리로 관계를 맺고 데이터를 추출해야한다. 이 때 ‘조인’을 사용한다.</li>
+</ul>
+<h2 id="1-조인의-종류"><a href="#1-조인의-종류" class="headerlink" title="1. 조인의 종류"></a>1. 조인의 종류</h2><ul>
+<li>내부 조인, 외부 조인, 동등 조인, 안티 조인, 셀프 조인, 세미 조인, 카타시안 조인, ANSI 조인이 있다.</li>
+<li>내부 조인과 외부 조인은 상대 개념이며, 외부 조인을 제외한 셀프~카타시안 조인은 모두 내부 조인에 포함된다.<ul>
+<li>조인 연산자에 따른 구분: 동등 조인, 안티 조인</li>
+<li>조인 대상에 따른 구분: 셀프 조인</li>
+<li>조인 조건에 따른 구분: 내부 조인, 외부 조인, 세미 조인, 카타시안 조인</li>
+<li>기타: ANSI 조인</li>
+</ul>
+</li>
+<li>명칭 전혀 몰라도 된다. 조인 방법에 대한 이해만 있으면 된다.</li>
+</ul>
+<h2 id="2-내부-조인"><a href="#2-내부-조인" class="headerlink" title="2. 내부 조인"></a>2. 내부 조인</h2><h3 id="a-동등-조인"><a href="#a-동등-조인" class="headerlink" title="a. 동등 조인"></a>a. 동등 조인</h3><ul>
+<li>WHERE 절에서 등호 연산자를 사용해 2개 이상의 테이블이나 뷰를 연결한 조인이다.( 등호 연산자를 사용한 WHERE 절 조건에 만족하는 데이터를 추출하는 조인)<ul>
+<li>WHERE 절에 기술한 조건을 <strong>조인 조건</strong>이라고 한다.</li>
+</ul>
+</li>
+<li>예시)  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> a.<span class="property">employee_id</span>, a.<span class="property">emp_name</span>, a.<span class="property">department_id</span>, b.<span class="property">department_name</span></span><br><span class="line">    <span class="variable constant_">FROM</span> employees a,</span><br><span class="line">         departments b</span><br><span class="line">   <span class="variable constant_">WHERE</span> a.<span class="property">department_id</span> = b.<span class="property">department_id</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>공통적으로 존재하는 department_id 를 등호 연산자를 사용해 조회조건에 명시하였다.</p>
+<p>  <img src="/images/4.28_SQL_Join/Untitled.png" alt="Untitled"></p>
+</li>
+<li><p>사원 테이블 전체 건수는 107건이지만, 사원 테이블에서 department_id는 필수 값이 아니기 때문에 NULL 값 하나를 제외하고 106개의 행만 출력 된 것이다.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="b-세미-조인"><a href="#b-세미-조인" class="headerlink" title="b. 세미 조인"></a>b. 세미 조인</h3><ul>
+<li><p>세미 조인은 서브 쿼리를 이용해 서브 쿼리에 존재하는 데이터만 메인 쿼리에서 추출하는 방법이다.</p>
+</li>
+<li><p>조인 방법으로 IN 과 EXIST 연산자를 사용한다.</p>
+</li>
+<li><p>EXIST 연산자 예시</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> department_id, department_name</span><br><span class="line">    <span class="variable constant_">FROM</span> departments a</span><br><span class="line">   <span class="variable constant_">WHERE</span> <span class="variable constant_">EXISTS</span> ( <span class="variable constant_">SELECT</span> *</span><br><span class="line">                   <span class="variable constant_">FROM</span> employees b</span><br><span class="line">                  <span class="variable constant_">WHERE</span> a.<span class="property">department_id</span> = b.<span class="property">department_id</span></span><br><span class="line">                    <span class="variable constant_">AND</span> b.<span class="property">salary</span> &gt; <span class="number">3000</span>)</span><br><span class="line">  <span class="variable constant_">ORDER</span> <span class="variable constant_">BY</span> a.<span class="property">department_name</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>WHERE 절에 EXISTS 연산자를 사용하고 부서 테이블과의 조인 조건은 서브 쿼리에서 명시하였다.</p>
+</li>
+<li><p>결과</p>
+<p>  <img src="/images/4.28_SQL_Join/Untitled%201.png" alt="Untitled"></p>
+</li>
+</ul>
+</li>
+<li><p>IN 연산자 예시</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> department_id, department_name</span><br><span class="line">    <span class="variable constant_">FROM</span> departments a</span><br><span class="line">   <span class="variable constant_">WHERE</span> a.<span class="property">department_id</span>  <span class="variable constant_">IN</span> ( <span class="variable constant_">SELECT</span> b.<span class="property">department_id</span></span><br><span class="line">                                 <span class="variable constant_">FROM</span> employees b</span><br><span class="line">                                <span class="variable constant_">WHERE</span> b.<span class="property">salary</span> &gt; <span class="number">3000</span>)</span><br><span class="line">  <span class="variable constant_">ORDER</span> <span class="variable constant_">BY</span> department_name;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>결과</p>
+<p>  <img src="/images/4.28_SQL_Join/Untitled%202.png" alt="Untitled"></p>
+</li>
+</ul>
+</li>
+<li><p>세미조인을 하게되면 서브 쿼리에 존재하는 메인 쿼리 데이터가 여러 건 존재하더라도 최종 반환되는 메인 쿼리 데이터에는 중복되는 건이 없다.</p>
+<ul>
+<li>일반 조인문으로 변환하면 중복되는 건들로 인해서 결과 건수가 많아진다.  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> a.<span class="property">department_id</span>, a.<span class="property">department_name</span></span><br><span class="line">    <span class="variable constant_">FROM</span> departments a, employees b</span><br><span class="line">   <span class="variable constant_">WHERE</span> a.<span class="property">department_id</span> = b.<span class="property">department_id</span></span><br><span class="line">     <span class="variable constant_">AND</span> b.<span class="property">salary</span> &gt; <span class="number">3000</span></span><br><span class="line">  <span class="variable constant_">ORDER</span> <span class="variable constant_">BY</span> a.<span class="property">department_name</span>;</span><br></pre></td></tr></table></figure>
+  <img src="/images/4.28_SQL_Join/Untitled%203.png" alt="Untitled"></li>
+</ul>
+</li>
+</ul>
+<h3 id="c-안티-조인"><a href="#c-안티-조인" class="headerlink" title="c. 안티 조인"></a>c. 안티 조인</h3><ul>
+<li>안티 조인은 서브 쿼리의 B 테이블에는 없는 메인 쿼리의 A 테이블의 데이터만 추출하는 조인 방법이다.(세미 조인과 반대 개념)</li>
+<li>조회 조건에서 NOT IN 또는 NOT EXISTS 연산자를 사용한다.<ul>
+<li><p>NOT IN 예시</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> a.<span class="property">employee_id</span>, a.<span class="property">emp_name</span>, a.<span class="property">department_id</span>, b.<span class="property">department_name</span></span><br><span class="line">    <span class="variable constant_">FROM</span> employees a,</span><br><span class="line">         departments b</span><br><span class="line">   <span class="variable constant_">WHERE</span> a.<span class="property">department_id</span> = b.<span class="property">department_id</span></span><br><span class="line">     <span class="variable constant_">AND</span> a.<span class="property">department_id</span> <span class="variable constant_">NOT</span> <span class="variable constant_">IN</span> ( <span class="variable constant_">SELECT</span> department_id</span><br><span class="line">                                    <span class="variable constant_">FROM</span> departments</span><br><span class="line">                                   <span class="variable constant_">WHERE</span> manager_id <span class="variable constant_">IS</span> <span class="variable constant_">NULL</span>) ;</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/4.28_SQL_Join/Untitled%204.png" alt="Untitled"></p>
+<ul>
+<li>department b 를 조인한 부분은 해당 사원에 대한 부서명을 가져오기 위한 조인이고, 안티 조인은 NOT IN 절 이하의 서브 쿼리에 명시했다.</li>
+</ul>
+</li>
+<li><p>NOT EXISTS 예시</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> <span class="title function_">count</span>(*)</span><br><span class="line">    <span class="variable constant_">FROM</span> employees a</span><br><span class="line">   <span class="variable constant_">WHERE</span> <span class="variable constant_">NOT</span> <span class="variable constant_">EXISTS</span> ( <span class="variable constant_">SELECT</span> <span class="number">1</span></span><br><span class="line">                        <span class="variable constant_">FROM</span> departments c</span><br><span class="line">                       <span class="variable constant_">WHERE</span> a.<span class="property">department_id</span> = c.<span class="property">department_id</span></span><br><span class="line">                         <span class="variable constant_">AND</span> manager_id <span class="variable constant_">IS</span> <span class="variable constant_">NULL</span>) ;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>결과: 107</li>
+</ul>
+</li>
+<li><p>IN은 106건, NOT EXISTS는 107건이다.</p>
+<ul>
+<li>IN 에서 조인조건에 참여하는 사원 테이블의 department_id 값이 NULL 이면 NOT IN 과의 연산결과가 FALSE 가 되어 106건이 된다.</li>
+<li>NOT EXISTS에서 조인조건이 서브 쿼리 내에 존재하고, 178번 사원도 조인 결과가 FALSE가 되며 NOT 으로 인해 쿼리 전체는 TRUE 가 되므로 107건이 조회된다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="d-셀프-조인"><a href="#d-셀프-조인" class="headerlink" title="d. 셀프 조인"></a>d. 셀프 조인</h3><ul>
+<li>셀프 조인은 서로 다른 두 테이블이 아닌 동일한 한 테이블을 사용해 조인하는 방법이다.</li>
+<li>예시)  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> a.<span class="property">employee_id</span>, a.<span class="property">emp_name</span>, b.<span class="property">employee_id</span>, b.<span class="property">emp_name</span>, a.<span class="property">department_id</span></span><br><span class="line">    <span class="variable constant_">FROM</span> employees a,</span><br><span class="line">         employees b</span><br><span class="line">   <span class="variable constant_">WHERE</span> a.<span class="property">employee_id</span> &lt; b.<span class="property">employee_id</span></span><br><span class="line">     <span class="variable constant_">AND</span> a.<span class="property">department_id</span> = b.<span class="property">department_id</span></span><br><span class="line">     <span class="variable constant_">AND</span> a.<span class="property">department_id</span> = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+  <img src="/images/4.28_SQL_Join/Untitled%205.png" alt="Untitled"><ul>
+<li>사원 테이블을 a와 b 로 나누어 조인하는데, 같은 부서 번호(20)를 가진 사원 중에서 a 사원번호가 b 사원 번호보다 작은 건을 조회하는 쿼리이다.</li>
+<li>사원 테이블에서 조건을 만족하는 것은 2건인데(201,202), 셀프 조인(a. employee_id &lt; b.employee_id) 조건 에 의해 1건만 추출된다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-외부-조인"><a href="#3-외부-조인" class="headerlink" title="3. 외부 조인"></a>3. 외부 조인</h2><ul>
+<li><p>일반 조인을 확장 한 개념으로, 조인 조건에 만족하는 데이터 뿐 아니라, 어느 한 쪽 테이블에 조인 조건에 명시된 컬럼에 값이 없거나(NULL 이라도) 해당 로우가 아예 없더라도 데이터를 모두 추출한다.</p>
+</li>
+<li><p><strong>조인 대상 테이블 중 데이터가 없는 테이블 조인 조건에 (+)를 붙인다.</strong></p>
+<ul>
+<li><p>일반 조인</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> a.<span class="property">department_id</span>, a.<span class="property">department_name</span>, b.<span class="property">job_id</span>, b.<span class="property">department_id</span></span><br><span class="line">      <span class="variable constant_">FROM</span> departments a,</span><br><span class="line">           job_history b</span><br><span class="line">     <span class="variable constant_">WHERE</span> a.<span class="property">department_id</span> = b.<span class="property">department_id</span>;</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/4.28_SQL_Join/Untitled%206.png" alt="Untitled"></p>
+<ul>
+<li>departments 와 job_history 테이블을 department_id 값을 조건으로 조인한 결과이다. 따라서 job_history에 없는 부서는 조회되지 않았다.</li>
+</ul>
+</li>
+<li><p>외부 조인</p>
+</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> a.<span class="property">department_id</span>, a.<span class="property">department_name</span>, b.<span class="property">job_id</span>, b.<span class="property">department_id</span></span><br><span class="line">    <span class="variable constant_">FROM</span> departments a,</span><br><span class="line">         job_history b</span><br><span class="line">   <span class="variable constant_">WHERE</span> a.<span class="property">department_id</span> = b.<span class="property">department_id</span> (+) ;</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/4.28_SQL_Join/Untitled%207.png" alt="Untitled"></p>
+<ul>
+<li>job_history에 없는 부서(department_id &#x3D; 10,30,40)도 모두 조회하고자 해서 외부 조인을 사용하였다.</li>
+<li>조인 조건에서 데이터가 없는 테이블의 컬럼에 (+) 기호를 붙이는 것이 외부 조인이다.</li>
+</ul>
+</li>
+<li><p><strong>외부 조인의 조인 조건이 여러 개일 때 모든 조건에 (+)를 붙인다</strong></p>
+<ul>
+<li>예시 2)</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> a.<span class="property">employee_id</span>, a.<span class="property">emp_name</span>, b.<span class="property">job_id</span>, b.<span class="property">department_id</span></span><br><span class="line">    <span class="variable constant_">FROM</span> employees a,</span><br><span class="line">         job_history b</span><br><span class="line">   <span class="variable constant_">WHERE</span> a.<span class="property">employee_id</span> = b.<span class="title function_">employee_id</span>(+)</span><br><span class="line">     <span class="variable constant_">AND</span> a.<span class="property">department_id</span> = b.<span class="property">department_id</span>;</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/4.28_SQL_Join/Untitled%208.png" alt="Untitled"></p>
+<ul>
+<li>(+) 를 붙였는데도 모두 조회가 되지 않았다.</li>
+<li><strong>외부 조인은 조건에 해당하는 조인조건 모두에 (+)를 붙여야 한다.</strong></li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select a.employee_id, a.emp_name, b.job_id, b.department_id</span><br><span class="line">     from employees a,</span><br><span class="line">          job_history b</span><br><span class="line">    where a.employee_id  = b.employee_id(+)</span><br><span class="line">      and a.department_id = b.department_id(+);</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/4.28_SQL_Join/Untitled%209.png" alt="Untitled">
+  </p>
+</li>
+<li><p>한 번에 한 테이블에만 외부 조인을 할 수 있다.</p>
+</li>
+<li><p>(+) 연산자가 붙은 조건과 OR을 같이 사용할 수 없다.</p>
+</li>
+<li><p>(+)연산자가 붙은 조건에는 IN 연산자를 함께 사용할 수 없다.(IN절에 포함되는 값이 1개일 때 만 가능)</p>
+</li>
+</ul>
+<h2 id="4-카타시안-조인"><a href="#4-카타시안-조인" class="headerlink" title="4. 카타시안 조인"></a>4. 카타시안 조인</h2><ul>
+<li>카타시안 조인은 WHERE절에 조인 조건이 없는 조인이다.(FROM 절에 테이블을 명시 했으나, 두 테이블 간의 조인 조건이 없는 조인)</li>
+<li>조인 조건이 없으므로 결과는 두 테이블 각각 건수의 곱이다.</li>
+<li>예시)  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> a.<span class="property">employee_id</span>, a.<span class="property">emp_name</span>, b.<span class="property">department_id</span>, b.<span class="property">department_name</span></span><br><span class="line">    <span class="variable constant_">FROM</span> employees a,</span><br><span class="line">         departments b;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>107건 * 27건 &#x3D; 총 2889행</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-ANSI-조인"><a href="#5-ANSI-조인" class="headerlink" title="5. ANSI 조인"></a>5. ANSI 조인</h2><ul>
+<li>ANSI 조인은 ANSI SQL 문법을 사용한 조인을 뜻한다.</li>
+<li>이 전에 나왔던 모든 조인을 ANSI SQL 을 사용해 변환이 가능하다.</li>
+<li>기존과 다른 점은 조인 조건이 WHERE절이 아닌 FROM에 들어간다는 점이다.</li>
+</ul>
+<h3 id="a-ANSI-내부조인"><a href="#a-ANSI-내부조인" class="headerlink" title="a. ANSI 내부조인"></a>a. ANSI 내부조인</h3><ul>
+<li><p>ANSI 내부 조인은 FROM 절에서 <strong>INNER JOIN</strong> 구문을 사용한다. 조인 조건은 <strong>ON 절에 명시</strong>하고 조인 조건 외의 조건은 기존과 같이 WHERE절에 명시한다.</p>
+</li>
+<li><p>예시)</p>
+<ul>
+<li>기존 문법</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> a.<span class="property">employee_id</span>, a.<span class="property">emp_name</span>, b.<span class="property">department_id</span>, b.<span class="property">department_name</span></span><br><span class="line">    <span class="variable constant_">FROM</span> employees a</span><br><span class="line">   <span class="variable constant_">INNER</span> <span class="variable constant_">JOIN</span> departments b</span><br><span class="line">      <span class="variable constant_">ON</span> (a.<span class="property">department_id</span> = b.<span class="property">department_id</span> )</span><br><span class="line">   <span class="variable constant_">WHERE</span> a.<span class="property">hire_date</span> &gt;= <span class="title function_">TO_DATE</span>(<span class="string">&#x27;2003-01-01&#x27;</span>,<span class="string">&#x27;YYYY-MM-DD&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>ANSI 문법</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> a.<span class="property">employee_id</span>, a.<span class="property">emp_name</span>, b.<span class="property">department_id</span>, b.<span class="property">department_name</span></span><br><span class="line">    <span class="variable constant_">FROM</span> employees a</span><br><span class="line">   <span class="variable constant_">INNER</span> <span class="variable constant_">JOIN</span> departments b</span><br><span class="line">      <span class="variable constant_">ON</span> (a.<span class="property">department_id</span> = b.<span class="property">department_id</span> )</span><br><span class="line">   <span class="variable constant_">WHERE</span> a.<span class="property">hire_date</span> &gt;= <span class="title function_">TO_DATE</span>(<span class="string">&#x27;2003-01-01&#x27;</span>,<span class="string">&#x27;YYYY-MM-DD&#x27;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>조인 조건 컬럼이 두 테이블 모두 동일하다면 ON 대신 USING 절을 사용할 수 있는데, 이떄는 SELECT 절에서 조인 조건에 포함된 컬럼명을 테이블명.컬럼명 형태가 아닌 컬럼명 만 기술해야한다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> a.<span class="property">employee_id</span>, a.<span class="property">emp_name</span>, b.<span class="property">department_id</span>, b.<span class="property">department_name</span></span><br><span class="line">    <span class="variable constant_">FROM</span> employees a</span><br><span class="line">   <span class="variable constant_">INNER</span> <span class="variable constant_">JOIN</span> departments b</span><br><span class="line">   <span class="variable constant_">USING</span> (department_id)</span><br><span class="line">   <span class="variable constant_">WHERE</span> a.<span class="property">hire_date</span> &gt;= <span class="title function_">TO_DATE</span>(<span class="string">&#x27;2003-01-01&#x27;</span>,<span class="string">&#x27;YYYY-MM-DD&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>결과: SQL 오류: ORA-25154: USING 절의 열 부분은 식별자를 가질 수 없음.</li>
+<li>SELECT의 b.department_id를 department_id 로 바꿔주어야 한다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="b-ANSI-외부-조인"><a href="#b-ANSI-외부-조인" class="headerlink" title="b. ANSI 외부 조인"></a>b. ANSI 외부 조인</h3><ul>
+<li><p>기존 문법에서는 대상 테이블(데이터가 없는 테이블)쪽 조인 조건에 (+)를 붙였지만, ANSI 외부 조인은 FROM 절에 명시된 테이블 순서에 입각해 먼저 명시된 테이블 기준으로 LEFT 혹은 RIGHT를 붙인다.</p>
+<ul>
+<li>예시)<ul>
+<li>기존 문법</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> a.<span class="property">employee_id</span>, a.<span class="property">emp_name</span>, b.<span class="property">job_id</span>, b.<span class="property">department_id</span></span><br><span class="line">    <span class="variable constant_">FROM</span> employees a,</span><br><span class="line">         job_history b</span><br><span class="line">   <span class="variable constant_">WHERE</span> a.<span class="property">employee_id</span>  = b.<span class="title function_">employee_id</span>(+)</span><br><span class="line">     <span class="variable constant_">AND</span> a.<span class="property">department_id</span> = b.<span class="title function_">department_id</span>(+);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>ANSI 문법(LEFT)</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> a.<span class="property">employee_id</span>, a.<span class="property">emp_name</span>, b.<span class="property">job_id</span>, b.<span class="property">department_id</span></span><br><span class="line">    <span class="variable constant_">FROM</span> employees a</span><br><span class="line">    <span class="variable constant_">LEFT</span> <span class="variable constant_">OUTER</span> <span class="variable constant_">JOIN</span> job_history b</span><br><span class="line">      <span class="variable constant_">ON</span> ( a.<span class="property">employee_id</span>  = b.<span class="property">employee_id</span></span><br><span class="line">           and a.<span class="property">department_id</span> = b.<span class="property">department_id</span>) ;</span><br></pre></td></tr></table></figure>
+<p>  사원 테이블이 기준이 되어 job_history 테이블을 LEFT OUTER JOIN 으로 연결했다.</p>
+<ul>
+<li>ANSI 문법(RIGHT)</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> a.<span class="property">employee_id</span>, a.<span class="property">emp_name</span>, b.<span class="property">job_id</span>, b.<span class="property">department_id</span></span><br><span class="line">    <span class="variable constant_">FROM</span> job_history b</span><br><span class="line">   <span class="variable constant_">RIGHT</span> <span class="variable constant_">OUTER</span> <span class="variable constant_">JOIN</span> employees a</span><br><span class="line">      <span class="variable constant_">ON</span> ( a.<span class="property">employee_id</span>  = b.<span class="property">employee_id</span></span><br><span class="line">           and a.<span class="property">department_id</span> = b.<span class="property">department_id</span>) ;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>외부 조인은 OUTER 라는 키워드를 붙이는데, 이는 생략해도 상관없다</p>
+<ul>
+<li>LEFT OUTER JOIN &#x3D; LEFT JOIN, RIGHT OUTER JOIN &#x3D; RIGHT JOIN</li>
+</ul>
+</li>
+</ul>
+<h3 id="c-CROSS-조인"><a href="#c-CROSS-조인" class="headerlink" title="c. CROSS 조인"></a>c. CROSS 조인</h3><ul>
+<li>ANSI 조인에서의 카타시안 조인(WHERE 절에 조인 조건을 명시하지 않는 조인)을 CROSS 조인이라고 한다.<ul>
+<li><p>예시</p>
+</li>
+<li><p>기본 문법</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> a.<span class="property">employee_id</span>, a.<span class="property">emp_name</span>, b.<span class="property">department_id</span>, b.<span class="property">department_name</span></span><br><span class="line">    <span class="variable constant_">FROM</span> employees a,</span><br><span class="line">         departments b;</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/4.28_SQL_Join/Untitled%2010.png" alt="Untitled"></p>
+</li>
+<li><p>ANSI 문법</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> a.<span class="property">employee_id</span>, a.<span class="property">emp_name</span>, b.<span class="property">department_id</span>, b.<span class="property">department_name</span></span><br><span class="line">    <span class="variable constant_">FROM</span> employees a</span><br><span class="line">   <span class="variable constant_">CROSS</span> <span class="variable constant_">JOIN</span> departments b;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+                    
+                    <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/SQL-Oracle/">#SQL, Oracle</a>
+                        </div>
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="http://tachyons.io/img/avatar_1.jpg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="John Doe">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            My name is SunHoo Park and this is my blog.<br>I am a student that is learning full stack software engineering.<br> I currently live in Seoul, Korea, hit me up if you are in the region.
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2022/04/28/4.27_SQL-Group_Querry_Group_Operator/"> Oracle - SQL 그룹 쿼리와 집합 연산자</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/28/4.27_SQL_Function(2)/"> Oracle - SQL 함수(2)</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/28/4.28_SQL_Join/"> Oracle - SQL 조인(Join)</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/27/4.27_SQL-Function/"> Oracle - SQL 함수</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/27/4.27_SQL-OPERATOR/"> Oracle - SQL 연산자</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://twitter.com/?lang=en" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://dribbble.com/" target="_blank">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/klugjo/hexo-theme-anodyne" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://plus.google.com/" target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
+                            <i class="fa fa-500px"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="/#" target="_blank">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                @Untitled. All right reserved | Design & Hexo <a class="link dim white" target="_blank" rel="noopener" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
