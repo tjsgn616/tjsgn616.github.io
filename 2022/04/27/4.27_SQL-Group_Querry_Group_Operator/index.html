@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="그룹 쿼리와 집합 연산자A. 기본 집계 함수
+집계 함수란 대상 데이터를 특정 그룹으로 묶은 다음 이 그룹에 대해 총합, 평균, 최댓값, 최솟값 등을 구하는 함수이다.
+
+1. COUNT(expr)
+쿼리 결과 건수(전체 로우 수)를 반환하는 집계 함수이다.
+테이블 전체 로">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content=" Oracle - SQL 그룹 쿼리와 집합 연산자"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title> Oracle - SQL 그룹 쿼리와 집합 연산자 - Hexo</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="Hexo">
+            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="Hexo">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="Home">
+                    Home
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="Archives">
+                    Archives
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/tags" 
+                    title="Tags">
+                    Tags
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/categories" 
+                    title="Categories">
+                    Categories
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about.html" 
+                    title="About">
+                    About
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/contact.html" 
+                    title="Contact">
+                    Contact
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns"> Oracle - SQL 그룹 쿼리와 집합 연산자</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-27</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa-file-text-o"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/SQL-Oracle/">#SQL, Oracle</a>
+                            </div>
+                        </div>
+                    
+
+                    <!-- Main Post Content -->
+                    <h1 id="그룹-쿼리와-집합-연산자"><a href="#그룹-쿼리와-집합-연산자" class="headerlink" title="그룹 쿼리와 집합 연산자"></a>그룹 쿼리와 집합 연산자</h1><h2 id="A-기본-집계-함수"><a href="#A-기본-집계-함수" class="headerlink" title="A. 기본 집계 함수"></a>A. 기본 집계 함수</h2><ul>
+<li>집계 함수란 대상 데이터를 특정 그룹으로 묶은 다음 이 그룹에 대해 총합, 평균, 최댓값, 최솟값 등을 구하는 함수이다.</li>
+</ul>
+<h3 id="1-COUNT-expr"><a href="#1-COUNT-expr" class="headerlink" title="1. COUNT(expr)"></a>1. COUNT(expr)</h3><ul>
+<li>쿼리 결과 건수(전체 로우 수)를 반환하는 집계 함수이다.</li>
+<li>테이블 전체 로우는 물론 WHERE 조건으로 걸러진 로우 수도 반환 할 수 있다.</li>
+<li>NULL 값은 세지 않는다.</li>
+<li>COUNT(DISTINCT “”): 고유 값들의 갯수를 셀 수 있다.</li>
+</ul>
+<h3 id="2-SUM-expr"><a href="#2-SUM-expr" class="headerlink" title="2. SUM(expr)"></a>2. SUM(expr)</h3><ul>
+<li>SUM은 expr 의 전체 합계를 반환하는 함수이다.</li>
+<li>expr에는 숫자형만 올 수 있다.</li>
+</ul>
+<h3 id="3-AVG-expr"><a href="#3-AVG-expr" class="headerlink" title="3. AVG(expr)"></a>3. AVG(expr)</h3><ul>
+<li>AVG는 expr의 평균값을 반환하는 함수이다.</li>
+<li>형태나 쓰임새는 COUNT, SUM과 같다.</li>
+</ul>
+<h3 id="4-MIN-expr-MAX-expr"><a href="#4-MIN-expr-MAX-expr" class="headerlink" title="4. MIN(expr), MAX(expr)"></a>4. MIN(expr), MAX(expr)</h3><ul>
+<li>MIN 은 최솟값, MAX는 최댓값을 반환하는 함수이다.</li>
+</ul>
+<h3 id="5-VARIANCE-expr-STDDEV-expr"><a href="#5-VARIANCE-expr-STDDEV-expr" class="headerlink" title="5. VARIANCE(expr), STDDEV(expr)"></a>5. VARIANCE(expr), STDDEV(expr)</h3><ul>
+<li>VARIANCE는 분산, STDDEV는 표준편차를 구해서 반환하는 함수이다.</li>
+</ul>
+<h2 id="B-GROUP-BY-절과-HAVING-절"><a href="#B-GROUP-BY-절과-HAVING-절" class="headerlink" title="B. GROUP BY 절과 HAVING 절"></a>B. GROUP BY 절과 HAVING 절</h2><h3 id="1-GROUP-BY"><a href="#1-GROUP-BY" class="headerlink" title="1. GROUP BY"></a>1. GROUP BY</h3><ul>
+<li><p>GROUP BY 절은 특정 그룹으로 묶어 데이터를 집계하는데 사용된다.</p>
+</li>
+<li><p>그룹으로 묶을 컬럼명이나 표현식을 GROUP BY 절에 명시해서 사용하며 GROUP BY 구문은 WHERE 과 ORDER BY 절 사이에 위치한다.</p>
+<ul>
+<li><p>예시)</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> department_id, <span class="title function_">SUM</span>(salary)</span><br><span class="line">      <span class="variable constant_">FROM</span> employees</span><br><span class="line">     <span class="variable constant_">GROUP</span> <span class="variable constant_">BY</span> department_id</span><br><span class="line">     <span class="variable constant_">ORDER</span> <span class="variable constant_">BY</span> department_id;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>그룹 쿼리 사용시 SELECT 리스트에 있는 컬럼명이나 표현식 중 집계 함수를 제외한 모두를 GROUP BY 절에 명시해주어야 한다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> period, region, <span class="title function_">SUM</span>(loan_jan_amt) totl_jan</span><br><span class="line">      <span class="variable constant_">FROM</span> kor_loan_status</span><br><span class="line">     <span class="variable constant_">WHERE</span> period = <span class="string">&#x27;201311&#x27;</span></span><br><span class="line">     <span class="variable constant_">GROUP</span> <span class="variable constant_">BY</span> region</span><br><span class="line">     <span class="variable constant_">ORDER</span> <span class="variable constant_">BY</span> region;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>SQL 오류: ORA-00979: GROUP BY 표현식이 아닙니다.</li>
+<li>월 까지 밖에 없는 데이터에서 2013년 11월로 period를 정해주었으므로 굳이 그룹에 포함시킬 필요 없지만, 구문 문법상 GROUP BY 절에 포함 시켜야만 한다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-HAVING"><a href="#2-HAVING" class="headerlink" title="2. HAVING"></a>2. HAVING</h3><ul>
+<li>HAVING 절은 GROUP BY 절 다음에 위치해 GROUP BY 한 결과를 대상으로 다시 필터를 거는 역할을 한다.<ul>
+<li><p>예시)</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> period, region, <span class="title function_">SUM</span>(loan_jan_amt) totl_jan</span><br><span class="line">      <span class="variable constant_">FROM</span> kor_loan_status</span><br><span class="line">     <span class="variable constant_">WHERE</span> period = <span class="string">&#x27;201311&#x27;</span></span><br><span class="line">     <span class="variable constant_">GROUP</span> <span class="variable constant_">BY</span> period, region</span><br><span class="line">     <span class="variable constant_">HAVING</span> <span class="title function_">SUM</span>(load_jan_amt) &gt; <span class="number">100000</span></span><br><span class="line">		<span class="variable constant_">ORDER</span> <span class="variable constant_">BY</span> region;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>위 쿼리 결과에서 대출 잔액이 100조 이상인 것만 추출하는 조건을 추가 하여 쿼리를 작성한 것이다.</p>
+</li>
+</ul>
+</li>
+<li>주의할 점은 WHERE 절은 쿼리 전체에 대한 필터 역할을 하고, HAVING 절은 WHERE 조건을 처리한 결과에서 GROUP BY를 수행한 후 산출된 결과에 대해 다시 조건을 걸어 데이터를 걸러내는 것이다.</li>
+</ul>
+<h2 id="C-ROLLUP-절과-CUBE-절"><a href="#C-ROLLUP-절과-CUBE-절" class="headerlink" title="C. ROLLUP 절과 CUBE 절"></a>C. ROLLUP 절과 CUBE 절</h2><ul>
+<li>ROLLUP 과 CUBE 는 GROUP BY 절에 사용되어 그룹별 소계를 추가로 보여주는 역할을 한다.</li>
+</ul>
+<h3 id="1-ROLLUP-expr1-expr2-…"><a href="#1-ROLLUP-expr1-expr2-…" class="headerlink" title="1. ROLLUP(expr1, expr2, …)"></a>1. ROLLUP(expr1, expr2, …)</h3><ul>
+<li><p>ROLLUP은 expr 로 명시한 표현식을 기준으로 집계한 결과(추가적인 집계 정보)를 보여준다.</p>
+</li>
+<li><p>ROLLUP절에 명시할 수 있는 표현식에는 그룹핑 대상, 즉 SELECT 리스트에서 집계 함수를 제외한 컬럼 등의 표현식이 올 수 있다.</p>
+</li>
+<li><p>명시한 표현식 수와 순서에 따라 레벨별로 집계한 결과가 반환된다.(표현식 개수가 n개면 n+1레벨까지, 하위레벨에서 상위레벨 순으로 데이터가 집계된다)</p>
+</li>
+<li><p>예시)</p>
+<ul>
+<li><p>ROLLUP 미적용</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> period, gubun, <span class="title function_">SUM</span>(loan_jan_amt) totl_jan</span><br><span class="line">      <span class="variable constant_">FROM</span> kor_loan_status</span><br><span class="line">     <span class="variable constant_">WHERE</span> period <span class="variable constant_">LIKE</span> <span class="string">&#x27;2013%&#x27;</span></span><br><span class="line">     <span class="variable constant_">GROUP</span> <span class="variable constant_">BY</span> period, gubun</span><br><span class="line">     <span class="variable constant_">ORDER</span> <span class="variable constant_">BY</span> period;</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/4.27_SQL-Group_Querry_Group_Operator/Untitled.png" alt="Untitled"></p>
+</li>
+<li><p>ROLLUP 적용</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> period, gubun, <span class="title function_">SUM</span>(loan_jan_amt) totl_jan</span><br><span class="line">    <span class="variable constant_">FROM</span> kor_loan_status</span><br><span class="line">   <span class="variable constant_">WHERE</span> period <span class="variable constant_">LIKE</span> <span class="string">&#x27;2013%&#x27;</span></span><br><span class="line">   <span class="variable constant_">GROUP</span> <span class="variable constant_">BY</span> <span class="title function_">ROLLUP</span>(period, gubun);</span><br></pre></td></tr></table></figure>
+<p>  <img src="/4%2027%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%20-%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8%20%E1%84%8F%E1%85%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AA%20%E1%84%8C%E1%85%B5%E1%86%B8%E1%84%92%E1%85%A1%E1%86%B8%20%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%A1%209008647eb163425ca6f0ed9a1ca261d5/Untitled%201.png" alt="Untitled"></p>
+</li>
+<li><p>ROLLUP 절에 period와 gubun 을 명시하였으므로 총 3레벨이다. 최하위 레벨인 period,gubun , 다음 하위 레벨인 period, 가장 상위레벨인 전체 합계가 집계 되었다.</p>
+</li>
+</ul>
+</li>
+<li><p>ROLLUP의 또다른 유형으로 분할 ROLLUP이 있다.</p>
+<ul>
+<li><code>GROUP BY expr1, ROLLUP(expr2, expr3)</code> 과 같이 진행하면, 위와 같이 전체 3단계가 되지만, 결과는 (expr1, expr2, expr3), (expr1, expr2),(expr1) 별로 집계되고 전체 합계는 집계되지 않는다.</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> period, gubun, <span class="title function_">SUM</span>(loan_jan_amt) totl_jan</span><br><span class="line">      <span class="variable constant_">FROM</span> kor_loan_status</span><br><span class="line">     <span class="variable constant_">WHERE</span> period <span class="variable constant_">LIKE</span> <span class="string">&#x27;2013%&#x27;</span></span><br><span class="line">     <span class="variable constant_">GROUP</span> <span class="variable constant_">BY</span> period, <span class="title function_">ROLLUP</span>( gubun );</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/4.27_SQL-Group_Querry_Group_Operator/Untitled%202.png" alt="Untitled"></p>
+</li>
+</ul>
+<h3 id="2-CUBE-expr1-expr2-…"><a href="#2-CUBE-expr1-expr2-…" class="headerlink" title="2. CUBE(expr1, expr2, …)"></a>2. CUBE(expr1, expr2, …)</h3><ul>
+<li><p>CUBE는 ROLLUP과 비슷하지만 조금 다르다.</p>
+</li>
+<li><p>ROLLUP은 레벨별 순차적 집계를 하는 반면 CUBE는 명시한 표현식 갯수에 따라 가능한 모든 조합으로 집계한 결과를 반환한다.</p>
+<ul>
+<li>그래서 CUBE는 2^(expr 갯수) 만큼 종류별로 집계된다.</li>
+</ul>
+</li>
+<li><p>예시)</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> period, gubun, <span class="title function_">SUM</span>(loan_jan_amt) totl_jan</span><br><span class="line">   <span class="variable constant_">FROM</span> kor_loan_status</span><br><span class="line">  <span class="variable constant_">WHERE</span> period <span class="variable constant_">LIKE</span> <span class="string">&#x27;2013%&#x27;</span></span><br><span class="line">  <span class="variable constant_">GROUP</span> <span class="variable constant_">BY</span> <span class="title function_">CUBE</span>(period, gubun) ;</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/4.27_SQL-Group_Querry_Group_Operator/Untitled%203.png" alt="Untitled"></p>
+<ul>
+<li>expr 수가 2개 이므로 총 4가지 유형의 집계가 나온다.(전체, gubun, period, period+gubun)</li>
+</ul>
+</li>
+<li><p>CUBE도 분할 CUBE유형이 존재한다.</p>
+<ul>
+<li><code>GROUP BY expr1, CUBE(expr2,expr3)</code> 를 하게 되면 (expr1, expr2, expr3), (expr1, expr2), (expr1, expr3), (expr1) 총 4가지 유형으로 집계된다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="ROLLUP-과-CUBE-집계-방식"><a href="#ROLLUP-과-CUBE-집계-방식" class="headerlink" title="ROLLUP 과 CUBE 집계 방식"></a>ROLLUP 과 CUBE 집계 방식</h3><table>
+<thead>
+<tr>
+<th>표현식</th>
+<th>집계 종류</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ROLLUP(expr1, expr2)</td>
+<td>expr1 + expr2</td>
+</tr>
+<tr>
+<td></td>
+<td>expr1</td>
+</tr>
+<tr>
+<td></td>
+<td>전체</td>
+</tr>
+<tr>
+<td>GROUP BY expr1, ROLLUP (expr2, expr3)</td>
+<td>expr1 + ( expr2 + expr3)</td>
+</tr>
+<tr>
+<td></td>
+<td>expr1 + ( expr2)</td>
+</tr>
+<tr>
+<td></td>
+<td>expr1</td>
+</tr>
+<tr>
+<td>GROUP BY ROLLUP(expr1), expr2</td>
+<td>expr2 + expr1</td>
+</tr>
+<tr>
+<td></td>
+<td>expr2</td>
+</tr>
+<tr>
+<td>CUBE (expr1, expr2)</td>
+<td>expr1 + expr2</td>
+</tr>
+<tr>
+<td></td>
+<td>expr1</td>
+</tr>
+<tr>
+<td></td>
+<td>expr2</td>
+</tr>
+<tr>
+<td></td>
+<td>전체</td>
+</tr>
+<tr>
+<td>GROUP BY expr1, CUBE ( expr2, expr3)</td>
+<td>expr1 + ( expr2 + expr3)</td>
+</tr>
+<tr>
+<td></td>
+<td>expr1 + ( expr2)</td>
+</tr>
+<tr>
+<td></td>
+<td>expr1 + ( expr3)</td>
+</tr>
+<tr>
+<td></td>
+<td>expr1</td>
+</tr>
+</tbody></table>
+<h2 id="B-집합-연산자"><a href="#B-집합-연산자" class="headerlink" title="B. 집합 연산자"></a>B. 집합 연산자</h2><ul>
+<li>데이터 집합(set)을 대상으로 연산을 수행하는 연산자</li>
+<li>집합 개념과 비슷하다.</li>
+</ul>
+<h3 id="1-UNION"><a href="#1-UNION" class="headerlink" title="1. UNION"></a>1. UNION</h3><ul>
+<li>합집합을 의미한다.</li>
+<li>데이터 집합들의  집합 원소를 모두 포함한 결과가 반환된다.</li>
+<li>예시)<ul>
+<li><p>A그룹</p>
+<p>  <img src="/images/4.27_SQL-Group_Querry_Group_Operator/Untitled%204.png" alt="Untitled"></p>
+</li>
+<li><p>B그룹</p>
+<p>  <img src="/images/4.27_SQL-Group_Querry_Group_Operator/Untitled%205.png" alt="Untitled"></p>
+</li>
+<li><p>UNION 명령어 실행</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> goods</span><br><span class="line"><span class="variable constant_">FROM</span> exp_goods_asia</span><br><span class="line"><span class="variable constant_">WHERE</span> country = <span class="string">&#x27;한국&#x27;</span></span><br><span class="line"><span class="variable constant_">UNION</span></span><br><span class="line"><span class="variable constant_">SELECT</span> goods</span><br><span class="line"><span class="variable constant_">FROM</span> exp_goods_asia</span><br><span class="line"><span class="variable constant_">WHERE</span> country = <span class="string">&#x27;일본&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>  <img src="/images/4.27_SQL-Group_Querry_Group_Operator/Untitled%206.png" alt="Untitled"></p>
+<ul>
+<li>합집합 개념을 적용해서 겹치는 종류는 추출하지 않는다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>UNION ALL 명령어는 합쳐서 전체를 다 추출한다.</li>
+</ul>
+<h3 id="2-INTERSECT"><a href="#2-INTERSECT" class="headerlink" title="2. INTERSECT"></a>2. INTERSECT</h3><ul>
+<li>교집합 개념을 적용하여 공통된 항목만 추출한다.</li>
+</ul>
+<h3 id="3-MINUS"><a href="#3-MINUS" class="headerlink" title="3. MINUS"></a>3. MINUS</h3><ul>
+<li>차집합 개념을 적용하여 한 데이터 집합에서 다른 데이터 집합과 공통된 항목을 제외한 결과를 추출한다.</li>
+</ul>
+<h3 id="집합-연산자-사용-시-주의사항"><a href="#집합-연산자-사용-시-주의사항" class="headerlink" title="집합 연산자 사용 시 주의사항"></a>집합 연산자 사용 시 주의사항</h3><ol>
+<li>집합 연산자로 연결할 각 SELECT 문의 리스트 개수와 데이터 타입을 일치시켜야 한다.</li>
+</ol>
+<ul>
+<li>리스트 개수 오류  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> goods</span><br><span class="line">    <span class="variable constant_">FROM</span> exp_goods_asia</span><br><span class="line">   <span class="variable constant_">WHERE</span> country = <span class="string">&#x27;한국&#x27;</span></span><br><span class="line">   <span class="variable constant_">UNION</span></span><br><span class="line">  <span class="variable constant_">SELECT</span> seq, goods</span><br><span class="line">    <span class="variable constant_">FROM</span> exp_goods_asia</span><br><span class="line">   <span class="variable constant_">WHERE</span> country = <span class="string">&#x27;일본&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>SQL 오류: ORA-01789: 질의 블록은 부정확한 수의 결과 열을 가지고 있습니다.</li>
+</ul>
+</li>
+<li>데이터 타입 오류  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> seq</span><br><span class="line">    <span class="variable constant_">FROM</span> exp_goods_asia</span><br><span class="line">   <span class="variable constant_">WHERE</span> country = <span class="string">&#x27;한국&#x27;</span></span><br><span class="line">   <span class="variable constant_">UNION</span></span><br><span class="line">  <span class="variable constant_">SELECT</span> goods</span><br><span class="line">    <span class="variable constant_">FROM</span> exp_goods_asia</span><br><span class="line">   <span class="variable constant_">WHERE</span> country = <span class="string">&#x27;일본&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>SQL 오류: ORA-01790: 대응하는 식과 같은 데이터 유형이어야 합니다.</li>
+<li>seq와 goods 의 데이터 타입이 달라서 오류가 발생하였다.</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li><p>ORDER BY 절은 맨 마지막 문장에서만 사용 할 수 있다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> goods</span><br><span class="line">    <span class="variable constant_">FROM</span> exp_goods_asia</span><br><span class="line">   <span class="variable constant_">WHERE</span> country = <span class="string">&#x27;한국&#x27;</span></span><br><span class="line">   <span class="variable constant_">ORDER</span> <span class="variable constant_">BY</span> goods</span><br><span class="line">   <span class="variable constant_">UNION</span></span><br><span class="line">  <span class="variable constant_">SELECT</span> goods</span><br><span class="line">    <span class="variable constant_">FROM</span> exp_goods_asia</span><br><span class="line">   <span class="variable constant_">WHERE</span> country = <span class="string">&#x27;일본&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>SQL 오류: ORA-00933: SQL 명령어가 올바르게 종료되지 않았습니다.</li>
+<li>ORDER BY를 맨 마지막으로 옮겨 주어야 한다.</li>
+</ul>
+</li>
+<li><p>BLOB, CLOB, BFILE 타입의 컬럼에서는 집합 연산자를 사용할 수 없다.</p>
+</li>
+<li><p>UNION, INTERSECT, MINUS 연산자는 LONG 형 컬럼에서 사용 할 수 없다.</p>
+</li>
+</ol>
+
+                    
+                    <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/SQL-Oracle/">#SQL, Oracle</a>
+                        </div>
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="http://tachyons.io/img/avatar_1.jpg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="John Doe">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            My name is SunHoo Park and this is my blog.<br>I am a student that is learning full stack software engineering.<br> I currently live in Seoul, Korea, hit me up if you are in the region.
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2022/04/27/4.27_SQL-Function/"> Oracle - SQL 함수</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/27/4.27_SQL-OPERATOR/"> Oracle - SQL 연산자</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/27/4.27_SQL-Group_Querry_Group_Operator/"> Oracle - SQL 그룹 쿼리와 집합 연산자</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/27/4.27_SQL_Function(2)/"> Oracle - SQL 함수(2)</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/19/WSL2-Apache-Nifi_Install_Setting(Windows10)/">WSL2- Apache-Nifi 설치와 설정(Windows10)</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://twitter.com/?lang=en" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://dribbble.com/" target="_blank">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/klugjo/hexo-theme-anodyne" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://plus.google.com/" target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
+                            <i class="fa fa-500px"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="/#" target="_blank">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                @Untitled. All right reserved | Design & Hexo <a class="link dim white" target="_blank" rel="noopener" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

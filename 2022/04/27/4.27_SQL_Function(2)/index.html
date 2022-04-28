@@ -10,12 +10,14 @@
 
     <!--Description-->
     
-        <meta name="description" content="WSL(Linux) - 기본 명령어&amp;#x2F;vi 명령어파일 및 디렉토리 명령어
-clear : 콘솔에 적힌 텍스트 전부 삭제
-pwd : 현재 작업 중인 디렉토리를 보여줌
-ls : 현재 위치의 디렉토리 목록
-cd : 디렉토리 변경, cd .. : 상위 디렉토리로 이동
-m">
+        <meta name="description" content="SQL 함수(2)A. 변환 함수
+서로 다른 유형의 데이터 타입으로 변한해주는 함수
+명시적 형 변환을 위한 함수
+
+1. TO_CHAR (숫자 혹은 날짜, format)
+숫자나 날짜를 문자로 변환해 주는 함수
+
+매개변수로는 숫자나 날짜가 올 수 있고 format 값에 따라">
     
 
     <!--Author-->
@@ -25,7 +27,7 @@ m">
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="WSL2(Linux) - 기본 명령어/vi 명령어"/>
+        <meta property="og:title" content=" Oracle - SQL 함수(2)"/>
     
 
     <!--Open Graph Description-->
@@ -47,7 +49,7 @@ m">
 
     <!-- Title -->
     
-    <title>WSL2(Linux) - 기본 명령어/vi 명령어 - Hexo</title>
+    <title> Oracle - SQL 함수(2) - Hexo</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
@@ -129,8 +131,8 @@ m">
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">WSL2(Linux) - 기본 명령어/vi 명령어</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-17</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns"> Oracle - SQL 함수(2)</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-27</p>
         </div>
     </div>
 
@@ -150,88 +152,92 @@ m">
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/WSL2-Linux-Vi/">#WSL2, Linux, Vi</a>
+                                <a class="fw3 ph1 dib" href="/tags/SQL-Oracle/">#SQL, Oracle</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <h1 id="WSL-Linux-기본-명령어-x2F-vi-명령어"><a href="#WSL-Linux-기본-명령어-x2F-vi-명령어" class="headerlink" title="WSL(Linux) - 기본 명령어&#x2F;vi 명령어"></a>WSL(Linux) - 기본 명령어&#x2F;vi 명령어</h1><h2 id="파일-및-디렉토리-명령어"><a href="#파일-및-디렉토리-명령어" class="headerlink" title="파일 및 디렉토리 명령어"></a>파일 및 디렉토리 명령어</h2><ul>
-<li>clear : 콘솔에 적힌 텍스트 전부 삭제</li>
-<li>pwd : 현재 작업 중인 디렉토리를 보여줌</li>
-<li>ls : 현재 위치의 디렉토리 목록</li>
-<li>cd : 디렉토리 변경, cd .. : 상위 디렉토리로 이동</li>
-<li>mkdir 폴더이름 : 폴더 이름 폴더를 만든다.</li>
-<li>touch 파일이름.확장자 : 파일이름.확장자 파일을 만든다.</li>
-<li>mv A B : 파일(이름) 바꾸기(A파일을 B파일로 이름을 바꾼다)<ul>
-<li>mv A 경로 : A를 해당경로로 이동</li>
-<li>mv A B 경로: A B(추가로 더 가능) 파일을 경로로 이동</li>
+                    <h1 id="SQL-함수-2"><a href="#SQL-함수-2" class="headerlink" title="SQL 함수(2)"></a>SQL 함수(2)</h1><h2 id="A-변환-함수"><a href="#A-변환-함수" class="headerlink" title="A. 변환 함수"></a>A. 변환 함수</h2><ul>
+<li>서로 다른 유형의 데이터 타입으로 변한해주는 함수</li>
+<li>명시적 형 변환을 위한 함수</li>
+</ul>
+<h3 id="1-TO-CHAR-숫자-혹은-날짜-format"><a href="#1-TO-CHAR-숫자-혹은-날짜-format" class="headerlink" title="1. TO_CHAR (숫자 혹은 날짜, format)"></a>1. TO_CHAR (숫자 혹은 날짜, format)</h3><ul>
+<li><p>숫자나 날짜를 문자로 변환해 주는 함수</p>
+</li>
+<li><p>매개변수로는 숫자나 날짜가 올 수 있고 format 값에 따라 결과를 특정 형식에 맞게 출력할 수 있다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> <span class="title function_">TO_CHAR</span>(<span class="number">123456789</span>, <span class="string">&#x27;999,999,999&#x27;</span>)</span><br><span class="line">      <span class="variable constant_">FROM</span> <span class="variable constant_">DUAL</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>결과:   123,456,789</li>
 </ul>
 </li>
-<li>rm 파일이름 : 파일이름 삭제<ul>
-<li>rm -rf 폴더 : 폴더 전체 삭제</li>
-</ul>
-</li>
-<li>cp A B : A를 B라는 이름으로 복사<ul>
-<li>cp -f A B : B이름이 이미 있다면 삭제하고 복사</li>
-<li>cp -r A B : 폴더 복사(하위내용 포함)</li>
-</ul>
+<li><p>자주 사용하는 포맷</p>
+<p>  <a target="_blank" rel="noopener" href="https://www.notion.so/bbb310f213dd41b7a50fd1cd36886474">날짜 변환 형식</a></p>
+<p>  <a target="_blank" rel="noopener" href="https://www.notion.so/782c65a7d8164f0fa9336b7dd1035a47">숫자 변환 형식</a></p>
 </li>
 </ul>
-<h2 id="Vi-명령어"><a href="#Vi-명령어" class="headerlink" title="Vi 명령어"></a>Vi 명령어</h2><ul>
-<li>vi 파일이름.확장자 : 파일 내용을 보고 수정할 수 있다.<ul>
-<li>vi 내부 명령어<ul>
-<li>명령모드(기본상태)<ul>
-<li>x : 커서가 위치한 글자 삭제(10x : 커서 있는 곳 부터 10개 삭제)</li>
-<li>dw : 커서가 있는 곳 부터 띄어쓰기가 있는 곳 까지의 한 단어 삭제</li>
-<li>dd : 커서가 위치한 한 줄 삭제</li>
-<li>u : 실행 취소(ctrl + z)</li>
-<li>yy : 복사 (5yy: 5줄 복사)</li>
-<li>dd : 잘라내기 (5dd: 5줄 잘라내기)</li>
-<li>p: 붙여넣기</li>
-<li>0 : 줄의 맨 처음으로(Home)</li>
-<li>$ : 줄의 맨 뒤로(End)</li>
-<li>G(대문자 G) : 파일 마지막 위치로 이동</li>
-<li>insert &#x2F; i : 입력 모드 전환</li>
-</ul>
-</li>
-<li>esc : 명령 모드 전환</li>
-<li>: &#x3D; 마지막 줄 모드 전환<ul>
-<li>:w : 저장</li>
-<li>:w 파일명 : 파일명 으로 저장</li>
-<li>:q &#x3D; 나가기, q! &#x3D; 저장하지 않고 그냥 종료<ul>
-<li>:wq 저장 후 종료</li>
-</ul>
-</li>
-<li>&#x2F;문자열 : 커서 위치 앞 쪽의 문자열 탐색</li>
-<li>?문자열 : 커서위치 뒤 쪽의 문자열 탐색</li>
+<h3 id="2-TO-NUMBER-expr-format"><a href="#2-TO-NUMBER-expr-format" class="headerlink" title="2. TO_NUMBER(expr, format)"></a>2. TO_NUMBER(expr, format)</h3><ul>
+<li>문자나 다른 유형의 숫자를 NUMBER 형으로 변환하는 함수</li>
+<li>예시)  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> <span class="title function_">TO_NUMBER</span>(<span class="string">&#x27;123456&#x27;</span>)</span><br><span class="line">    <span class="variable constant_">FROM</span> <span class="variable constant_">DUAL</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>결과: 123456</li>
 </ul>
 </li>
 </ul>
+<h3 id="3-TO-DATE-char-format-TO-TIMESTAMP-char-format"><a href="#3-TO-DATE-char-format-TO-TIMESTAMP-char-format" class="headerlink" title="3. TO_DATE(char, format), TO_TIMESTAMP(char, format)"></a>3. TO_DATE(char, format), TO_TIMESTAMP(char, format)</h3><ul>
+<li>문자를 날짜형으로 변환하는 함수이다</li>
+<li>이전의 ‘날짜 변환 형식’과 같은 항목이 올 수 있다.</li>
+<li>TO_DATE 는 DATE 형으로, TO_TIMESTAMP 는 TIMESTAMP 형으로 변환해 값을 반환한다.</li>
+</ul>
+<h2 id="B-NULL-관련-함수"><a href="#B-NULL-관련-함수" class="headerlink" title="B. NULL 관련 함수"></a>B. NULL 관련 함수</h2><ul>
+<li>NULL을 비교할 때는 IS NULL 또는 IS NOT NULL 구문을 사용하는데, 오라클에서는 NULL을 연산 대상으로 처리하는 SQL 함수를 제공하고 있다.</li>
+</ul>
+<h3 id="1-NVL-expr1-expr2-NVL2-expr1-expr2-expr3"><a href="#1-NVL-expr1-expr2-NVL2-expr1-expr2-expr3" class="headerlink" title="1. NVL(expr1, expr2), NVL2(expr1, expr2, expr3)"></a>1. NVL(expr1, expr2), NVL2(expr1, expr2, expr3)</h3><ul>
+<li>NVL은 expr1이 NULL 일 때, expr2를 반환한다.</li>
+<li>NVL2 는 expr1이 NULL이 아니면 expr2를, NULL이면 expr3를 반환한다.<ul>
+<li>예시)</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> employee_id,</span><br><span class="line">       <span class="title class_">NVL2</span>(commission_pct, salary + (salary * commission_pct), salary) <span class="variable constant_">AS</span> final_salary</span><br><span class="line">  <span class="variable constant_">FROM</span> employees;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>앞의 쿼리는 commision_pct가 NULL 인 사원은 그냥 급여를, Null이 아닌 사원은 급여 + 급여*커미션을 조회하고있다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-COALESCE-expr1-expr2-…"><a href="#2-COALESCE-expr1-expr2-…" class="headerlink" title="2. COALESCE (expr1, expr2, …)"></a>2. COALESCE (expr1, expr2, …)</h3><ul>
+<li>COALESCE 는 매개변수로 들어오는 표현식에서 NULL 이 아닌 첫 번째 표현식을 반환한다.</li>
+</ul>
+<h3 id="3-LNNVL-조건식"><a href="#3-LNNVL-조건식" class="headerlink" title="3. LNNVL(조건식)"></a>3. LNNVL(조건식)</h3><ul>
+<li>LNNVL은 매개변수로 들어오는 조건식의 결과가 FALSE나 UNKNOWN이면 TRUE, TRUE 면 FALSE를 반환한다.<ul>
+<li><p>예시)</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> <span class="title function_">COUNT</span>(*)</span><br><span class="line">      <span class="variable constant_">FROM</span> employees</span><br><span class="line">     <span class="variable constant_">WHERE</span> <span class="title function_">NVL</span>(commission_pct, <span class="number">0</span>) &lt; <span class="number">0.2</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>NULL 값은 일반적인 조건식으로는 출력되지 않으므로 NVL을 이용해 0값으로 바꿔주었다.</p>
+</li>
+<li><p>위와 같은 식을 LNNVL 함수를 이용해 똑같이 만들 수 있다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> <span class="title function_">COUNT</span>(*)</span><br><span class="line">      <span class="variable constant_">FROM</span> employees</span><br><span class="line">     <span class="variable constant_">WHERE</span> <span class="title function_">LNNVL</span>(commission_pct &gt;= <span class="number">0.2</span>) ;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>LNNVL 함수는 매개변수로 들어오는 조건의 결과가 TRUE이면 FALSE를, FALSE나 UNKNOWN이면 TRUE를 반환하므로, 조건식을 ‘commission_pct&lt; 0.2’가 아닌 ‘commission_pct&gt;&#x3D;<br>   0.2<br>  ’로 바꾸었다.</p>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="압축-명령어"><a href="#압축-명령어" class="headerlink" title="압축 명령어"></a>압축 명령어</h2><ul>
-<li>tar : 압축 관련 명령어<ul>
-<li>tar -cvf A.tar B : B를 A.tar 로 압축한다.</li>
-<li>tar -zcvf A.tar.gz B : B를 A.tar.gz 로 압축한다.</li>
-<li>tar -xvf A.tar : A.tar 파일의 압축을 푼다.</li>
-<li>tar -zxvf A.tar.gz : A.tar.gz 파일의 압축을푼다.</li>
+<h3 id="4-NULLIF-expr1-expr2"><a href="#4-NULLIF-expr1-expr2" class="headerlink" title="4. NULLIF (expr1, expr2)"></a>4. NULLIF (expr1, expr2)</h3><ul>
+<li>NULLIF 함수는 expr1과 expr2를 비교해 같으면 NULL, 같지 않으면, expr1을 반환한다.</li>
 </ul>
-</li>
+<h2 id="C-기타-함수"><a href="#C-기타-함수" class="headerlink" title="C. 기타 함수"></a>C. 기타 함수</h2><h3 id="1-GREATEST-expr1-expr2-…-LEAST-expr1-expr2-…"><a href="#1-GREATEST-expr1-expr2-…-LEAST-expr1-expr2-…" class="headerlink" title="1. GREATEST(expr1, expr2, …) , LEAST(expr1, expr2, …)"></a>1. GREATEST(expr1, expr2, …) , LEAST(expr1, expr2, …)</h3><ul>
+<li>GREATEST는 매개변수로 들어오는 표현식 중에서 가장 큰 값을, LEAST는 가장 작은 값을 반환한다.</li>
+<li>숫자 뿐 아니라 문자도 비교할 수 있다.</li>
 </ul>
-<h2 id="패키지-설치-x2F-삭제-명령어"><a href="#패키지-설치-x2F-삭제-명령어" class="headerlink" title="패키지 설치&#x2F;삭제 명령어"></a>패키지 설치&#x2F;삭제 명령어</h2><ul>
-<li>sudo : 관리자 권한 부여</li>
-<li>apt-get install&#x2F;uninstall 패키지이름 : 패키지 설치&#x2F;삭제(주로 sudo와 함께 사용된다.)</li>
-<li>apt-get upgrade : 패키지들을 최신 버전으로 업그레이드 할 때 사용</li>
+<h3 id="2-DECODE-expr-search1-result1-search2-result2-…-deafult"><a href="#2-DECODE-expr-search1-result1-search2-result2-…-deafult" class="headerlink" title="2. DECODE (expr, search1, result1, search2, result2, …, deafult)"></a>2. DECODE (expr, search1, result1, search2, result2, …, deafult)</h3><ul>
+<li>DECODE 는 expr 과 search1을 비교해 두 값이 같으면 result1를, 같지 않으면 search2 와 비교해 두 값이 같으면 result2를 반환하고, 같은 식으로 계속 비교해도 같은 값이 나오지 않으면 default 값을 반환한다.</li>
+<li>비교 값과 결과 값을 일일이 나열해야 하므로, CASE표현식을 쓰는것이 더 깔끔하긴 하다.</li>
 </ul>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/WSL2-Linux-Vi/">#WSL2, Linux, Vi</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/SQL-Oracle/">#SQL, Oracle</a>
                         </div>
                     
 
