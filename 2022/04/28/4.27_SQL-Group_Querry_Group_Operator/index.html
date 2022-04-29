@@ -225,7 +225,7 @@
 </li>
 <li><p>ROLLUP 적용</p>
   <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> period, gubun, <span class="title function_">SUM</span>(loan_jan_amt) totl_jan</span><br><span class="line">    <span class="variable constant_">FROM</span> kor_loan_status</span><br><span class="line">   <span class="variable constant_">WHERE</span> period <span class="variable constant_">LIKE</span> <span class="string">&#x27;2013%&#x27;</span></span><br><span class="line">   <span class="variable constant_">GROUP</span> <span class="variable constant_">BY</span> <span class="title function_">ROLLUP</span>(period, gubun);</span><br></pre></td></tr></table></figure>
-<p>  <img src="/4%2027%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%20-%20%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8%20%E1%84%8F%E1%85%AF%E1%84%85%E1%85%B5%E1%84%8B%E1%85%AA%20%E1%84%8C%E1%85%B5%E1%86%B8%E1%84%92%E1%85%A1%E1%86%B8%20%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%86%AB%E1%84%8C%E1%85%A1%209008647eb163425ca6f0ed9a1ca261d5/Untitled%201.png" alt="Untitled"></p>
+<p>  <img src="/images/4.27_SQL-Group_Querry_Group_Operator/Untitled%201.png" alt="Untitled"></p>
 </li>
 <li><p>ROLLUP 절에 period와 gubun 을 명시하였으므로 총 3레벨이다. 최하위 레벨인 period,gubun , 다음 하위 레벨인 period, 가장 상위레벨인 전체 합계가 집계 되었다.</p>
 </li>
