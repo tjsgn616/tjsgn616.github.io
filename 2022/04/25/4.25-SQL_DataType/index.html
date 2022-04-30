@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="SQL - 테이블과 데이터 타입테이블
+테이블: 데이터를 담고 있는 객체
+
+테이블 명, 컬럼 명의 최대 크기는 30 바이트이다.
+테이블 명, 컬럼 명으로 예약어는 사용할 수 없다.(예약어 &amp;#x3D; 오라클이 미리 선점한 단어)
+테이블 명, 컬럼명으로 문자 ,숫자, ‘_">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content=" Oracle - SQL 데이터 타입"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title> Oracle - SQL 데이터 타입 - Hexo</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="Hexo">
+            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="Hexo">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="Home">
+                    Home
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="Archives">
+                    Archives
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/tags" 
+                    title="Tags">
+                    Tags
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/categories" 
+                    title="Categories">
+                    Categories
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about.html" 
+                    title="About">
+                    About
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/contact.html" 
+                    title="Contact">
+                    Contact
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns"> Oracle - SQL 데이터 타입</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-25</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa-file-text-o"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/SQL-Oracle/">#SQL, Oracle</a>
+                            </div>
+                        </div>
+                    
+
+                    <!-- Main Post Content -->
+                    <h1 id="SQL-테이블과-데이터-타입"><a href="#SQL-테이블과-데이터-타입" class="headerlink" title="SQL - 테이블과 데이터 타입"></a>SQL - 테이블과 데이터 타입</h1><h2 id="테이블"><a href="#테이블" class="headerlink" title="테이블"></a>테이블</h2><ul>
+<li><p>테이블: 데이터를 담고 있는 객체</p>
+<ul>
+<li>테이블 명, 컬럼 명의 최대 크기는 30 바이트이다.</li>
+<li>테이블 명, 컬럼 명으로 예약어는 사용할 수 없다.(예약어 &#x3D; 오라클이 미리 선점한 단어)</li>
+<li>테이블 명, 컬럼명으로 문자 ,숫자, ‘_’, ‘$’, ‘#’ 을 사용할 수 있지만 첫글자는 문자여야만 한다.</li>
+<li>한 테이블에 사용 가능한 컬럼은 최대 255개이다.</li>
+</ul>
+</li>
+<li><p>테이블 생성( <code>CREATE TABLE 테이블명(조건)</code> )</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">CREATE</span> <span class="variable constant_">TABLE</span> <span class="title function_">ex2_1</span>(</span><br><span class="line">    <span class="title class_">COLUMN1</span> <span class="title function_">CHAR</span>(<span class="number">10</span>)</span><br><span class="line">    ,<span class="title class_">COLUMN2</span> <span class="title class_">VARCHAR2</span>(<span class="number">10</span>)</span><br><span class="line">    ,<span class="title class_">COLUMN3</span> <span class="title class_">NVARCHAR2</span>(<span class="number">10</span>)</span><br><span class="line">    ,<span class="title class_">COLUMN4</span> <span class="variable constant_">NUMBER</span></span><br><span class="line">);</span><br><span class="line"># ; 로 한 명령문의 끝을 선언 할 수 있다.</span><br></pre></td></tr></table></figure>
+<ul>
+<li>쿼리를 작성 후, 페이지 전체 명령어 실행은 F5</li>
+<li>한 구역의 명령어만 실행은 F9 실행</li>
+</ul>
+</li>
+</ul>
+<h2 id="데이터"><a href="#데이터" class="headerlink" title="데이터"></a>데이터</h2><ul>
+<li><p>데이터 추가: <code>INSERT INTO () VALUES ();</code></p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">INSERT</span> <span class="variable constant_">INTO</span> ex2_2 <span class="title function_">VALUES</span>(<span class="string">&#x27;abc&#x27;</span>, <span class="string">&#x27;abc&#x27;</span>, <span class="string">&#x27;abc&#x27;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>데이터 확인: <code>SELECT FROM</code></p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span></span><br><span class="line">	<span class="title class_">COLUMN1</span></span><br><span class="line">	, <span class="title function_">LENGTH</span>(<span class="title class_">COLUMN1</span>) <span class="keyword">as</span> len1</span><br><span class="line">	, <span class="title class_">COLUMN2</span></span><br><span class="line">	, <span class="title function_">LENGTH</span>(<span class="title class_">COLUMN2</span>) <span class="keyword">as</span> len2</span><br><span class="line"><span class="variable constant_">FROM</span> ex2_1;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="데이터-타입"><a href="#데이터-타입" class="headerlink" title="데이터 타입"></a>데이터 타입</h2><h3 id="1-문자-데이터"><a href="#1-문자-데이터" class="headerlink" title="1. 문자 데이터"></a>1. 문자 데이터</h3><ul>
+<li>각각의 COLUMN 에 들어갈 데이터 타입을 설정한 것이다.<ul>
+<li><strong>CHAR(byte or char): 고정길이 문자</strong><ul>
+<li>CHAR은 고정된 크기 할당 시 어떤 문자를 넣어도 고정된 크기를 차지한다.</li>
+</ul>
+</li>
+<li><strong>VARCHAR2(byte or char) : 가변길이 문자</strong><ul>
+<li>VARCHAR2는 넣는 문자의 크기에 따라 다른 크기를 가지며 최대치를 지정하는 것이다.</li>
+<li>공간 효율화를 위해 VARCHAR2를 권장한다.</li>
+</ul>
+</li>
+<li>NCHAR(byte or char) : 고정길이 유니코드 문자</li>
+<li>NVARCHAR2(byte or char) : 가변길이 유니코드 문자</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-숫자-데이터"><a href="#2-숫자-데이터" class="headerlink" title="2. 숫자 데이터"></a>2. 숫자 데이터</h3><ul>
+<li><p>오라클에서 제공하는 숫자형 데이터 이다.</p>
+<ul>
+<li><strong>NUMBER(p, s) : 가변 숫자 p(1<del>38, 디폴트 &#x3D; 38)와 s(-84</del>127, 디폴트&#x3D;0)는 십진수 기준</strong></li>
+<li><strong>FLOAT(p): NUMBER의 하위 타입, p(1~128, 디폴트 &#x3D; 128)는 이진수 기준</strong></li>
+<li>BINARY_FLOAT : 32비트 부동 소수점 수</li>
+<li>BINARY_DOUBLE : 64비트 부동 소수점 수</li>
+</ul>
+</li>
+<li><p>예시)</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">CREATE</span> <span class="variable constant_">TABLE</span> <span class="title function_">ex2_4</span>(</span><br><span class="line">        <span class="variable constant_">COL_FLOT1</span> <span class="title function_">FLOAT</span>(<span class="number">32</span>)</span><br><span class="line">        ,<span class="variable constant_">COL_FLOT2</span> <span class="variable constant_">FLOAT</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="variable constant_">INSERT</span> <span class="variable constant_">INTO</span> ex2_4 (<span class="variable constant_">COL_FLOT1</span>, <span class="variable constant_">COL_FLOT2</span>) <span class="variable constant_">VALUES</span> (<span class="number">1234567891234</span>, <span class="number">1234567891234</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>출력: 1234567891000, 1234567891234</li>
+<li>FLOAT(32)의 경우 FLOAT 뒤의 숫자는 2진수 기준 자릿수 이기 때문에, 2진수 32자릿수는 10진수 기준 10자릿수 이므로 10번째 자리 까지인 1234567891000으로 입력된다.</li>
+<li>FLOAT의 경우 기본값이 126 이기 때문에 10진수 기준 38 자릿수까지 표현할 수 있기 때문에 그대로 출력이 된다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-날짜형-데이터"><a href="#3-날짜형-데이터" class="headerlink" title="3. 날짜형 데이터"></a>3. 날짜형 데이터</h3><ul>
+<li>DATE: 연,월,일,시,분,초 까지 입력 가능하다</li>
+<li>TIMESTAMP: 연,월,일,시,분,초,밀리초 까지 입력 가능하다(DATE 보다 정확도가 조금 더 높다)</li>
+</ul>
+<h3 id="4-LOB-데이터-타입"><a href="#4-LOB-데이터-타입" class="headerlink" title="4. LOB 데이터 타입"></a>4. LOB 데이터 타입</h3><ul>
+<li>LARGE OBJECT의 약자로 대용량 데이터를 저장할 수 있는 데이터 타입이다.</li>
+<li>비정형 데이터는 그 크기가 매우 크기 때문에 그러한 데이터를 저장하는데 사용된다.</li>
+</ul>
+
+                    
+                    <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/SQL-Oracle/">#SQL, Oracle</a>
+                        </div>
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="http://tachyons.io/img/avatar_1.jpg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="John Doe">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            My name is SunHoo Park and this is my blog.<br>I am a student that is learning full stack software engineering.<br> I currently live in Seoul, Korea, hit me up if you are in the region.
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2022/04/28/4.27_SQL-Group_Querry_Group_Operator/"> Oracle - SQL 그룹 쿼리와 집합 연산자</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/28/4.27_SQL_Function(2)/"> Oracle - SQL 함수(2)</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/28/4.28_SQL_Join/"> Oracle - SQL 조인(Join)</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/28/4_28_SQL-Sub_Querry/"> Oracle - SQL 서브 쿼리(subquerry)</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/27/4.27_SQL-Function/"> Oracle - SQL 함수</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://twitter.com/?lang=en" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://dribbble.com/" target="_blank">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/klugjo/hexo-theme-anodyne" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://plus.google.com/" target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
+                            <i class="fa fa-500px"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="/#" target="_blank">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                @Untitled. All right reserved | Design & Hexo <a class="link dim white" target="_blank" rel="noopener" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="SQL 문장
+객체를 생성하는 DDL(CREATE, ALTER, DROP)과 데이터를 수정하고 만드는 DML(SELECT, INSERT, UPDATE, DELETE, MERGE, 등)이 존재한다.
+
+DDL
+객체를 생성하고 제거하는 명령어들
+
+CREATE : 테이블,인덱스">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content=" Oracle - SQL 문장(DDL,DML) "/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title> Oracle - SQL 문장(DDL,DML)  - Hexo</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="Hexo">
+            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="Hexo">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="Home">
+                    Home
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="Archives">
+                    Archives
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/tags" 
+                    title="Tags">
+                    Tags
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/categories" 
+                    title="Categories">
+                    Categories
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about.html" 
+                    title="About">
+                    About
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/contact.html" 
+                    title="Contact">
+                    Contact
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns"> Oracle - SQL 문장(DDL,DML) </h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-04-26</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa-file-text-o"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/SQL-Oracle/">#SQL, Oracle</a>
+                            </div>
+                        </div>
+                    
+
+                    <!-- Main Post Content -->
+                    <h1 id="SQL-문장"><a href="#SQL-문장" class="headerlink" title="SQL 문장"></a>SQL 문장</h1><ul>
+<li>객체를 생성하는 DDL(CREATE, ALTER, DROP)과 데이터를 수정하고 만드는 DML(SELECT, INSERT, UPDATE, DELETE, MERGE, 등)이 존재한다.</li>
+</ul>
+<h1 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h1><ul>
+<li><p>객체를 생성하고 제거하는 명령어들</p>
+</li>
+<li><p><strong>CREATE</strong> : 테이블,인덱스, 뷰 등의 데이터베이스 객체를 생성하는 명령문</p>
+<ul>
+<li>테이블 생성: <code>CREATE TABLE 테이블명(컬럼명1 컬럼1_데이터타입 [NULL, NOT NULL], 컬럼명2 컬럼2_데이터타입 [NULL, NOT NULL], ...)</code></li>
+</ul>
+</li>
+<li><p><strong>ALTER</strong>:  이미 생성된 데이터베이스 객체의 컬럼명, 데이터 타입 등을 변경하는 명령문</p>
+<ul>
+<li>컬럼 명 변경: <code>ALTER TABLE 테이블명 RENAME COLUMN 컬럼명1 TO 컬럼명2;</code></li>
+<li>컬럼 타입 변경: <code>ALTER TABLE 테이블명 MODIFY 컬럼명 테이터타입;</code></li>
+<li>컬럼 추가: <code>ALTER TABLE 테이블명 ADD 컬럼명 데이터타입;</code></li>
+<li>컬럼 삭제: <code>ALTER TABLE 테이블명 DROP COLUMN 컬럼명 ;</code></li>
+<li>제약조건 추가: <code>ALTER TABLE 테이블명 ADD CONSTRAINTS 제약조건명 PRIMARY KEY (컬럼명);</code></li>
+<li>제약조건 삭제: <code>ALTER TABLE 테이블명 DROP CONSTRAINTS 제약조건 명;</code></li>
+</ul>
+</li>
+<li><p><strong>DROP</strong> : 생성된 데이터베이스 객체를 삭제하는 명령문</p>
+<ul>
+<li>테이블 삭제: <code>DROP TABLE 테이블명;</code></li>
+</ul>
+</li>
+<li><p><strong>TRUNCATE</strong> : 한번 실행 시, 데이터 바로 삭제</p>
+<ul>
+<li>명령문은 DROP과 유사하다.</li>
+<li>Delete 문은 데이터 삭제 후, DB에서도 제거하려면 Commit 할 필요가 있으나 Truncate는 바로 삭제된다.</li>
+<li>바로 제거 되기 때문에 Rollback 도 적용 할 수 없다.</li>
+</ul>
+</li>
+<li><p><strong>DESC:</strong> 테이블에 있는 컬럼 내역들을 바로 나타내 준다.</p>
+<ul>
+<li>컬럼 내역 보기: <code>DESC 테이블명;</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="DML"><a href="#DML" class="headerlink" title="DML"></a>DML</h1><ul>
+<li>데이터를 만들거나 수정하는 명령어들</li>
+<li>SELECT, INSERT, UPDATE, DELETE, MERGE 등이 있다.</li>
+<li>기본 골격은 간단하며, 용도에 따라 다양한 옵션이 붙는다.</li>
+</ul>
+<h3 id="1-SELECT"><a href="#1-SELECT" class="headerlink" title="1. SELECT"></a>1. SELECT</h3><ul>
+<li><p>데이터를 조회할 때 사용하는 명령문</p>
+</li>
+<li><p>기본 형태</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> * or 컬럼 명 # *는 전체 선택</span><br><span class="line"><span class="variable constant_">FROM</span> [스키마.]테이블명 or 뷰명</span><br><span class="line"><span class="variable constant_">WHERE</span> 조건 </span><br><span class="line"><span class="variable constant_">AND</span> 추가조건</span><br><span class="line"><span class="variable constant_">OR</span> 추가조건</span><br><span class="line"><span class="variable constant_">ORDER</span> <span class="variable constant_">BY</span> 컬럼; #정렬기준(기본은 오름차순)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>예시)</p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled.png" alt="Untitled"></p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%201.png" alt="Untitled"></p>
+</li>
+</ul>
+<h3 id="2-INSERT"><a href="#2-INSERT" class="headerlink" title="2. INSERT"></a>2. INSERT</h3><ul>
+<li><p>신규로 데이터를 입력할 때 사용한다.</p>
+</li>
+<li><p>기본 형태</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">INSERT</span> <span class="variable constant_">INTO</span> [스키마.]테이블명 (컬럼명<span class="number">2</span>, 컬럼명<span class="number">2</span>, ...)</span><br><span class="line"><span class="variable constant_">VALUES</span> (값<span class="number">1</span>, 값<span class="number">2</span>, ...)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>예시)</p>
+</li>
+</ul>
+<p><img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%202.png" alt="Untitled"></p>
+<p><img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%203.png" alt="Untitled"></p>
+<ul>
+<li><p>Column 명을 생략 할 수 있다.</p>
+<ul>
+<li><p>생략할 경우, 전체 Column 수와 동일해야만 한다.</p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%204.png" alt="Untitled"></p>
+</li>
+<li><p>일부만 입력할 경우, 입력할 Column도 지정해 줘야한다.</p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%205.png" alt="Untitled"></p>
+</li>
+<li><p>일부만 입력할 경우, 입력할 Column을 생략하면 에러가 발생한다.</p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%206.png" alt="Untitled"></p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%207.png" alt="Untitled"></p>
+</li>
+</ul>
+</li>
+<li><p><strong>INSERT ~ SELECT 형태 (실무에서 많이 사용)</strong></p>
+<ul>
+<li>다른 테이블이나 뷰의 조회 결과로 나온 데이터를 또 다른 테이블에 넣는 형식</li>
+<li>기본 형태</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">INSERT</span> <span class="variable constant_">INTO</span> [스키마.]테이블명 (컬럼<span class="number">1</span>, 컬럼<span class="number">2</span>, ...)</span><br><span class="line"><span class="variable constant_">SELECT</span> 문;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>예시)</p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%208.png" alt="Untitled"></p>
+</li>
+<li><p>employees 데이터에서 조건에 맞는 employee_id와 emp_name 데이터를 가져와 ex3_2에 입력하게 했다.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-UPDATE"><a href="#3-UPDATE" class="headerlink" title="3. UPDATE"></a>3. UPDATE</h3><ul>
+<li><p>테이블에 있는 기존 데이터를 수정할 때 사용하는 문장</p>
+</li>
+<li><p>기본 형태</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">UPDATE</span> [스키마.]테이블명</span><br><span class="line"><span class="variable constant_">SET</span> 컬럼<span class="number">1</span> = 변경값<span class="number">1</span></span><br><span class="line">	,컬럼<span class="number">2</span> = 변경값<span class="number">2</span></span><br><span class="line">	,...</span><br><span class="line"><span class="variable constant_">WHERE</span> 조건;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>이미 입력된 데이터를 변경해야 하므로, ‘변경할 테이블, 컬럼, 변경할 값’ 이 필요하다.</li>
+</ul>
+</li>
+<li><p>예시)</p>
+<ul>
+<li>ex3_1 가 있다.</li>
+</ul>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%209.png" alt="Untitled"></p>
+<ul>
+<li><p>4번째 row의 col3 값이 비어있는데, 이것을 채우려고 한다. 네 번째 로우를 검색할 조건이 필요한데 NULL 값을 찾으면 된다.</p>
+</li>
+<li><p>NULL 데이터를 찾을 때는 검색 조건에서 IS NULL 을 사용하면 된다.</p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%2010.png" alt="Untitled"></p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%2011.png" alt="Untitled"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-MERGE"><a href="#4-MERGE" class="headerlink" title="4. MERGE"></a>4. MERGE</h3><ul>
+<li><p>조건을 비교해서 테이블에 해당 조건에 맞는 데이터가 없으면 INSERT, 있으면 UPDATE를 실행하는 문장</p>
+</li>
+<li><p>기본 형태</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">MERGE</span> <span class="variable constant_">INTO</span> [스키마.]테이블명</span><br><span class="line">		<span class="variable constant_">USING</span> (<span class="variable constant_">UPDATE</span>나 <span class="variable constant_">INSERT</span> 될 데이터 원천)</span><br><span class="line">			<span class="variable constant_">ON</span> (<span class="variable constant_">UPDATE</span> 될 조건)</span><br><span class="line"><span class="variable constant_">WHEN</span> <span class="variable constant_">MATCHED</span> <span class="variable constant_">THEN</span></span><br><span class="line">			<span class="variable constant_">SET</span> 컬럼<span class="number">1</span>=값<span class="number">1</span>, 컬럼<span class="number">2</span> = 값<span class="number">2</span>, ...</span><br><span class="line"><span class="variable constant_">WHERE</span> update조건</span><br><span class="line">			<span class="variable constant_">DELETE</span> <span class="variable constant_">WHERE</span> update_delete 조건</span><br><span class="line"><span class="variable constant_">WHEN</span> <span class="variable constant_">NOT</span> <span class="variable constant_">MATCHED</span> <span class="variable constant_">THEN</span></span><br><span class="line">			<span class="variable constant_">INSERT</span> (컬럼<span class="number">1</span>, 컬럼<span class="number">2</span>, ...) <span class="variable constant_">VALUES</span> (값<span class="number">1</span>, 값<span class="number">2</span>, ...)</span><br><span class="line">			<span class="variable constant_">WHERE</span> insert조건;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>예시)</p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%2012.png" alt="Untitled"></p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%2013.png" alt="Untitled"></p>
+<ul>
+<li>ex3_3 이라는 신규 테이블을 생성한 뒤, sales 테이블에서 2000년 10월부터 2000년 12월까지 매출을 달성한 사원 번호를 입력했다.</li>
+<li>group by를 통해 사원번호의 중복을 제거하였다.</li>
+</ul>
+</li>
+<li><p>아래 조건을 만족하는 MERGE 문을 작성한다.</p>
+<ol>
+<li>관리자 사번(manager_id)이 146번인 사원을 찾는다.</li>
+<li>ex3_3 테이블에 있는 사원의 사번과 일치하면 보너스 금액에 자신의 급여의 1%를 보너스로 갱</li>
+<li>ex3_3 테이블에 있는 사원의 사번과 일치하지 않으면 1.에서의 결과의 사원을 신규로 입(이 때 보너스 금액은 급여의 0.1%), 이 때 급여가 8000미만인 사원만 처리한다.</li>
+</ol>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%2014.png" alt="Untitled"></p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%2015.png" alt="Untitled"></p>
+<ul>
+<li><strong>서브쿼리</strong>의 개념이 사용되었다.</li>
+<li><strong>서브쿼리: 쿼리 안에 또 다른 쿼리가 들어가 있는 형태(노란색 영역)</strong></li>
+</ul>
+</li>
+<li><p>UPDATE 절에 DELETE WHERE 구문을 추가할 수 있다.</p>
+<ul>
+<li><p>마지막 UPDATE 절에 DELETE WHERE 구문만 추가하였다.</p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%2016.png" alt="Untitled"></p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%2017.png" alt="Untitled"></p>
+</li>
+<li><p>Employee_id &#x3D; 161 인 항목이 삭제되었다.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-Commit-and-Rollback"><a href="#5-Commit-and-Rollback" class="headerlink" title="5. Commit and Rollback"></a>5. Commit and Rollback</h3><ul>
+<li><p><strong>Commit : 변경한 데이터를 db에 마지막으로 반영</strong></p>
+<ul>
+<li><p>Commit 예시) 아무 항목의 데이터를 만든다.</p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%2018.png" alt="Untitled"></p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%2019.png" alt="Untitled"></p>
+</li>
+<li><p>cmd 실행 - <code>sqlplus</code> 입력 - id&#x2F;비밀번호 입력(ora_user&#x2F;Risa) 입력 - 데이터베이스 접속 완료</p>
+</li>
+<li><p><code>select * from ex3_4;</code></p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%2020.png" alt="Untitled"></p>
+</li>
+<li><p>Commit 명령어로 db에 최종 반영을 해주지 않았기 때문.</p>
+</li>
+<li><p>Commit; 명령어 실행</p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%2021.png" alt="Untitled"></p>
+<p>  <img src="/images/4.26_sql-Sentence-DDL_DML/Untitled%2022.png" alt="Untitled"></p>
+</li>
+</ul>
+</li>
+<li><p><strong>Rollback : 변경한 데이터를 변경하기 이전으로 되돌림</strong></p>
+</li>
+</ul>
+
+                    
+                    <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/SQL-Oracle/">#SQL, Oracle</a>
+                        </div>
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="http://tachyons.io/img/avatar_1.jpg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="John Doe">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            My name is SunHoo Park and this is my blog.<br>I am a student that is learning full stack software engineering.<br> I currently live in Seoul, Korea, hit me up if you are in the region.
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2022/04/28/4.27_SQL-Group_Querry_Group_Operator/"> Oracle - SQL 그룹 쿼리와 집합 연산자</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/28/4.27_SQL_Function(2)/"> Oracle - SQL 함수(2)</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/28/4.28_SQL_Join/"> Oracle - SQL 조인(Join)</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/28/4_28_SQL-Sub_Querry/"> Oracle - SQL 서브 쿼리(subquerry)</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/27/4.27_SQL-Function/"> Oracle - SQL 함수</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://twitter.com/?lang=en" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://dribbble.com/" target="_blank">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/klugjo/hexo-theme-anodyne" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://plus.google.com/" target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
+                            <i class="fa fa-500px"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="/#" target="_blank">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                @Untitled. All right reserved | Design & Hexo <a class="link dim white" target="_blank" rel="noopener" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
