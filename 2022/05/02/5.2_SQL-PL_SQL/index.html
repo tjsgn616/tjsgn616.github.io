@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="PL&amp;#x2F;SQL
+PL&amp;#x2F;SQL이란 집합적 언어의 특징과 계층적 언어의 특징을 모두 지니고 있다.(SQL을 확장한 계층적 언어)
+복잡한 비즈니스 로직을 처리할 때(프로그래밍) 유용하게 사용할 수 있다.
+블록 단위의 실행을 제공한다.(BEGIN 과 END; 로">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content=" Oracle - PL/SQL "/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title> Oracle - PL/SQL  - Hexo</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="Hexo">
+            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="Hexo">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="Home">
+                    Home
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="Archives">
+                    Archives
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/tags" 
+                    title="Tags">
+                    Tags
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/categories" 
+                    title="Categories">
+                    Categories
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about.html" 
+                    title="About">
+                    About
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/contact.html" 
+                    title="Contact">
+                    Contact
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns"> Oracle - PL/SQL </h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2022-05-02</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa-file-text-o"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/SQL-Oracle-PL-SQL/">#SQL, Oracle, PL/SQL</a>
+                            </div>
+                        </div>
+                    
+
+                    <!-- Main Post Content -->
+                    <h1 id="PL-x2F-SQL"><a href="#PL-x2F-SQL" class="headerlink" title="PL&#x2F;SQL"></a>PL&#x2F;SQL</h1><ul>
+<li>PL&#x2F;SQL이란 집합적 언어의 특징과 계층적 언어의 특징을 모두 지니고 있다.(SQL을 확장한 계층적 언어)</li>
+<li>복잡한 비즈니스 로직을 처리할 때(프로그래밍) 유용하게 사용할 수 있다.</li>
+<li>블록 단위의 실행을 제공한다.(BEGIN 과 END; 로 구분, 마지막 라인에 &#x2F;를 입력하면 해당 블록이 실행된다.)</li>
+<li>!!!!!!!!!!한 줄을 끝낼 때 마다 ; 를 붙여줘야한다 !!!!!!!!</li>
+<li>좌측 변수에 우측 값을  입력할 때는 :&#x3D; 를 사용한다.(python의 &#x3D; 과 같은 역할)</li>
+</ul>
+<h2 id="기본-PL-x2F-SQL-블록-구조"><a href="#기본-PL-x2F-SQL-블록-구조" class="headerlink" title="기본 PL&#x2F;SQL 블록 구조"></a>기본 PL&#x2F;SQL 블록 구조</h2><h3 id="설정-SET"><a href="#설정-SET" class="headerlink" title="설정(SET)"></a>설정(SET)</h3><ul>
+<li>한 번 적용하면 SQL을 종료 할 때 까지 그 이후 실행하는 모든 명령문에 적용된다.<ul>
+<li><code>SET TIMING</code> : 명령문 실행 경과 시간을 함께 출력한다.</li>
+<li><code>SET SERVEROUTPUT</code> : 명령문 실행 결과를 출력한다.<ul>
+<li><code>SET SERVEROUTPUT ON</code> 을 했다면 <code>DBMS_OUTPUT.PUT_LINE(출력하고자하는 값);</code> 을 통해 해당 값을 출력 시킬 수 있다.</li>
+<li>ON &#x2F; OFF 를 붙여서 켜고 끄고 할 수 있다.(디폴트 값은 OFF)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="DECLARE-선언부"><a href="#DECLARE-선언부" class="headerlink" title="DECLARE(선언부)"></a>DECLARE(선언부)</h3><ul>
+<li>DECLARE는 PL&#x2F;SQL에서 사용하는 모든 변수나 상수를 선언하는 부분이다.</li>
+<li>변수, 상수, 커서 등을 선언한다.<ul>
+<li><code>DECLARE 변수이름 변수타입</code> 으로 진행한다.</li>
+<li>예) <code>DECLARE vi_num NUMBER;</code></li>
+</ul>
+</li>
+<li>변수 타입을 지정할 때 명시적으로 지정하지 않아도 된다.<ul>
+<li>%ROWTYPE : 해당 테이블이나 뷰의 컬럼 속성을 그대로 가져온다. ( <code>변수명 테이블이름%ROWTYPE</code>)</li>
+<li>%TYPE : 해당 테이블의 컬럼 속성을 지정하여 그대로 가져온다.( <code>변수명 테이블이름.컬럼명%TYPE</code> )</li>
+</ul>
+</li>
+</ul>
+<h3 id="BEGIN-실행부"><a href="#BEGIN-실행부" class="headerlink" title="BEGIN(실행부)"></a>BEGIN(실행부)</h3><ul>
+<li>BEGIN 은 절차적 형식으로 SQL문을 실행할 수 있도록 로직을 기술할 수 있는 부분이다.(실질적 실행 코드 작성하는 곳)</li>
+<li>제어문, 반복문, 함수 등을 사용 가능하다.</li>
+</ul>
+<h3 id="EXCEPTION-예외-처리부"><a href="#EXCEPTION-예외-처리부" class="headerlink" title="EXCEPTION(예외 처리부)"></a>EXCEPTION(예외 처리부)</h3><ul>
+<li>EXCEPTION 은 PL&#x2F;SQL문이 실행되는 중 에러가 발생 했을 때, 이를 해결하기 위한 문장을 기술 할 수 있는 부분이다.</li>
+</ul>
+<h3 id="END-실행문-종료"><a href="#END-실행문-종료" class="headerlink" title="END(실행문 종료)"></a>END(실행문 종료)</h3><ul>
+<li>END는 실행문을 종료한다.</li>
+</ul>
+<h2 id="PL-x2F-SQL-프로그램의-작성-요령"><a href="#PL-x2F-SQL-프로그램의-작성-요령" class="headerlink" title="PL&#x2F;SQL 프로그램의 작성 요령"></a>PL&#x2F;SQL 프로그램의 작성 요령</h2><ul>
+<li>한 문장이 끝날 때 마다 ;(세미콜론)을 붙여서 한 문장이 끝났다는 것을 명시 해 주어야한다.</li>
+<li>END의 뒤에 ;(세미콜론)을 붙여서 한 블록이 끝났다는 것을 명시 해 주어야 한다.</li>
+<li>PL&#x2F;SQL 전체 블록의 마지막에 &#x2F; 를 붙여서 종결 시켜 주어야한다.</li>
+</ul>
+<h2 id="BEGIN-문장"><a href="#BEGIN-문장" class="headerlink" title="BEGIN 문장"></a>BEGIN 문장</h2><h3 id="DML문"><a href="#DML문" class="headerlink" title="DML문"></a>DML문</h3><ul>
+<li>예시)  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">DECLARE</span></span><br><span class="line">    vs_emp_name <span class="title class_">VARCHAR2</span>(<span class="number">80</span>);</span><br><span class="line">    -- 사원명 변수</span><br><span class="line">    vs_dep_name <span class="title class_">VARCHAR2</span>(<span class="number">80</span>);</span><br><span class="line">    -- 부서명 변수</span><br><span class="line"><span class="variable constant_">BEGIN</span></span><br><span class="line">    <span class="variable constant_">SELECT</span> a.<span class="property">emp_name</span>, b.<span class="property">department_name</span></span><br><span class="line">        <span class="variable constant_">INTO</span> vs_emp_name, vs_dep_name</span><br><span class="line">    <span class="variable constant_">FROM</span> employees a</span><br><span class="line">        , departments b</span><br><span class="line">    <span class="variable constant_">WHERE</span> a.<span class="property">department_id</span> = b.<span class="property">department_id</span></span><br><span class="line">        <span class="variable constant_">AND</span> a.<span class="property">employee_id</span> = <span class="number">100</span>;</span><br><span class="line">    <span class="variable constant_">DBMS_OUTPUT</span>.<span class="title function_">PUT_LINE</span>(vs_emp_name || <span class="string">&#x27; - &#x27;</span> || vs_dep_name);</span><br><span class="line"><span class="variable constant_">END</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>위 명령문 전문은, 그 일부인 아래의 결과를 <code>into</code> 로 <code>vs_emp_name, vs_dep_name</code> 에 집어넣어준다</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">SELECT</span> a.<span class="property">emp_name</span>, b.<span class="property">department_name</span></span><br><span class="line">  <span class="variable constant_">FROM</span> employees a</span><br><span class="line">      , departments b</span><br><span class="line"> <span class="variable constant_">WHERE</span> a.<span class="property">department_id</span> = b.<span class="property">department_id</span></span><br><span class="line">   <span class="variable constant_">AND</span> a.<span class="property">employee_id</span> = <span class="number">100</span>;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="ACCEPT-PROMT"><a href="#ACCEPT-PROMT" class="headerlink" title="ACCEPT PROMT"></a>ACCEPT PROMT</h3><ul>
+<li>변수에 변수를 직접 입력하게 할 수 있는 명령문<ul>
+<li><p><code>ACCEPT 변수명 PROMT ‘입력창에 나올 문장’</code></p>
+<ul>
+<li><p>예시) <code>accept p_num1 prompt &#39;첫번째 숫자를 입력하세요’</code></p>
+<p>  <img src="/images/5.2_SQL-PL_SQL/Untitled.png" alt="Untitled"></p>
+</li>
+</ul>
+</li>
+<li><p>BEGIN 문에서 해당 변수를 사용 하고자 하면 ‘&amp;’를 붙여서 사용한다.</p>
+<ul>
+<li>예시) <code>v_sum = &amp;p_num1 + &amp;p_num2 + &amp;p_num3</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h3><ul>
+<li>조건문을 만드는데 사용하는 문법으로 <code>if, elsif, else / end if;</code> 가 있다.<ul>
+<li>예시)</li>
+</ul>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">IF</span> 조건 <span class="variable constant_">THEN</span> 결과 ;</span><br><span class="line"><span class="variable constant_">ELSIF</span> 조건 <span class="variable constant_">THEN</span> 결과 ;</span><br><span class="line"><span class="variable constant_">ELSE</span> 결과;</span><br><span class="line"><span class="variable constant_">END</span> <span class="variable constant_">IF</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>조건문의 마지막에 <code>END IF;</code> 문을 넣는다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h3><ul>
+<li><p>반복하는 형태의 문장을 만들고자 할 때 사용하는 것으로 <code>LOOP / EXIT WHEN END LOOP;</code> 를 사용한다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">LOOP</span> (반복문을 실행할 것이라는 선언)</span><br><span class="line">	반복문~~;</span><br><span class="line">	<span class="variable constant_">EXIT</span> <span class="variable constant_">WHEN</span> 조건;</span><br><span class="line"><span class="variable constant_">END</span> <span class="variable constant_">LOOP</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>예시) 구구단 문장</p>
+</li>
+</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">DECLARE</span></span><br><span class="line">    v_count1 <span class="title function_">number</span>(<span class="number">10</span>) := <span class="number">0</span>;</span><br><span class="line">    v_count2 <span class="title function_">number</span>(<span class="number">10</span>) := <span class="number">0</span>;</span><br><span class="line"><span class="variable constant_">BEGIN</span>   </span><br><span class="line">    <span class="variable constant_">LOOP</span> </span><br><span class="line">        v_count1 := v_count1 +<span class="number">1</span>;</span><br><span class="line">            <span class="variable constant_">LOOP</span> </span><br><span class="line">                v_count2 := v_count2 +<span class="number">1</span>;</span><br><span class="line">                <span class="variable constant_">DBMS_OUTPUT</span>.<span class="title function_">PUT_LINE</span>( v_count1 || <span class="string">&#x27;x&#x27;</span> || v_count2 || <span class="string">&#x27; = &#x27;</span> || v_count1 * v_count2);</span><br><span class="line">                <span class="variable constant_">EXIT</span> <span class="variable constant_">WHEN</span> v_count2 = <span class="number">9</span>;</span><br><span class="line">                </span><br><span class="line">            <span class="variable constant_">END</span> <span class="variable constant_">LOOP</span>;</span><br><span class="line">            </span><br><span class="line">        <span class="variable constant_">EXIT</span> <span class="variable constant_">WHEN</span> v_count1 = <span class="number">9</span>;</span><br><span class="line">        v_count2 := <span class="number">0</span>;</span><br><span class="line">    <span class="variable constant_">END</span> <span class="variable constant_">LOOP</span>;</span><br><span class="line"><span class="variable constant_">END</span>;</span><br><span class="line">/</span><br></pre></td></tr></table></figure>
+                    
+                    <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/SQL-Oracle-PL-SQL/">#SQL, Oracle, PL/SQL</a>
+                        </div>
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="http://tachyons.io/img/avatar_1.jpg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="John Doe">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            My name is SunHoo Park and this is my blog.<br>I am a student that is learning full stack software engineering.<br> I currently live in Seoul, Korea, hit me up if you are in the region.
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2022/05/02/5.2_SQL-PL_SQL/"> Oracle - PL/SQL </a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/28/4.27_SQL-Group_Querry_Group_Operator/"> Oracle - SQL 그룹 쿼리와 집합 연산자</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/28/4.27_SQL_Function(2)/"> Oracle - SQL 함수(2)</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/28/4.28_SQL_Join/"> Oracle - SQL 조인(Join)</a>
+        </p>
+    
+        <p>
+            <a href="/2022/04/28/4_28_SQL-Sub_Querry/"> Oracle - SQL 서브 쿼리(subquerry)</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://twitter.com/?lang=en" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://dribbble.com/" target="_blank">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/klugjo/hexo-theme-anodyne" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://plus.google.com/" target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
+                            <i class="fa fa-500px"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="/#" target="_blank">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                @Untitled. All right reserved | Design & Hexo <a class="link dim white" target="_blank" rel="noopener" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
